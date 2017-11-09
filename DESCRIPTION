@@ -1,5 +1,4 @@
 Package: ggeasy
-Type: `ggplot2` Shortcuts 
 Title: Easy Access To `ggplot2` Commands
 Version: 0.1.0
 Authors@R: person("Jonathan", "Carroll", 
@@ -9,7 +8,12 @@ Authors@R: person("Jonathan", "Carroll",
 Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
 Description: Provides a series of aliases to commonly used but difficult 
     to remember `ggplot2` sequences.
-License: MIT
+License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
 Imports: ggplot2
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
