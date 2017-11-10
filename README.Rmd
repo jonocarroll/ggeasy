@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: yes
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -14,7 +15,7 @@ knitr::opts_chunk$set(
 
 # ggeasy
 
-You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
+You know how to make `ggplot2` graphics, right? No worries. Piece of `r icon::fa("birthday-cake")`.
 
 Now, can you please rotate the `x` axis labels to vertical?
 
