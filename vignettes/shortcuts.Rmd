@@ -44,3 +44,28 @@ p4 <- p +
 plot_grid(p1, p2, p3, p4, nrow = 2)
 ```
 
+## Removing legends
+
+Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
+
+```{r, fig.width = 8, fig.height = 8}
+p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+    geom_point()
+
+p1 <- p + 
+    labs(title = "With all legends")
+p2 <- p + 
+    easy_remove_legend() + 
+    labs(title = "Remove all legends")
+p3 <- p + 
+    easy_remove_legend(size) + 
+    labs(title = "Remove size legend")
+p4 <- p + 
+    easy_remove_legend(size, color) + 
+    labs(title = "Remove both legends specifically")
+
+plot_grid(p1, p2, p3, p4, nrow = 2)
+```
+
+
+
