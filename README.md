@@ -3,7 +3,7 @@
 ggeasy
 ======
 
-You know how to make `ggplot2` graphics, right? No worries. Piece of <!--html_preserve--><i class="fa  fa-birthday-cake "></i><!--/html_preserve-->.
+You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
 
 Now, can you please rotate the `x` axis labels to vertical?
 
