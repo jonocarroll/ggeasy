@@ -38,4 +38,74 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
     ggplot2::theme(axis.text.x = ggplot2::element_text(angle = angle, hjust = hjust))
 }
 
+#' Easily remove axe(s)
+#'
+#' easy_remove_axes by default removes both axes, but can remove only x or y
+#' if "x" or "y" is given to the 'which' argument
+#' 
+#' easy_remove_x_axis and easy_remove_y_axis remove just the x or y axis,
+#' respectively.
+#'
+#' @md
+#' @param which which axis or axes to remove, by default "both"
+#' @param what what axis components to remove
+#'
+#' @return  a \code{\link[ggplot2]{theme}} object  which can be used in 
+#' \code{\link[ggplot2]{ggplot2}} calls 
+#' @export
+#' @author Alicia Schep
+#' @import rlang
+#' @import ggplot2
+#'
+#' @examples
+#' 
+#' # Remove all axes
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point() + easy_remove_axes()
+#' 
+#' # remove just x axis
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point() + easy_remove_x_axis()
+#'   
+#' # can also use:
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point() + easy_remove_axes("x")
+#'   
+#' # Remove y axis
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point() + easy_remove_y_axis()
+#'   
+#' # Remove just the ticks
+#' # Remove y axis
+#' ggplot(mtcars, aes(wt, mpg)) +
+#'   geom_point() + easy_remove_y_axis(what = "ticks)
+easy_remove_axes <- function(which = c("both","x","y"),
+                             what = c("ticks","title","text","line")){
+  
+  which <- match.arg(which)
+  what <- match.arg(what, several.ok = TRUE)
+  
+  axis_suffix <- if (which == "both") "" else paste0(".", which)
+  
+  blanks <- lapply(what, function(x) element_blank())
+  names(blanks) <- paste0("axis.", what, axis_suffix)
+  
+  do.call(theme, blanks)
+  
+}
 
+#' @export
+#' @rdname easy_remove_axes
+easy_remove_y_axis <- function(what = c("ticks","title","text","line")){
+  
+  easy_remove_axes("y", what = what)
+  
+}
+
+#' @export
+#' @rdname easy_remove_axes
+easy_remove_x_axis <- function(what = c("ticks","title","text","line")) {
+  
+  easy_remove_axes("x", what = what)
+  
+}
