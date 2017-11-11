@@ -2,5 +2,6 @@
 
 export(easy_remove_legend)
 export(easy_rotate_x_labels)
+export(ggbot)
 import(ggplot2)
 import(rlang)
