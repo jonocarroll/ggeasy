@@ -7,16 +7,20 @@
 \title{Easily remove axe(s)}
 \usage{
 easy_remove_axes(which = c("both", "x", "y"), what = c("ticks", "title",
-  "text", "line"))
+  "text", "line"), teach = FALSE)
 
-easy_remove_y_axis(what = c("ticks", "title", "text", "line"))
+easy_remove_y_axis(what = c("ticks", "title", "text", "line"),
+  teach = FALSE)
 
-easy_remove_x_axis(what = c("ticks", "title", "text", "line"))
+easy_remove_x_axis(what = c("ticks", "title", "text", "line"),
+  teach = FALSE)
 }
 \arguments{
 \item{which}{which axis or axes to remove, by default "both"}
 
 \item{what}{what axis components to remove}
+
+\item{teach}{print longer equivalent ggplot expression?}
 }
 \value{
 a \code{\link[ggplot2]{theme}} object  which can be used in

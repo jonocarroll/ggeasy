@@ -49,6 +49,7 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
 #' @md
 #' @param which which axis or axes to remove, by default "both"
 #' @param what what axis components to remove
+#' @param teach print longer equivalent ggplot expression?
 #'
 #' @return  a \code{\link[ggplot2]{theme}} object  which can be used in 
 #' \code{\link[ggplot2]{ggplot2}} calls 
@@ -80,7 +81,8 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
 #' ggplot(mtcars, aes(wt, mpg)) +
 #'   geom_point() + easy_remove_y_axis(what = "ticks)
 easy_remove_axes <- function(which = c("both","x","y"),
-                             what = c("ticks","title","text","line")){
+                             what = c("ticks","title","text","line"), 
+                             teach = FALSE){
   
   which <- match.arg(which)
   what <- match.arg(what, several.ok = TRUE)
@@ -90,22 +92,35 @@ easy_remove_axes <- function(which = c("both","x","y"),
   blanks <- lapply(what, function(x) element_blank())
   names(blanks) <- paste0("axis.", what, axis_suffix)
   
+  if (teach) {
+    blank_strings <- lapply(what, function(x) " = element_blank()")
+    args <- paste0(names(blanks), blank_strings, collapse = ", ")
+    message("easy_remove_label call can be substituted with:\n")
+    message(strwrap(paste0("theme(",args,")"), 
+                    width = 80, 
+                    exdent = 2,
+                    prefix = "\n", 
+                    initial = ""))
+  }
+  
   do.call(theme, blanks)
   
 }
 
 #' @export
 #' @rdname easy_remove_axes
-easy_remove_y_axis <- function(what = c("ticks","title","text","line")){
+easy_remove_y_axis <- function(what = c("ticks","title","text","line"), 
+                               teach = FALSE){
   
-  easy_remove_axes("y", what = what)
+  easy_remove_axes("y", what = what, teach = teach)
   
 }
 
 #' @export
 #' @rdname easy_remove_axes
-easy_remove_x_axis <- function(what = c("ticks","title","text","line")) {
+easy_remove_x_axis <- function(what = c("ticks","title","text","line"),
+                               teach = FALSE) {
   
-  easy_remove_axes("x", what = what)
+  easy_remove_axes("x", what = what, teach = teach)
   
 }
