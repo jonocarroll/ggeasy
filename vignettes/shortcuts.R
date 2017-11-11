@@ -22,7 +22,7 @@ p4 <- p +
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
     
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
@@ -40,7 +40,7 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(cyl, hp, col = "red")) + geom_point()
@@ -57,7 +57,7 @@ p4 <- p +
     ggbot("blue", "point") +
     labs(title = "Partial match to words")
     
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(cyl, hp, col = "red")) + geom_point()
@@ -74,5 +74,5 @@ p4 <- p +
     ggbot("remove legend") +
     labs(title = "No legend")
     
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 

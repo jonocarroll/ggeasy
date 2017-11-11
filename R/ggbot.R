@@ -39,7 +39,7 @@ ggbot <- function(...) {
     if (length(detect_remove_cmds) > 0 && length(detect_funs) > 0) {
 
         ## remove theme
-        if (detect_funs[1] == "theme") theme_void()
+        if (detect_funs[1] == "theme") return(theme_void())
 
         ## remove axes
         if (detect_funs[1] == "axis" && detect_aes[1] == "x") {
