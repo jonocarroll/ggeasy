@@ -59,6 +59,12 @@ p4 <- p +
     
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 
+## ---- fig.width = 5, fig.height = 5--------------------------------------
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl), size = hp)) + 
+    geom_point() + 
+    theme_dark() + 
+    ggbot("make points red white and blue")
+
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(cyl, hp, col = "red")) + geom_point()
 
@@ -75,4 +81,10 @@ p4 <- p +
     labs(title = "No legend")
     
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+
+## ---- fig.width = 5, fig.height = 5--------------------------------------
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl), size = hp)) + 
+    geom_point() + 
+    ggbot("I don't need no theme") +
+    ggbot("I don't need no legend")
 
