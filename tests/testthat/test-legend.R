@@ -1,4 +1,4 @@
-context("legend")
+context("remove legend")
 
 test_that("easy_remove_legend works with no argument", {
   easy_res <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
