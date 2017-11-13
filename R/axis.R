@@ -79,7 +79,7 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
 #' # Remove just the ticks
 #' # Remove y axis
 #' ggplot(mtcars, aes(wt, mpg)) +
-#'   geom_point() + easy_remove_y_axis(what = "ticks)
+#'   geom_point() + easy_remove_y_axis(what = "ticks")
 easy_remove_axes <- function(which = c("both","x","y"),
                              what = c("ticks","title","text","line"), 
                              teach = FALSE){
