@@ -7,6 +7,8 @@
 #' @md
 #' @param ... optional name(s) specific aesthetics for which to remove the 
 #' legend
+#' @param teach print message showing how to make same adjustment using only
+#' ggplot2?
 #'
 #' @return either a \code{\link[ggplot2]{theme}} object or a
 #' \code{\link[ggplot2]{guides}}object, both of which can be used in
@@ -33,13 +35,30 @@
 #' # Remove more than one
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 #'   geom_point() + easy_remove_legend(size, color)
-easy_remove_legend <- function(...) {
+easy_remove_legend <- function(..., teach = FALSE) {
   vars <- rlang::exprs(...)
   if (length(vars) == 0) {
+    if (teach) {
+      message("easy_remove_legend call can be substituted with:\n")
+      message('theme(legend.position = "none")')
+    }
     theme(legend.position = "none")
   } else {
     inputs <- lapply(vars, function(x) FALSE)
     names(inputs) <- vars
+    
+    if (teach){
+      message("easy_remove_legend call can be substituted with:")
+      false_strings <- lapply(vars, function(x) " = FALSE")
+      args <- paste0(vars, false_strings, collapse = ", ")
+      message(strwrap(
+        paste0("guides(", args, ")"),
+        width = 80,
+        exdent = 2,
+        prefix = "\n",
+        initial = ""
+      ))
+    }
 
     do.call(guides, inputs)
   }

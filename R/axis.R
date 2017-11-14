@@ -95,7 +95,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
   if (teach) {
     blank_strings <- lapply(what, function(x) " = element_blank()")
     args <- paste0(names(blanks), blank_strings, collapse = ", ")
-    message("easy_remove_axes call can be substituted with:\n")
+    message("easy_remove_axes call can be substituted with:")
     message(strwrap(
       paste0("theme(", args, ")"),
       width = 80,
