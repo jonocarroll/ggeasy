@@ -7,8 +7,8 @@
 easy_remove_legend(...)
 }
 \arguments{
-\item{...}{additional arguments to be passed to
-\code{\link[ggplot2]{element_text}}}
+\item{...}{optional name(s) specific aesthetics for which to remove the
+legend}
 }
 \value{
 either a \code{\link[ggplot2]{theme}} object or a
@@ -21,6 +21,8 @@ specific aesthetic to remove only certain legends.
 }
 \examples{
 
+library(ggplot2)
+
 # Remove all legends
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_remove_legend()
@@ -28,12 +30,15 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 # remove just size legend
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_remove_legend("size")
-  
+
 # can also use:
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_remove_legend(size)
-  
+
 # Remove more than one
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_remove_legend(size, color)
+}
+\author{
+Alicia Schep
 }
