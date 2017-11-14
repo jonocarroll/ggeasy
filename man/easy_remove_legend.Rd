@@ -4,11 +4,14 @@
 \alias{easy_remove_legend}
 \title{Easily remove legend(s)}
 \usage{
-easy_remove_legend(...)
+easy_remove_legend(..., teach = FALSE)
 }
 \arguments{
 \item{...}{optional name(s) specific aesthetics for which to remove the
 legend}
+
+\item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
+expression?}
 }
 \value{
 either a \code{\link[ggplot2]{theme}} object or a

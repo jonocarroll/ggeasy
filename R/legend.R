@@ -7,8 +7,8 @@
 #' @md
 #' @param ... optional name(s) specific aesthetics for which to remove the 
 #' legend
-#' @param teach print message showing how to make same adjustment using only
-#' ggplot2?
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}} 
+#' expression?
 #'
 #' @return either a \code{\link[ggplot2]{theme}} object or a
 #' \code{\link[ggplot2]{guides}}object, both of which can be used in
