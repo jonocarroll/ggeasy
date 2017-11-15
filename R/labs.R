@@ -1,7 +1,8 @@
 #' @title Easily add ggplot labels using label attribtute of data.frame column
 #' @description Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
 #' the column label attribute if present as the variable label in the plot.
-#' @inheritDotParams ggplot2::labs
+#' @param ... A list of new name-value pairs. The name should either be an aesthetic, 
+#' or one of "title", "subtitle", or "caption"
 #' @return NULL
 #' @examples 
 #' 
@@ -13,20 +14,31 @@
 #'   ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
 #'   geom_line(aes(colour=Species))
 #'   
+#'  p 
+#'   
 #'  p + easy_labs()
 #'  
-#'  p + easy_labs(title='my title',subtitle='mysubtitle',x='x axis label')
+#'  p + easy_labs(p,title='my title',subtitle='mysubtitle',x='x axis label')
 #' 
 #' 
 #' @rdname easy_labs
 #' @export 
 
 easy_labs <- function(...){
+
+  man_labs <- labs(list(...))
   
-  p <- ggplot2::last_plot()
+  structure(man_labs, class = "easy_labels")
+  
+}
+
+
+easy_update_labels <- function(p,man_labs){
+
+  p <- plot_clone(p)
   
   dat_labs <- sapply(p$data,attr,which='label')
-  man_labs <- list(...)
+  
   
   args <- lapply(p$labels,function(x){
     
@@ -40,14 +52,14 @@ easy_labs <- function(...){
     }
     
   })
-  
-  man_labs <- list(...)
-  
+ 
   if(length(man_labs)>0)
     for(nm in names(man_labs))
       args[[nm]] <- man_labs[[nm]]
   
-  structure(args, class = "labels")
+  p$labels <- args
+  
+  p
   
 }
 

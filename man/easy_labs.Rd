@@ -7,10 +7,8 @@
 easy_labs(...)
 }
 \arguments{
-\item{...}{Arguments passed on to \code{ggplot2::labs}
-\describe{
-  \item{}{}
-}}
+\item{...}{A list of new name-value pairs. The name should either be an aesthetic, 
+or one of "title", "subtitle", or "caption"}
 }
 \description{
 Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
@@ -26,9 +24,11 @@ p <-
   ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
   geom_line(aes(colour=Species))
   
+ p 
+  
  p + easy_labs()
  
- p + easy_labs(title='my title',subtitle='mysubtitle',x='x axis label')
+ p + easy_labs(p,title='my title',subtitle='mysubtitle',x='x axis label')
 
 
 }
