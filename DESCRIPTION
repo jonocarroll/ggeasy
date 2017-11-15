@@ -3,7 +3,7 @@ Title: Easy Access To `ggplot2` Commands
 Version: 0.1.0
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
- person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618"))
+ person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),
  person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut"))
  )
 Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
