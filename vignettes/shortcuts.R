@@ -1,33 +1,14 @@
----
-title: "`ggplot2` Shortcuts"
-author: "Jonathan Carroll"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{`ggplot2` Shortcuts}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
----
-
-This package allows easy access to some common `ggplot2` tasks. For example, rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
-
-```{r, message = FALSE}
+## ---- message = FALSE----------------------------------------------------
 library(ggplot2)
 library(cowplot)
 library(ggeasy)
 
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
-```
 
-then by default, this looks like
-
-```{r, fig.width = 6, fig.height = 6}
+## ---- fig.width = 6, fig.height = 6--------------------------------------
 p + labs(title = "ggplot2 default")
-```
 
-We can perform various rotations though
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p1 <- p + 
     easy_rotate_x_labels() + 
     labs(title = "default rotation")
@@ -42,13 +23,8 @@ p4 <- p +
     labs(title = "text starts at bottom")
     
 plot_grid(p1, p2, p3, p4, nrow = 2)
-```
 
-## Removing legends
-
-Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point()
 
@@ -65,13 +41,8 @@ p4 <- p +
     labs(title = "Remove both legends specifically")
 
 plot_grid(p1, p2, p3, p4, nrow = 2)
-```
 
-## Fixing Limits
-
-The limits of axes can be set explicitly, either setting minimal spacing around data or selecting the limits specifically.
-
-```{r}
+## ------------------------------------------------------------------------
 ggplot(mtcars) +
   geom_bar(aes(x = factor(cyl))) +
   scale_y_continuous(expand = c(0, 0, 0.1, 0), limits = c(0, NA))
@@ -102,7 +73,4 @@ ggplot(mtcars) +
 ggplot(mtcars) +
   geom_bar(aes(x = factor(cyl))) +
   easy_exact_ylim(limit = c(-5, 20), teach = TRUE)
-```
-
-
 
