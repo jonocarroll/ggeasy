@@ -37,22 +37,51 @@ easy_update_labels <- function(p,man_labs){
 
   p <- plot_clone(p)
   
-  dat_labs <- sapply(p$data,attr,which='label')
+  root_dat_labs <- sapply(p$data,attr,which='label')
+  root_dat_labs <- root_dat_labs[!sapply(root_dat_labs,is.null)]
+  root_map <- unlist(p$mapping)
   
-  
-  args <- lapply(p$labels,function(x){
+  root_labs <- lapply(root_map, function(x){
     
-    if(x%in%names(dat_labs)){
-      
-      if(is.null(dat_labs[[x]])){
-        x  
-      }else{
-        dat_labs[[x]]
-      }
+    new_lab <- root_dat_labs[[deparse(x)]]
+    
+    if(is.null(new_lab)){
+      new_lab <- deparse(x)
     }
+
+    new_lab
     
   })
+  
+  
+  layers_map <- lapply(p$layers,function(x){
+    l_map <- unlist(x$mapping) 
+    
+    l_dat_labs <- sapply(x$data,attr,which='label')
+    l_dat_labs <- l_dat_labs[!sapply(l_dat_labs,is.null)]
+    l_map <- unlist(x$mapping)
+    
+    l_labs <- lapply(l_map, function(y){
+      
+      new_lab <- l_dat_labs[[deparse(y)]]
+      
+      if(is.null(new_lab)){
+        new_lab <- deparse(y)
+      }
+      
+      new_lab
+      
+    })
+    
+    unlist(l_labs)
+  })
+  
+  args <- c(root_labs,unlist(layers_map))
  
+  # keep last duplicate aes (ie last layer added)
+  
+  args <- args[!duplicated(names(args),fromLast = TRUE)]
+  
   if(length(man_labs)>0)
     for(nm in names(man_labs))
       args[[nm]] <- man_labs[[nm]]

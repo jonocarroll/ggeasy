@@ -28,7 +28,7 @@ p <-
   
  p + easy_labs()
  
- p + easy_labs(p,title='my title',subtitle='mysubtitle',x='x axis label')
+ p + easy_labs(title='my title',subtitle='mysubtitle',x='x axis label')
 
 
 }
