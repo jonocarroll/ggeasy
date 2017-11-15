@@ -34,9 +34,9 @@
 #'   geom_point() + easy_remove_legend(size, color)
 easy_remove_legend <- function(...){
 
-  vars <- exprs(...)
+  vars <- rlang::exprs(...)
   if (length(vars) == 0) {
-    theme(legend.position = "none")
+    ggplot2::theme(legend.position = "none")
   } else {
     inputs <- lapply(vars, function(x) FALSE)
     names(inputs) <- vars

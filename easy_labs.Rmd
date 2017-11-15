@@ -1,0 +1,46 @@
+---
+title: "easy_labs"
+author: "Jonathan Sidi"
+date: "11/14/2017"
+output: pdf_document
+---
+
+```{r chunky001}
+  
+library(dplyr)
+library(ggeasy)
+```
+
+```{r chunky004}
+
+iris1 <- iris%>%
+  label(vars=names(iris)[-1],labels = c('Sepal Width','Petal Length','Petal Width','Flower Species'))
+
+```
+
+```{r chunky005}
+
+iris1%>%
+  ggplot(aes(x=Sepal.Length,y=Sepal.Width))+
+  geom_line(aes(colour=Species))
+
+
+```
+
+```{r chunky006}
+
+iris1%>%
+  ggplot(aes(x=Sepal.Length,y=Sepal.Width))+
+  geom_line(aes(colour=Species)) +
+  easy_labs()
+
+```
+
+```{r chunky007}
+
+iris1%>%
+  ggplot(aes(x=Sepal.Length,y=Sepal.Width))+
+  geom_line(aes(colour=Species)) +
+  easy_labs(title='my title',subtitle='mysubtitle',x='aaa')
+
+```
