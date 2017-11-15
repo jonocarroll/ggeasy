@@ -1,4 +1,4 @@
-#' @title Create ggplot labels using label attribtute of data.frame column
+#' @title Easily add ggplot labels using label attribtute of data.frame column
 #' @description Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
 #' the column label attribute if present as the variable label in the plot.
 #' @inheritDotParams ggplot2::labs
@@ -7,10 +7,10 @@
 #' 
 #' lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
 #' 
-#' iris_labs <- iris%>%label(vars=names(iris),labels = lbl)
+#' iris_labs <- label(iris,vars=names(iris),labels = lbl)
 #' 
-#' p <- iris_labs%>%
-#'   ggplot(aes(x=Sepal.Length,y=Sepal.Width))+
+#' p <- 
+#'   ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
 #'   geom_line(aes(colour=Species))
 #'   
 #'  p + easy_labs()
@@ -49,4 +49,30 @@ easy_labs <- function(...){
   
   structure(args, class = "labels")
   
+}
+
+
+#' @title Add label attribute to data.frame columns
+#' @description Utility function to add label attribute to data.frame columns.
+#' @param .data data.frame, data.frame to manipulate 
+#' @param vars character, names of columns to add label attribute
+#' @param labels character, labels to append to vars
+#' @return data.frame
+#' @examples 
+#' lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
+#' 
+#' iris_labs <- label(iris,vars=names(iris),labels = lbl)
+#' 
+#' @rdname label
+#' @export 
+#' @author Jonathan Sidi
+label <- function(.data,vars,labels){
+  
+  IDX <- match(vars,names(.data))
+  
+  for(i in 1:length(IDX)){
+    attr(.data[[IDX[i]]],'label') <- labels[i]  
+  } 
+  
+  .data
 }

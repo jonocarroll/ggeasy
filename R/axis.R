@@ -112,7 +112,7 @@ easy_remove_axes <- function(which = c("both","x","y"),
 easy_remove_y_axis <- function(what = c("ticks","title","text","line"), 
                                teach = FALSE){
   
-  ggeasy::easy_remove_axes("y", what = what, teach = teach)
+  easy_remove_axes("y", what = what, teach = teach)
   
 }
 
@@ -121,6 +121,6 @@ easy_remove_y_axis <- function(what = c("ticks","title","text","line"),
 easy_remove_x_axis <- function(what = c("ticks","title","text","line"),
                                teach = FALSE) {
   
-  ggeasy::easy_remove_axes("x", what = what, teach = teach)
+  easy_remove_axes("x", what = what, teach = teach)
   
 }
