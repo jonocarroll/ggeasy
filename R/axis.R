@@ -134,11 +134,14 @@ easy_remove_x_axis <- function(what = c("ticks","title","text","line"),
 #' @param expand a four-element numeric-like vector specifying the multiplicative and additive expansion parameters. See Details.
 #' @param teach print longer equivalent ggplot expression?
 #'
+#' @details Multiplicative and additive expansion constants are defined by the four elements `c(m_lower, a_lower, m_uppper, a_upper)`.
+#'
 #' @return  a \code{\link[ggplot2]{theme}} object  which can be used in
 #' \code{\link[ggplot2]{ggplot2}} calls
 #' @export
 #' @author Jonathan Carroll
 #'
+#' @import ggplot2
 #' @examples
 #'
 #'ggplot(mtcars) +

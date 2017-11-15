@@ -29,6 +29,9 @@ a \code{\link[ggplot2]{theme}} object  which can be used in
 \description{
 Easily specify exact limits
 }
+\details{
+Multiplicative and additive expansion constants are defined by the four elements \code{c(m_lower, a_lower, m_uppper, a_upper)}.
+}
 \examples{
 
 ggplot(mtcars) +
