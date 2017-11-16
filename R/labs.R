@@ -18,7 +18,7 @@
 #'   
 #'  p + easy_labs()
 #'  
-#'  p + easy_labs(title='my title',subtitle='mysubtitle',x='x axis label')
+#'  p + labs(title='my title') + easy_labs(subtitle='mysubtitle',x='x axis label')
 #' 
 #' 
 #' @rdname easy_labs
@@ -28,15 +28,13 @@ easy_labs <- function(...){
 
   man_labs <- labs(list(...))
   
-  structure(man_labs, class = "easy_labels")
+  structure(man_labs, class = "easy_labs")
   
 }
 
-
+#' @export
 easy_update_labels <- function(p,man_labs){
 
-  p <- plot_clone(p)
-  
   root_dat_labs <- sapply(p$data,attr,which='label')
   root_dat_labs <- root_dat_labs[!sapply(root_dat_labs,is.null)]
   root_map <- unlist(p$mapping)
@@ -65,9 +63,11 @@ easy_update_labels <- function(p,man_labs){
       
       new_lab <- l_dat_labs[[deparse(y)]]
       
-      if(is.null(new_lab)){
+      if(is.null(new_lab)) 
+        new_lab <-  root_dat_labs[[deparse(y)]]
+      
+      if(is.null(new_lab))
         new_lab <- deparse(y)
-      }
       
       new_lab
       
@@ -86,10 +86,21 @@ easy_update_labels <- function(p,man_labs){
     for(nm in names(man_labs))
       args[[nm]] <- man_labs[[nm]]
   
-  p$labels <- args
+
+  for(i in names(args)){
+    p$labels[[i]] <- args[[i]]
+  }
   
   p
   
+}
+
+#' @export
+ggplot_add.easy_labs <- function (p, object, objectname) {
+  
+    p <- easy_update_labels(object,p)
+
+    p
 }
 
 

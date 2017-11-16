@@ -4,3 +4,5 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^.*\.yml$
+
+lab_utils.R
