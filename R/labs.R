@@ -87,8 +87,13 @@ easy_update_labels <- function(p,man_labs){
       args[[nm]] <- man_labs[[nm]]
   
 
+  plot_names <- unique(c(names(p$data),
+                         unlist(lapply(p$layers,function(x) names(x$data))))
+                       )
+  
   for(i in names(args)){
-    p$labels[[i]] <- args[[i]]
+    if(p$labels[[i]]%in%plot_names) #making sure only replacing default col names
+      p$labels[[i]] <- args[[i]]
   }
   
   p
