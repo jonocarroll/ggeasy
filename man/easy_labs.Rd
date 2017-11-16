@@ -16,9 +16,13 @@ the column label attribute if present as the variable label in the plot.
 }
 \examples{
 
+require(ggplot2)
+
+iris_labs <- iris
+
 lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
 
-iris_labs <- label(iris,vars=names(iris),labels = lbl)
+labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
 
 p <- 
   ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+

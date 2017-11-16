@@ -14,6 +14,7 @@ This package allows easy access to some common `ggplot2` tasks. For example, rot
 ```{r, message = FALSE}
 library(ggplot2)
 library(cowplot)
+library(labelled)
 library(ggeasy)
 
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
@@ -67,5 +68,40 @@ p4 <- p +
 plot_grid(p1, p2, p3, p4, nrow = 2)
 ```
 
+## Plot Labels
 
+```{r, fig.width = 8, fig.height = 8}
+iris_labs <- iris
+
+lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
+
+var_label(iris_labs) <- split(lbl,names(iris_labs))
+
+p <- 
+     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
+     geom_line(aes(colour=Species)) +
+     theme(text=element_text(size=7))
+
+#basic usage
+p1 <- p + easy_labs()
+
+#supplying own label (like regular ggplot2::labs)
+p2 <- p + easy_labs(x='My x axis')
+
+#adding new label (like regular ggplot2::labs)
+p3 <- p + easy_labs(title='Plot Title')
+
+#complex usage: 
+#  adding layer level data with same column names but different labels
+
+iris_labs_2 <- iris_labs
+var_label(iris_labs_2$Species) <- "Sub-genera"
+
+p4 <- p + 
+  geom_point(data=iris_labs_2, aes(fill=Species),shape=24) +
+  facet_wrap(~Species,labeller = label_both) + 
+  easy_labs()
+
+plot_grid(p1, p2, p3, p4, nrow = 2)
+```
 

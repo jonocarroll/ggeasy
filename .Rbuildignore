@@ -5,4 +5,4 @@
 ^README-.*\.png$
 ^.*\.yml$
 
-lab_utils.R
+labs_utils.R

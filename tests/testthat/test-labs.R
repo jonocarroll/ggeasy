@@ -1,10 +1,13 @@
 context("attr labs")
 
+iris_labs <- iris
+
+lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
+
+labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
+
 test_that("easy_labs uses column attrib", {
-  lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
-   
-  iris_labs <- label(iris,vars=names(iris),labels = lbl)
-   
+  
   p <- 
      ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
      geom_line(aes(colour=Species))
@@ -17,10 +20,7 @@ test_that("easy_labs uses column attrib", {
 })
 
 test_that("regular labs overides easy_labs ", {
-  lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
-  
-  iris_labs <- label(iris,vars=names(iris),labels = lbl)
-  
+
   p <- 
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
     geom_line(aes(colour=Species))
@@ -33,10 +33,7 @@ test_that("regular labs overides easy_labs ", {
 })
 
 test_that("regular labs pass new labels through easy_labs ", {
-  lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
-  
-  iris_labs <- label(iris,vars=names(iris),labels = lbl)
-  
+
   p <- 
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
     geom_line(aes(colour=Species))
@@ -49,9 +46,8 @@ test_that("regular labs pass new labels through easy_labs ", {
 })
 
 test_that("column name used when no column attrib present", {
-  lbl <- c('Sepal Width','Petal Length','Petal Width','Flower Species')
   
-  iris_labs <- label(iris,vars=names(iris)[-1],labels = lbl)
+  labelled::var_label(iris_labs$Sepal.Length) <- NULL
   
   p <- 
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
