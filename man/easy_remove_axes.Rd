@@ -4,7 +4,7 @@
 \alias{easy_remove_axes}
 \alias{easy_remove_y_axis}
 \alias{easy_remove_x_axis}
-\title{Easily remove axe(s)}
+\title{Easily remove one or more axes}
 \usage{
 easy_remove_axes(which = c("both", "x", "y"), what = c("ticks", "title",
   "text", "line"), teach = FALSE)
@@ -18,9 +18,11 @@ easy_remove_x_axis(what = c("ticks", "title", "text", "line"),
 \arguments{
 \item{which}{which axis or axes to remove, by default "both"}
 
-\item{what}{what axis components to remove}
+\item{what}{axis components to remove
+(\code{"ticks"}, \code{"title"}, \code{"text"}, and/or \code{"line"})}
 
-\item{teach}{print longer equivalent ggplot expression?}
+\item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
+expression?}
 }
 \value{
 a \code{\link[ggplot2]{theme}} object  which can be used in
@@ -33,6 +35,30 @@ if "x" or "y" is given to the 'which' argument
 \details{
 easy_remove_x_axis and easy_remove_y_axis remove just the x or y axis,
 respectively.
+}
+\examples{
+
+library(ggplot2)
+# Remove all axes
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_axes()
+
+# remove just x axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_x_axis()
+
+# can also use:
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_axes("x")
+
+# Remove y axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_y_axis()
+
+# Remove just the ticks
+# Remove y axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_y_axis(what = "ticks")
 }
 \author{
 Alicia Schep
