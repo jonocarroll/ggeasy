@@ -12,12 +12,14 @@ Description: Provides a series of aliases to commonly used but difficult
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
-Depends: ggplot2
-Imports: rlang, plyr
+Imports: 
+  ggplot2,
+  rlang
 RoxygenNote: 6.0.1
 Suggests: 
-    cowplot,
-    knitr,
-    rmarkdown,
-    testthat
+  cowplot,
+  knitr,
+  rmarkdown,
+  testthat,
+  cowplot
 VignetteBuilder: knitr

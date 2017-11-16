@@ -18,7 +18,7 @@
 #'   
 #'  p + easy_labs()
 #'  
-#'  p + labs(title='my title') + easy_labs(subtitle='mysubtitle',x='x axis label')
+#'  p + easy_labs(subtitle='mysubtitle',x='x axis label')
 #' 
 #' 
 #' @rdname easy_labs
@@ -91,7 +91,7 @@ easy_update_labels <- function(p,man_labs){
                          unlist(lapply(p$layers,function(x) names(x$data))))
                        )
   
-  for(i in names(args)){
+  for(i in names(p$labels)){
     if(p$labels[[i]]%in%plot_names) #making sure only replacing default col names
       p$labels[[i]] <- args[[i]]
   }
