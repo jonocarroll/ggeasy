@@ -1,33 +1,14 @@
----
-title: "`ggplot2` Shortcuts"
-author: "Jonathan Carroll"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{`ggplot2` Shortcuts}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
----
-
-This package allows easy access to some common `ggplot2` tasks. For example, rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
-
-```{r, message = FALSE}
+## ---- message = FALSE----------------------------------------------------
 library(ggplot2)
 library(cowplot)
 library(ggeasy)
 
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
-```
 
-then by default, this looks like
-
-```{r, fig.width = 6, fig.height = 6}
+## ---- fig.width = 6, fig.height = 6--------------------------------------
 p + labs(title = "ggplot2 default")
-```
 
-We can perform various rotations though
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p1 <- p + 
     easy_rotate_x_labels() + 
     labs(title = "default rotation")
@@ -42,13 +23,8 @@ p4 <- p +
     labs(title = "text starts at bottom")
     
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
-```
 
-## Removing legends
-
-Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point()
 
@@ -65,13 +41,8 @@ p4 <- p +
     labs(title = "Remove both legends specifically")
 
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
-```
 
-## The `ggbot`
-
-Sometimes you don't even remember these helper functions. `ggbot` takes your commands and tries to interpret them in a way that modifies a plot. 
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(cyl, hp, col = "red")) + geom_point()
 
 p1 <- p + 
@@ -87,20 +58,14 @@ p4 <- p +
     labs(title = "Partial match to words")
     
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
-```
 
-Various combinations of aesthetics can be requested, for example we can ask to change all colours of points
-
-```{r, fig.width = 5, fig.height = 5}
+## ---- fig.width = 5, fig.height = 5--------------------------------------
 ggplot(mtcars, aes(wt, mpg, colour = factor(cyl), size = hp)) + 
     geom_point() + 
     theme_dark() + 
     ggbot("make points red white and blue")
-```
 
-`ggbot` can also be used to remove components easily
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(cyl, hp, col = "red")) + geom_point()
 
 p1 <- p + 
@@ -116,15 +81,10 @@ p4 <- p +
     labs(title = "No legend")
     
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
-```
 
-or remove everything `theme`-related
-
-```{r, fig.width = 5, fig.height = 5}
+## ---- fig.width = 5, fig.height = 5--------------------------------------
 ggplot(mtcars, aes(wt, mpg, colour = factor(cyl), size = hp)) + 
     geom_point() + 
     ggbot("I don't need no theme") +
     ggbot("I don't need no legend")
-```
-
 
