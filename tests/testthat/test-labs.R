@@ -12,11 +12,11 @@ test_that("easy_labs uses column attrib", {
      ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
      geom_line(aes(colour=Species))
      
-  p_man_labs <- p + labs(x='Sepal Length',y='Sepal Width', colour='Flower Species')
+  hard_res <- p + labs(x='Sepal Length',y='Sepal Width', colour='Flower Species')
      
-  p_labs <- p + easy_labs()
+  easy_res <- p + easy_labs()
   
-  expect_equal(p_labs$labels, p_man_labs$labels)
+  expect_equal(easy_res, hard_res)
 })
 
 test_that("regular labs overides easy_labs ", {
@@ -25,11 +25,11 @@ test_that("regular labs overides easy_labs ", {
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
     geom_line(aes(colour=Species))
   
-  p_man_labs <- p + labs(x='x axis',y='Sepal Width', colour='Flower Species')
+  hard_res <- p + labs(x='x axis',y='Sepal Width', colour='Flower Species')
   
-  p_labs <- p + easy_labs(x='x axis')
+  easy_res <- p + easy_labs(x='x axis')
   
-  expect_equal(p_labs$labels, p_man_labs$labels)
+  expect_equal(easy_res, hard_res)
 })
 
 test_that("regular labs pass new labels through easy_labs ", {
@@ -38,11 +38,11 @@ test_that("regular labs pass new labels through easy_labs ", {
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
     geom_line(aes(colour=Species))
   
-  p_man_labs <- p + labs(x='Sepal Length',y='Sepal Width', colour='Flower Species',title='my title')
+  hard_res <- p + labs(x='Sepal Length',y='Sepal Width', colour='Flower Species',title='my title')
   
-  p_labs <- p + easy_labs(title='my title')
+  easy_res <- p + easy_labs(title='my title')
   
-  expect_equal(p_labs$labels, p_man_labs$labels)
+  expect_equal(easy_res, hard_res)
 })
 
 test_that("column name used when no column attrib present", {
@@ -53,9 +53,14 @@ test_that("column name used when no column attrib present", {
     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
     geom_line(aes(colour=Species))
   
-  p_man_labs <- p + labs(y='Sepal Width', colour='Flower Species')
+  hard_res <- p + labs(y='Sepal Width', colour='Flower Species')
   
-  p_labs <- p + easy_labs()
-
-  expect_equal(p_labs$labels[c('x','y','colour')], p_man_labs$labels[c('x','y','colour')])
+  hard_res$labels[c('x','y','colour')]
+  
+  easy_res <- p + easy_labs()
+  
+  easy_res$labels[c('x','y','colour')]
+  
+  expect_equal(easy_res, hard_res)
+  
 })
