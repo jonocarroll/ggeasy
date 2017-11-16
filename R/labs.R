@@ -83,15 +83,18 @@ easy_update_labels <- function(p,man_labs){
   args <- args[!duplicated(names(args),fromLast = TRUE)]
   
   if(length(man_labs)>0)
-    for(nm in names(man_labs))
+    for(nm in names(man_labs)){
       args[[nm]] <- man_labs[[nm]]
+      p$labels[[nm]] <- man_labs[[nm]]
+    }
+      
   
 
   plot_names <- unique(c(names(p$data),
                          unlist(lapply(p$layers,function(x) names(x$data))))
                        )
   
-  for(i in names(p$labels)){
+  for(i in names(args)){
     if(p$labels[[i]]%in%plot_names) #making sure only replacing default col names
       p$labels[[i]] <- args[[i]]
   }
