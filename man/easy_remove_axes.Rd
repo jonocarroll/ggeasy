@@ -36,6 +36,30 @@ if "x" or "y" is given to the 'which' argument
 easy_remove_x_axis and easy_remove_y_axis remove just the x or y axis,
 respectively.
 }
+\examples{
+
+library(ggplot2)
+# Remove all axes
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_axes()
+
+# remove just x axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_x_axis()
+
+# can also use:
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_axes("x")
+
+# Remove y axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_y_axis()
+
+# Remove just the ticks
+# Remove y axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + easy_remove_y_axis(what = "ticks")
+}
 \author{
 Alicia Schep
 }

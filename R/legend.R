@@ -39,7 +39,7 @@ easy_remove_legend <- function(..., teach = FALSE) {
   vars <- rlang::exprs(...)
   if (length(vars) == 0) {
     if (teach) {
-      message("easy_remove_legend call can be substituted with:\n")
+      message("easy_remove_legend call can be substituted with:")
       message('theme(legend.position = "none")')
     }
     theme(legend.position = "none")
