@@ -55,11 +55,11 @@ test_that("column name used when no column attrib present", {
   
   hard_res <- p + labs(y='Sepal Width', colour='Flower Species')
   
-  hard_res$labels[c('x','y','colour')]
+  hard_res$labels <- hard_res$labels[c('x','y','colour')]
   
   easy_res <- p + easy_labs()
   
-  easy_res$labels[c('x','y','colour')]
+  easy_res$labels <- easy_res$labels[c('x','y','colour')]
   
   expect_equal(easy_res, hard_res)
   

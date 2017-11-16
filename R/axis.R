@@ -32,8 +32,8 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
     angle
   } else if (is.character(angle)) {
     switch(angle,
-           startattop = -90,
-           startatbottom = 90
+      startattop = -90,
+      startatbottom = 90
     )
   }
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = angle, hjust = hjust))
@@ -51,7 +51,7 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
 #' @param which which axis or axes to remove, by default "both"
 #' @param what axis components to remove
 #' (`"ticks"`, `"title"`, `"text"`, and/or `"line"`)
-#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}} 
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
 #' expression?
 #'
 #' @return  a \code{\link[ggplot2]{theme}} object  which can be used in
@@ -87,12 +87,12 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
                              teach = FALSE) {
   which <- match.arg(which)
   what <- match.arg(what, several.ok = TRUE)
-  
+
   axis_suffix <- if (which == "both") "" else paste0(".", which)
-  
+
   blanks <- lapply(what, function(x) element_blank())
   names(blanks) <- paste0("axis.", what, axis_suffix)
-  
+
   if (teach) {
     blank_strings <- lapply(what, function(x) " = element_blank()")
     args <- paste0(names(blanks), blank_strings, collapse = ", ")
@@ -105,7 +105,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
       initial = ""
     ))
   }
-  
+
   do.call(theme, blanks)
 }
 

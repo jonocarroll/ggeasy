@@ -2,7 +2,7 @@
 % Please edit documentation in R/labs.R
 \name{easy_labs}
 \alias{easy_labs}
-\title{Easily add ggplot labels using label attribtute of data.frame column}
+\title{Easily add ggplot labels using label attribtute of `data.frame` column}
 \usage{
 easy_labs(...)
 }
@@ -17,22 +17,15 @@ the column label attribute if present as the variable label in the plot.
 \examples{
 
 require(ggplot2)
-
 iris_labs <- iris
-
-lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
-
+lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower Species')
 labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
 
-p <- 
-  ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
+p <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
   geom_line(aes(colour=Species))
   
- p 
-  
- p + easy_labs()
+p
+p + easy_labs()
+p + easy_labs(subtitle='mysubtitle', x='x axis label')
  
- p + easy_labs(subtitle='mysubtitle',x='x axis label')
-
-
 }

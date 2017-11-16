@@ -1,4 +1,4 @@
-#' @title Easily add ggplot labels using label attribtute of data.frame column
+#' @title Easily add ggplot labels using label attribtute of `data.frame` column
 #' @description Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
 #' the column label attribute if present as the variable label in the plot.
 #' @param ... A list of new name-value pairs. The name should either be an aesthetic, 
@@ -7,24 +7,17 @@
 #' @examples 
 #' 
 #' require(ggplot2)
-#' 
 #' iris_labs <- iris
-#' 
-#' lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
-#' 
+#' lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower Species')
 #' labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
 #' 
-#' p <- 
-#'   ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
+#' p <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
 #'   geom_line(aes(colour=Species))
 #'   
-#'  p 
-#'   
-#'  p + easy_labs()
+#' p
+#' p + easy_labs()
+#' p + easy_labs(subtitle='mysubtitle', x='x axis label')
 #'  
-#'  p + easy_labs(subtitle='mysubtitle',x='x axis label')
-#' 
-#' 
 #' @rdname easy_labs
 #' @export 
 easy_labs <- function(...){
@@ -55,7 +48,6 @@ easy_update_labels <- function(p,man_labs){
   
   
   layers_map <- lapply(p$layers,function(x){
-    l_map <- unlist(x$mapping) 
     
     l_dat_labs <- sapply(x$data,attr,which='label')
     l_dat_labs <- l_dat_labs[!sapply(l_dat_labs,is.null)]
@@ -89,12 +81,9 @@ easy_update_labels <- function(p,man_labs){
       args[[nm]] <- man_labs[[nm]]
       p$labels[[nm]] <- man_labs[[nm]]
     }
-      
   
-
   plot_names <- unique(c(names(p$data),
-                         unlist(lapply(p$layers,function(x) names(x$data))))
-                       )
+                         unlist(lapply(p$layers,function(x) names(x$data)))))
   
   for(i in names(args)){
     if(p$labels[[i]]%in%plot_names) #making sure only replacing default col names
