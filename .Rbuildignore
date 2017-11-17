@@ -3,6 +3,3 @@
 
 ^README\.Rmd$
 ^README-.*\.png$
-^.*\.yml$
-
-labs_utils.R
