@@ -1,34 +1,15 @@
----
-title: "`ggplot2` Shortcuts"
-author: "Jonathan Carroll"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{`ggplot2` Shortcuts}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
----
-
-This package allows easy access to some common `ggplot2` tasks. For example, rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
-
-```{r, message = FALSE}
+## ---- message = FALSE----------------------------------------------------
 library(ggplot2)
 library(cowplot)
 library(labelled)
 library(ggeasy)
 
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
-```
 
-then by default, this looks like
-
-```{r, fig.width = 6, fig.height = 6}
+## ---- fig.width = 6, fig.height = 6--------------------------------------
 p + labs(title = "ggplot2 default")
-```
 
-We can perform various rotations though
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p1 <- p + 
     easy_rotate_x_labels() + 
     labs(title = "default rotation")
@@ -43,13 +24,8 @@ p4 <- p +
     labs(title = "text starts at bottom")
     
 plot_grid(p1, p2, p3, p4, nrow = 2)
-```
 
-## Removing legends
-
-Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point()
 
@@ -66,11 +42,8 @@ p4 <- p +
     labs(title = "Remove both legends specifically")
 
 plot_grid(p1, p2, p3, p4, nrow = 2)
-```
 
-## Plot Labels
-
-```{r, fig.width = 8, fig.height = 8}
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 iris_labs <- iris
 
 lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
@@ -103,5 +76,4 @@ p4 <- p +
   easy_labs()
 
 plot_grid(p1, p2, p3, p4, nrow = 2)
-```
 
