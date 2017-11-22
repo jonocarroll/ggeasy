@@ -41,8 +41,8 @@ p3 <- p +
 p4 <- p + 
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
-    
-plot_grid(p1, p2, p3, p4, nrow = 2)
+
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 ```
 
 ## Removing legends
@@ -65,43 +65,50 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 ```
 
 ## Plot Labels
 
+Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. `easy_labs()` makes this possible.
+
 ```{r, fig.width = 8, fig.height = 8}
+## create a copy of the iris data
 iris_labs <- iris
 
-lbl <- c('Sepal Length','Sepal Width','Petal Length','Petal Width','Flower Species')
+## add labels to the columns
+## these are visible if you use View(iris_labs) in RStudio
+lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower\nSpecies')
+var_label(iris_labs) <- split(lbl, names(iris_labs))
 
-var_label(iris_labs) <- split(lbl,names(iris_labs))
+p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
+    geom_line(aes(colour = Species))
 
-p <- 
-     ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
-     geom_line(aes(colour=Species)) +
-     theme(text=element_text(size=7))
-
-#basic usage
-p1 <- p + easy_labs()
-
-#supplying own label (like regular ggplot2::labs)
-p2 <- p + easy_labs(x='My x axis')
-
-#adding new label (like regular ggplot2::labs)
-p3 <- p + easy_labs(title='Plot Title')
-
-#complex usage: 
-#  adding layer level data with same column names but different labels
-
+p1 <- p + labs(title = "default labels")
+p2 <- p + 
+    easy_labs() + 
+    labs(title = "Replace titles with column labels")
+p3 <- p + 
+    easy_labs(x = 'My x axis') + 
+    labs(title = "Manually add x axis label")
+    
 iris_labs_2 <- iris_labs
 var_label(iris_labs_2$Species) <- "Sub-genera"
 
-p4 <- p + 
-  geom_point(data=iris_labs_2, aes(fill=Species),shape=24) +
-  facet_wrap(~Species,labeller = label_both) + 
-  easy_labs()
+p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
+    easy_labs() + 
+    labs(title = "Additional labels can be added in other aesthetics")
 
-plot_grid(p1, p2, p3, p4, nrow = 2)
+plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 ```
+
+This extends to facetting also
+
+```{r, fig.width = 8, fig.height = 8}
+p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
+    facet_wrap(~Species) + 
+    easy_labs() + 
+    labs(title = "Facetting works")
+```
+
 
