@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-ggeasy
-======
+[ggeasy](https://jonocarroll.github.io/ggeasy/)
+===============================================
 
 You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
 
@@ -20,6 +20,11 @@ You can install ggeasy from github with:
 # install.packages("devtools")
 devtools::install_github("jonocarroll/ggeasy")
 ```
+
+Reference
+---------
+
+See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
 
 Examples
 --------
