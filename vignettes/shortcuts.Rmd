@@ -9,20 +9,26 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
-This package allows easy access to some common `ggplot2` tasks. For example, rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
+This package allows easy access to some common `ggplot2` tasks. 
 
-```{r, message = FALSE}
+```{r, warning = FALSE, message = FALSE}
 library(ggplot2)
 library(cowplot)
 library(labelled)
 library(ggeasy)
+```
 
+## Rotate Plot Labels
+
+Rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
+
+```{r}
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
 ```
 
 then by default, this looks like
 
-```{r, fig.width = 6, fig.height = 6}
+```{r, fig.width = 5, fig.height = 5}
 p + labs(title = "ggplot2 default")
 ```
 
