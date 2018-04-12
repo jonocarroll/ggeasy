@@ -10,13 +10,33 @@
 #' iris_labs <- iris
 #' lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower Species')
 #' labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
-#' 
+#'  
 #' p <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
 #'   geom_line(aes(colour=Species))
 #'   
 #' p
+#' 
 #' p + easy_labs()
 #' p + easy_labs(subtitle='mysubtitle', x='x axis label')
+#' 
+#' # working with value labels
+#' 
+#' iris_labs$Species <- as.character(iris_labs$Species)
+#' val_labels(iris_labs$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
+#' 
+#' p1 <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
+#'   geom_line(aes(colour=Species))  
+#'   
+#' # ggplot2 doesnt build with columns that inherit 'labelled'
+#' 
+#' class(iris_labs$Species)
+#' 
+#' \dontrun{
+#' p1
+#' }
+#' 
+#' # easy_labs does let you build ggplots with columns that inherit 'labelled'
+#' p1 + easy_labs()
 #'  
 #' @rdname easy_labs
 #' @export 
@@ -28,7 +48,38 @@ easy_labs <- function(...){
   
 }
 
+strip_labelled <- function(data){
+  
+  data <- lapply(data,function(x){
+    
+    attribs <- attributes(x)
+    
+    lab_x <- attribs[['labels']]
+    lab_col_x <- attribs[['label']]
+    
+    if(!is.null(lab_x)){
+      x <- factor(as.character(x),levels=lab_x,labels=names(lab_x))
+    }
+    
+    if(!is.null(lab_col_x)){
+      attr(x,'label') <- lab_col_x
+    }
+    
+    x
+  })
+  
+  as.data.frame(data)
+}
+
 easy_update_labels <- function(p,man_labs){
+
+  p$data <- strip_labelled(p$data)
+  
+  p$layers <- lapply(p$layers,function(x){
+    if(length(x$data)>0)
+      x$data <- strip_labelled(x$data)
+    x
+  })
 
   root_dat_labs <- sapply(p$data,attr,which='label')
   root_dat_labs <- root_dat_labs[!sapply(root_dat_labs,is.null)]

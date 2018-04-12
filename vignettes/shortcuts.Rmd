@@ -13,7 +13,7 @@ This package allows easy access to some common `ggplot2` tasks.
 
 ```{r, warning = FALSE, message = FALSE}
 library(ggplot2)
-library(cowplot)
+library(patchwork)
 library(labelled)
 library(ggeasy)
 ```
@@ -48,7 +48,7 @@ p4 <- p +
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
 
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+(p1 + p2)/ (p3 + p4)
 ```
 
 ## Removing legends
@@ -71,7 +71,7 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+(p1 + p2)/ (p3 + p4)
 ```
 
 ## Plot Labels
@@ -105,13 +105,33 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     easy_labs() + 
     labs(title = "Additional labels can be added in other aesthetics")
 
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+(p1 + p2)/ (p3 + p4)
+
+```
+ 
+ You can also use value labels instead of factors (e.g. using `labelled::var_labels()`), keeping your data.frames cleaner and simpler to manipulate. 
+ 
+```{r, fig.width = 8, fig.height = 8}
+
+iris_labs_3 <- iris_labs
+
+iris_labs_3$Species <- as.character(iris_labs_3$Species)
+
+var_label(iris_labs_3$Species) <- "Sub-genera"
+
+val_labels(iris_labs_3$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
+ 
+p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
+   geom_line(aes(colour=Species))
+
+p5 + easy_labs()
+
 ```
 
-This extends to facetting also
+easy_labs also extends to facetting
 
 ```{r, fig.width = 8, fig.height = 8}
-p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
+p5 + geom_point(data = iris_labs_3, aes(fill = Species), shape = 24) +
     facet_wrap(~Species) + 
     easy_labs() + 
     labs(title = "Facetting works")

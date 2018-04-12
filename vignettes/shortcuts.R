@@ -1,12 +1,13 @@
-## ---- message = FALSE----------------------------------------------------
+## ---- warning = FALSE, message = FALSE-----------------------------------
 library(ggplot2)
-library(cowplot)
+library(patchwork)
 library(labelled)
 library(ggeasy)
 
+## ------------------------------------------------------------------------
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
 
-## ---- fig.width = 6, fig.height = 6--------------------------------------
+## ---- fig.width = 5, fig.height = 5--------------------------------------
 p + labs(title = "ggplot2 default")
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
@@ -23,7 +24,7 @@ p4 <- p +
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
 
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+(p1 + p2)/ (p3 + p4)
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
@@ -41,7 +42,7 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
+(p1 + p2)/ (p3 + p4)
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 ## create a copy of the iris data
@@ -57,7 +58,8 @@ p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 p1 <- p + labs(title = "default labels")
 p2 <- p + 
-    easy_labs() 
+    easy_labs() + 
+    labs(title = "Replace titles with column labels")
 p3 <- p + 
     easy_labs(x = 'My x axis') + 
     labs(title = "Manually add x axis label")
@@ -65,11 +67,32 @@ p3 <- p +
 iris_labs_2 <- iris_labs
 var_label(iris_labs_2$Species) <- "Sub-genera"
 
-p4 <- p + 
-    geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
+p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
+    easy_labs() + 
+    labs(title = "Additional labels can be added in other aesthetics")
+
+(p1 + p2)/ (p3 + p4)
+
+
+## ---- fig.width = 8, fig.height = 8--------------------------------------
+
+iris_labs_3 <- iris_labs
+
+iris_labs_3$Species <- as.character(iris_labs_3$Species)
+
+var_label(iris_labs_3$Species) <- "Sub-genera"
+
+val_labels(iris_labs_3$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
+ 
+p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
+   geom_line(aes(colour=Species))
+
+p5 + easy_labs()
+
+
+## ---- fig.width = 8, fig.height = 8--------------------------------------
+p5 + geom_point(data = iris_labs_3, aes(fill = Species), shape = 24) +
     facet_wrap(~Species) + 
     easy_labs() + 
     labs(title = "Facetting works")
-
-plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 

@@ -20,12 +20,32 @@ require(ggplot2)
 iris_labs <- iris
 lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower Species')
 labelled::var_label(iris_labs) <- split(lbl,names(iris_labs))
-
+ 
 p <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
   geom_line(aes(colour=Species))
   
 p
+
 p + easy_labs()
 p + easy_labs(subtitle='mysubtitle', x='x axis label')
+
+# working with value labels
+
+iris_labs$Species <- as.character(iris_labs$Species)
+val_labels(iris_labs$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
+
+p1 <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
+  geom_line(aes(colour=Species))  
+  
+# ggplot2 doesnt build with columns that inherit 'labelled'
+
+class(iris_labs$Species)
+
+\dontrun{
+p1
+}
+
+# easy_labs does let you build ggplots with columns that inherit 'labelled'
+p1 + easy_labs()
  
 }

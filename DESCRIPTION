@@ -15,9 +15,9 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Suggests: 
-  cowplot,
+  patchwork,
   knitr,
   rmarkdown,
   testthat,
