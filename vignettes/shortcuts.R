@@ -24,7 +24,7 @@ p4 <- p +
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
 
-(p1 + p2)/ (p3 + p4)
+(p1 + p2) / (p3 + p4)
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
@@ -42,7 +42,7 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-(p1 + p2)/ (p3 + p4)
+(p1 + p2) / (p3 + p4)
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
 ## create a copy of the iris data
@@ -71,7 +71,7 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     easy_labs() + 
     labs(title = "Additional labels can be added in other aesthetics")
 
-(p1 + p2)/ (p3 + p4)
+(p1 + p2) / (p3 + p4)
 
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
@@ -87,7 +87,9 @@ val_labels(iris_labs_3$Species) <- setNames(c('setosa','versicolor','virginica')
 p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
    geom_line(aes(colour=Species))
 
-p5 + easy_labs()
+p5 + 
+  easy_labs() +
+  labs(title = "Value Labels Work")
 
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------

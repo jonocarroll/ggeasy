@@ -37,15 +37,23 @@ val_labels(iris_labs$Species) <- setNames(c('setosa','versicolor','virginica'),c
 p1 <- ggplot(iris_labs,aes(x=Sepal.Length,y=Sepal.Width))+
   geom_line(aes(colour=Species))  
   
-# ggplot2 doesnt build with columns that inherit 'labelled'
+# ggplot2 doesnt build with columns that 
+# inherit the attribute 'labels'
 
-class(iris_labs$Species)
+attributes(iris_labs$Species)
 
 \dontrun{
+
+# This will cause an error
+
 p1
 }
 
-# easy_labs does let you build ggplots with columns that inherit 'labelled'
+# easy_labs does let you build ggplots with columns 
+# that inherit the attribute 'labels'
 p1 + easy_labs()
  
+}
+\author{
+Jonathan Sidi
 }
