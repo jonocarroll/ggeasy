@@ -17,9 +17,10 @@ Imports:
   rlang
 RoxygenNote: 6.0.1.9000
 Suggests: 
-  patchwork,
   knitr,
   rmarkdown,
   testthat,
-  labelled
+  labelled,
+  patchwork,
+  covrpage
 VignetteBuilder: knitr

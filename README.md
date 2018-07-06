@@ -1,18 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[ggeasy](https://jonocarroll.github.io/ggeasy/)
-===============================================
 
-You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
+[![Covrpage
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_06-brightgreen.svg)](https://github.com/yonicd/ggeasy/tree/master/tests/README.md)
 
-Now, can you please rotate the `x` axis labels to vertical?
+# [ggeasy](https://jonocarroll.github.io/ggeasy/)
 
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/xkcd.png) ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif) ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif)
+You know how to make `ggplot2` graphics, right? No worries. Piece of
+cake.
+
+Now, can you please rotate the `x` axis labels to
+vertical?
+
+![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/xkcd.png)
+![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif)
+![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif)
 
 `ggeasy` is here to make that a little easier.
 
-Installation
-------------
+## Installation
 
 You can install ggeasy from github with:
 
@@ -21,13 +27,11 @@ You can install ggeasy from github with:
 devtools::install_github("jonocarroll/ggeasy")
 ```
 
-Reference
----------
+## Reference
 
 See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
 
-Examples
---------
+## Examples
 
 ``` r
 library(ggplot2)
@@ -38,7 +42,7 @@ ggplot(mtcars, aes(hp, mpg)) +
     easy_rotate_x_labels()
 ```
 
-![](tools/readme/README-example-1.png)
+![](tools/readme/README-example-1.png)<!-- -->
 
 ``` r
 
@@ -47,7 +51,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     easy_remove_legend(size)
 ```
 
-![](tools/readme/README-example-2.png)
+![](tools/readme/README-example-2.png)<!-- -->
 
 ``` r
 
@@ -63,4 +67,4 @@ ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     easy_labs()
 ```
 
-![](tools/readme/README-example-3.png)
+![](tools/readme/README-example-3.png)<!-- -->
