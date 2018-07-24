@@ -51,6 +51,21 @@ p4 <- p +
 plot_grid(p1, p2, p3, p4, nrow = 2, align = "hv", axis = "l")
 ```
 
+## Rotating facet labels
+
+```{r, fig.width = 6, fig.height = 6}
+mtcars_with_long_labels <- mtcars
+mtcars_with_long_labels$cyl_long <- sprintf(
+  "Cars that have %s cylinders exactly",
+  mtcars_with_long_labels$cyl
+)
+
+ggplot(mtcars_with_long_labels, aes(wt, mpg)) +
+  geom_point() +
+  facet_wrap(~cyl_long, nrow = 1) +
+  easy_rotate_facet_labels()
+```
+
 ## Removing legends
 
 Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
