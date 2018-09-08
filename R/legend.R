@@ -5,9 +5,9 @@
 #'
 #'
 #' @md
-#' @param ... optional name(s) specific aesthetics for which to remove the 
+#' @param ... optional name(s) specific aesthetics for which to remove the
 #' legend
-#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}} 
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
 #' expression?
 #'
 #' @return either a \code{\link[ggplot2]{theme}} object or a
@@ -15,11 +15,11 @@
 #' \code{\link[ggplot2]{ggplot2}} calls
 #' @export
 #' @author Alicia Schep
-#' 
+#'
 #' @examples
 #'
 #' library(ggplot2)
-#' 
+#'
 #' # Remove all legends
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 #'   geom_point() + easy_remove_legend()
@@ -46,8 +46,8 @@ easy_remove_legend <- function(..., teach = FALSE) {
   } else {
     inputs <- lapply(vars, function(x) FALSE)
     names(inputs) <- vars
-    
-    if (teach){
+
+    if (teach) {
       message("easy_remove_legend call can be substituted with:")
       false_strings <- lapply(vars, function(x) " = FALSE")
       args <- paste0(vars, false_strings, collapse = ", ")

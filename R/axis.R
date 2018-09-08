@@ -51,7 +51,7 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
 #' @param which which axis or axes to remove, by default "both"
 #' @param what axis components to remove
 #' (`"ticks"`, `"title"`, `"text"`, and/or `"line"`)
-#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}} 
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
 #' expression?
 #'
 #' @return  a \code{\link[ggplot2]{theme}} object  which can be used in
