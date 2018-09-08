@@ -4,4 +4,7 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^docs$
-^\.gitattributes$
+
+mybox.R
+lab_rotate.R
+textRect_rotate.R
