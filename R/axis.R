@@ -33,12 +33,13 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
     middle = 0.5,
     right = 1
   )
-  angle <- if (is.numeric(angle) | is.integer(angle)) {
+  angle <- if (is.numeric(angle) || is.integer(angle)) {
     angle
   } else if (is.character(angle)) {
     switch(angle,
       startattop = -90,
-      startatbottom = 90
+      startatbottom = 90,
+      stop("angle not recognised. Accepts: startattop, startatbottom", call. = FALSE)
     )
   }
 
