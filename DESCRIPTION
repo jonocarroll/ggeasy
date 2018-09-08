@@ -21,7 +21,7 @@ Suggests: knitr,
   rmarkdown,
   testthat,
   cowplot,
-  clipr
+  clipr,
   labelled,
   patchwork,
   covrpage
