@@ -4,7 +4,8 @@ Version: 0.1.0
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
  person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),
- person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut"),comment = c(ORCID = "0000-0002-4222-1819"))
+ person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut"),comment = c(ORCID = "0000-0002-4222-1819")),
+ person("Bob", "Rudis", email = "bob@rud.is", role = c("ctb"), comment = c(ORCID = "0000-0001-5670-2640"))
  )
 Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
 Description: Provides a series of aliases to commonly used but difficult 
@@ -15,11 +16,12 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 6.0.1.9000
-Suggests: 
-  knitr,
+RoxygenNote: 6.0.1
+Suggests: knitr,
   rmarkdown,
   testthat,
+  cowplot,
+  clipr
   labelled,
   patchwork,
   covrpage
