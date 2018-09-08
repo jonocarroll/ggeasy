@@ -6,11 +6,12 @@
 #'
 #'
 #' @md
+#' @param which which axis or axes to rotate, by default "both"
 #' @param angle angle through which the text should be rotated. Can also be one
 #'   of "startattop" or "startatbottom" to define where the text should start.
 #' @param side horizontal justification of the text before rotation
-#' @param ... additional arguments to be passed to
-#'   \code{\link[ggplot2]{element_text}}
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
+#' expression?
 #'
 #' @return a \code{\link[ggplot2]{theme}} object which can be used in
 #'   \code{\link[ggplot2]{ggplot2}} calls.
@@ -20,8 +21,12 @@
 #' library(ggplot2)
 #' ggplot(mtcars, aes(mpg, hp)) +
 #'   geom_point() +
-#'   easy_rotate_x_labels()
-easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right"), ...) {
+#'   easy_rotate_labels()
+easy_rotate_labels <- function(which = c("both", "x", "y"),
+                               angle = 90,
+                               side = c("left", "middle", "right"),
+                               teach = FALSE) {
+  axis <- match.arg(which)
   hjust <- switch(
     match.arg(side),
     left = 0,
@@ -36,7 +41,43 @@ easy_rotate_x_labels <- function(angle = 90, side = c("left", "middle", "right")
       startatbottom = 90
     )
   }
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = angle, hjust = hjust))
+
+  axis_suffix <- if (axis == "both") "" else paste0(".", which)
+
+  rotations <- lapply(axis, function(x) ggplot2::element_text(angle = angle, hjust = hjust))
+  names(rotations) <- paste0("axis.text", axis_suffix)
+
+  if (teach) {
+    rotation_strings <- paste0(names(rotations),
+                               " = element_text(angle = ", angle,
+                               " , hjust = ", hjust)
+    message("easy_rotate_x_labels call can be substituted with:")
+    message(strwrap(
+      paste0("theme(", paste(rotation_strings), ")"),
+      width = 80,
+      exdent = 2,
+      prefix = "\n",
+      initial = ""
+    ))
+  }
+
+  do.call(theme, rotations)
+}
+
+#' @export
+#' @rdname easy_rotate_labels
+easy_rotate_x_labels <- function(angle = 90,
+                                 side = c("left", "middle", "right"),
+                                 teach = FALSE) {
+  easy_rotate_labels(which = "x", angle = angle, side = side, teach = teach)
+}
+
+#' @export
+#' @rdname easy_rotate_labels
+easy_rotate_y_labels <- function(angle = 90,
+                                 side = c("left", "middle", "right"),
+                                 teach = FALSE) {
+  easy_rotate_labels(which = "y", angle = angle, side = side, teach = teach)
 }
 
 #' Easily remove one or more axes
@@ -90,7 +131,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
 
   axis_suffix <- if (which == "both") "" else paste0(".", which)
 
-  blanks <- lapply(what, function(x) element_blank())
+  blanks <- lapply(what, function(x) ggplot2::element_blank())
   names(blanks) <- paste0("axis.", what, axis_suffix)
 
   if (teach) {
@@ -106,7 +147,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
     ))
   }
 
-  do.call(theme, blanks)
+  do.call(ggplot2::theme, blanks)
 }
 
 #' @export
