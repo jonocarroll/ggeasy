@@ -50,6 +50,10 @@ ggplot(mtcars, aes(hp, mpg)) +
     geom_point() + 
     easy_rotate_x_labels()
 
+ggplot(mtcars, aes(hp, mpg)) + 
+    geom_point() + 
+    easy_rotate_y_labels()
+
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point() +
     easy_remove_legend(size)
@@ -65,3 +69,13 @@ ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     easy_labs()
 ```
+
+These functions will try to teach you the 'official' way to achieve these goal, 
+usually via the `teach` argument (where implemented)
+
+```{r teach}
+ggplot(mtcars, aes(hp, mpg)) + 
+    geom_point() + 
+    easy_rotate_y_labels(angle = "startatbottom", teach = TRUE)
+```
+

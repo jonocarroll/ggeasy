@@ -4,7 +4,6 @@
 #'
 #' theme(axis.text.x = element_text(angle, hjust))
 #'
-#'
 #' @md
 #' @param which which axis or axes to rotate, by default "both"
 #' @param angle angle through which the text should be rotated. Can also be one

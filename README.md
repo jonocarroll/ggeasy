@@ -46,12 +46,21 @@ ggplot(mtcars, aes(hp, mpg)) +
 
 ``` r
 
+ggplot(mtcars, aes(hp, mpg)) + 
+    geom_point() + 
+    easy_rotate_y_labels()
+```
+
+![](tools/readme/README-example-2.png)<!-- -->
+
+``` r
+
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point() +
     easy_remove_legend(size)
 ```
 
-![](tools/readme/README-example-2.png)<!-- -->
+![](tools/readme/README-example-3.png)<!-- -->
 
 ``` r
 
@@ -67,4 +76,17 @@ ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     easy_labs()
 ```
 
-![](tools/readme/README-example-3.png)<!-- -->
+![](tools/readme/README-example-4.png)<!-- -->
+
+These functions will try to teach you the ‘official’ way to achieve
+these goal, usually via the `teach` argument (where implemented)
+
+``` r
+ggplot(mtcars, aes(hp, mpg)) + 
+    geom_point() + 
+    easy_rotate_y_labels(angle = "startatbottom", teach = TRUE)
+#> easy_rotate_x_labels call can be substituted with:
+#> theme(axis.text.y = element_text(angle = 90, hjust = 0)
+```
+
+![](tools/readme/README-teach-1.png)<!-- -->
