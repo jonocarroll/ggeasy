@@ -14,6 +14,23 @@ test_that("rotation of both labels", {
     hard_res_both_45_right <- p + ggplot2::theme(axis.text = element_text(angle = 45, hjust = 1))
     easy_res_both_45_right <- p + easy_rotate_labels(angle = 45, side = "right")
     expect_equal(hard_res_both_45_right, easy_res_both_45_right)
+
+    hard_res_both_top_right <- p + ggplot2::theme(axis.text = element_text(angle = -90, hjust = 1))
+    easy_res_both_top_right <- p + easy_rotate_labels(angle = "startattop", side = "right")
+    expect_equal(hard_res_both_top_right, easy_res_both_top_right)
+
+    hard_res_both_bottom_right <- p + ggplot2::theme(axis.text = element_text(angle = 90, hjust = 1))
+    easy_res_both_bottom_right <- p + easy_rotate_labels(angle = "startatbottom", side = "right")
+    expect_equal(hard_res_both_bottom_right, easy_res_both_bottom_right)
+
+    expect_message(p + easy_rotate_labels(side = "left", teach = TRUE), regexp = "angle = 90, hjust = 0")
+    expect_message(p + easy_rotate_labels(side = "right", teach = TRUE), regexp = "angle = 90, hjust = 1")
+    expect_message(p + easy_rotate_labels(angle = 45, side = "right", teach = TRUE), regexp = "angle = 45, hjust = 1")
+
+    expect_error(p + easy_rotate_labels(which = "foo"), regexp = "should be one of")
+    expect_error(p + easy_rotate_labels(angle = "foo"), regexp = "not recognised")
+    expect_error(p + easy_rotate_labels(side = "foo"), regexp = "should be one of")
+
 })
 
 test_that("rotation of x labels", {
