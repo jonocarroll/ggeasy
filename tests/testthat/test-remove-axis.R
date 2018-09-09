@@ -1,6 +1,6 @@
 context("remove axes")
 
-p <- ggplot2::ggplot(mtcars, ggplot2::aes(mpg, hp))
+p <- ggplot2::ggplot(mtcars, ggplot2::aes(mpg, hp)) + geom_point()
 
 test_that("no argument", {
   hard_res_no_arg_both <- p + ggplot2::theme(
