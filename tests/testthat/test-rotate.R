@@ -27,6 +27,10 @@ test_that("rotation of both labels", {
     expect_message(p + easy_rotate_labels(side = "right", teach = TRUE), regexp = "angle = 90, hjust = 1")
     expect_message(p + easy_rotate_labels(angle = 45, side = "right", teach = TRUE), regexp = "angle = 45, hjust = 1")
 
+    expect_message(p + easy_rotate_x_labels(angle = 45, teach = TRUE), regexp = "easy_rotate_x_labels")
+    expect_message(p + easy_rotate_y_labels(angle = 45, teach = TRUE), regexp = "easy_rotate_y_labels")
+    expect_message(p + easy_rotate_labels(angle = 45, teach = TRUE), regexp = "easy_rotate_labels")
+
     expect_error(p + easy_rotate_labels(which = "foo"), regexp = "should be one of")
     expect_error(p + easy_rotate_labels(angle = "foo"), regexp = "not recognised")
     expect_error(p + easy_rotate_labels(side = "foo"), regexp = "should be one of")

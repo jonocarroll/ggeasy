@@ -85,7 +85,7 @@ these goal, usually via the `teach` argument (where implemented)
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
     easy_rotate_y_labels(angle = "startatbottom", teach = TRUE)
-#> easy_rotate_x_labels call can be substituted with:
+#> easy_rotate_y_labels call can be substituted with:
 #> theme(axis.text.y = element_text(angle = 90, hjust = 0)
 ```
 

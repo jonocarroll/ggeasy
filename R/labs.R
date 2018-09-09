@@ -42,6 +42,7 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
     )
   }
 
+  fun_name <- paste0("easy_rotate_", ifelse(axis == "both", "", paste0(which, "_")), "labels")
   axis_suffix <- if (axis == "both") "" else paste0(".", which)
 
   rotations <- lapply(axis, function(x) ggplot2::element_text(angle = angle, hjust = hjust))
@@ -51,7 +52,7 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
     rotation_strings <- paste0(names(rotations),
                                " = element_text(angle = ", angle,
                                ", hjust = ", hjust)
-    message("easy_rotate_x_labels call can be substituted with:")
+    message(paste0(fun_name, " call can be substituted with:"))
     message(strwrap(
       paste0("theme(", paste(rotation_strings), ")"),
       width = 80,
