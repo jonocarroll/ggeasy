@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • ggeasy</title>
+<title>Makes axis text labels flush on the ends — easy_flush_ticks • ggeasy</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,16 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Makes axis text labels flush on the ends — easy_flush_ticks" />
+
+<meta property="og:description" content="A covenience function intended for basic, fixed-scale plots only (i.e. does not handle
+free scales in facets).
+
+You need to pass in a ggplot2 object to this function. It can't be +'d in a chain
+of geoms, coords, scales, themes, etc. It also builds the plot (but does not display
+it) so if the plt takes a while (i.e. has lots of data or transforms) this will also
+take a while." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -46,7 +55,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,17 +110,74 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Makes axis text labels flush on the ends</h1>
+    
+    <div class="hidden name"><code>easy_flush_ticks.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="shortcuts.html">`ggplot2` Shortcuts</a></li>
-      </ul>
+    <div class="ref-description">
+    
+    <p>A covenience function intended for basic, fixed-scale plots only (i.e. does not handle
+free scales in facets).<br />
+<br />
+You need to pass in a ggplot2 object to this function. It can't be <code>+</code>'d in a chain
+of geoms, coords, scales, themes, etc. It also builds the plot (but does not display
+it) so if the plt takes a while (i.e. has lots of data or transforms) this will also
+take a while.</p>
+    
     </div>
+
+    <pre class="usage"><span class='fu'>easy_flush_ticks</span>(<span class='no'>gg</span>, <span class='kw'>flush</span> <span class='kw'>=</span> <span class='st'>"XY"</span>, <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>gg</th>
+      <td><p>ggplot2 plot object</p></td>
+    </tr>
+    <tr>
+      <th>flush</th>
+      <td><p>either "<code>X</code>" or "<code>Y</code>" or "<code>XY</code>" to flush individual or both axes. Default: both.</p></td>
+    </tr>
+    <tr>
+      <th>teach</th>
+      <td><p>if <code>TRUE</code> then display <code>theme()</code> statements and copy them to the clipboard</p></td>
+    </tr>
+    <tr>
+      <th>plot</th>
+      <td><p>if <code>FALSE</code> then the ggplot object will be returned <em>invisibly</em></p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>ggplot2 object with <code>theme()</code> elements added</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If <code>clipr</code> is installed and <code>cat</code> is <code>TRUE</code> then the <code>theme(...)</code> statements will
+be copied to the clipboard as well as displayed (via <code>cat()</code>) in the console.</p>
+    
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Intended for basic, fixed-scale plots only (i.e. does not handle free scales in facets).
+Also, the clipboard operations will only occur if <code>clipr</code> is installed.</p>
+    
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#note">Note</a></li>
+          </ul>
+
   </div>
 </div>
 
