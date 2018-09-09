@@ -1,6 +1,6 @@
 context("rotate labels")
 
-p <- ggplot2::ggplot(mtcars, aes(mpg, hp))
+p <- ggplot2::ggplot(mtcars, ggplot2::aes(mpg, hp))
 
 test_that("rotation of both labels", {
     hard_res_both_90_left <- p + ggplot2::theme(axis.text = element_text(angle = 90, hjust = 0))
