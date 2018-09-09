@@ -51,7 +51,7 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
   if (teach) {
     rotation_strings <- paste0(names(rotations),
                                " = element_text(angle = ", angle,
-                               ", hjust = ", hjust)
+                               ", hjust = ", hjust, ")")
     message(paste0(fun_name, " call can be substituted with:"))
     message(strwrap(
       paste0("theme(", paste(rotation_strings), ")"),

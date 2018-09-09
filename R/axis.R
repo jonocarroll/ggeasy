@@ -47,6 +47,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
   which <- match.arg(which)
   what <- match.arg(what, several.ok = TRUE)
 
+  fun_name <- paste0("easy_remove_", ifelse(which == "both", "_axes", paste0(which, "_axis")))
   axis_suffix <- if (which == "both") "" else paste0(".", which)
 
   blanks <- lapply(what, function(x) ggplot2::element_blank())
@@ -55,7 +56,7 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
   if (teach) {
     blank_strings <- lapply(what, function(x) " = element_blank()")
     args <- paste0(names(blanks), blank_strings, collapse = ", ")
-    message("easy_remove_axes call can be substituted with:")
+    message(paste0(fun_name, " call can be substituted with:"))
     message(strwrap(
       paste0("theme(", args, ")"),
       width = 80,
