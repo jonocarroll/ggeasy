@@ -1,16 +1,40 @@
-## ---- warning = FALSE, message = FALSE-----------------------------------
+---
+title: "`ggplot2` Shortcuts"
+author: "Jonathan Carroll"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{`ggplot2` Shortcuts}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+This package allows easy access to some common `ggplot2` tasks. 
+
+```{r, warning = FALSE, message = FALSE}
 library(ggplot2)
 library(patchwork)
 library(labelled)
 library(ggeasy)
+```
 
-## ------------------------------------------------------------------------
+## Rotate Plot Labels
+
+Rotating the `x` axis labels is a very frequently looked up task, and we can make it easier. If we create a simple `ggplot2` plot
+
+```{r}
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
+```
 
-## ---- fig.width = 5, fig.height = 5--------------------------------------
+then by default, this looks like
+
+```{r, fig.width = 5, fig.height = 5}
 p + labs(title = "ggplot2 default")
+```
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+We can perform various rotations though
+
+```{r, fig.width = 8, fig.height = 8}
 p1 <- p + 
     easy_rotate_x_labels() + 
     labs(title = "default rotation")
@@ -25,8 +49,13 @@ p4 <- p +
     labs(title = "text starts at bottom")
 
 (p1 + p2) / (p3 + p4)
+```
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## Removing legends
+
+Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
+
+```{r, fig.width = 8, fig.height = 8}
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point()
 
@@ -43,8 +72,13 @@ p4 <- p +
     labs(title = "Remove both legends specifically")
 
 (p1 + p2) / (p3 + p4)
+```
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## Plot Labels
+
+Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. `easy_labs()` makes this possible.
+
+```{r, fig.width = 8, fig.height = 8}
 ## create a copy of the iris data
 iris_labs <- iris
 
@@ -73,28 +107,15 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
 
 (p1 + p2) / (p3 + p4)
 
+```
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+easy_labs also extends to facetting
 
-iris_labs_3 <- iris_labs
-
-iris_labs_3$Species <- as.character(iris_labs_3$Species)
-
-var_label(iris_labs_3$Species) <- "Sub-genera"
-
-val_labels(iris_labs_3$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
- 
-p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
-   geom_line(aes(colour=Species))
-
-p5 + 
-  easy_labs() +
-  labs(title = "Value Labels Work")
-
-
-## ---- fig.width = 8, fig.height = 8--------------------------------------
-p5 + geom_point(data = iris_labs_3, aes(fill = Species), shape = 24) +
+```{r, fig.width = 8, fig.height = 8}
+p4 + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     facet_wrap(~Species) + 
     easy_labs() + 
     labs(title = "Facetting works")
+```
+
 

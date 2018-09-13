@@ -9,6 +9,9 @@ easy_labs(..., teach = FALSE)
 \arguments{
 \item{...}{A list of new name-value pairs. The name should either be an aesthetic,
 or one of "title", "subtitle", or "caption"}
+
+\item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
+expression?}
 }
 \description{
 Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
