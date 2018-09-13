@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_06-brightgreen.svg)](https://github.com/yonicd/ggeasy/tree/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_13-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
 
 # [ggeasy](https://jonocarroll.github.io/ggeasy/)
 
@@ -86,7 +86,7 @@ ggplot(mtcars, aes(hp, mpg)) +
     geom_point() + 
     easy_rotate_y_labels(angle = "startatbottom", teach = TRUE)
 #> easy_rotate_y_labels call can be substituted with:
-#> theme(axis.text.y = element_text(angle = 90, hjust = 0)
+#> theme(axis.text.y = element_text(angle = 90, hjust = 0))
 ```
 
 ![](tools/readme/README-teach-1.png)<!-- -->
