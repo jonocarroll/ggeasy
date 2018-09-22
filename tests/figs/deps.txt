@@ -1,5 +1,5 @@
 Fontconfig: 2.11.94
-FreeType: 2.8.1
+FreeType: 2.9.1
 Cairo: 1.15.10
 vdiffr: 0.2.3
 svglite: 1.2.1.9000
