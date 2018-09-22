@@ -1,5 +1,5 @@
 Package: ggeasy
-Title: Easy Access To `ggplot2` Commands
+Title: Easy Access to `ggplot2` Commands
 Version: 0.1.0
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
