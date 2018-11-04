@@ -13,7 +13,7 @@ This package allows easy access to some common `ggplot2` tasks.
 
 ```{r, warning = FALSE, message = FALSE}
 library(ggplot2)
-library(patchwork)
+library(cowplot)
 library(labelled)
 library(ggeasy)
 ```
@@ -48,7 +48,7 @@ p4 <- p +
     easy_rotate_x_labels("startatbottom") + 
     labs(title = "text starts at bottom")
 
-(p1 + p2) / (p3 + p4)
+plot_grid(p1, p2, p3, p4, nrow = 2)
 ```
 
 ## Removing legends
@@ -71,7 +71,7 @@ p4 <- p +
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
 
-(p1 + p2) / (p3 + p4)
+plot_grid(p1, p2, p3, p4, nrow = 2)
 ```
 
 ## Plot Labels
@@ -105,8 +105,7 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     easy_labs() + 
     labs(title = "Additional labels can be added in other aesthetics")
 
-(p1 + p2) / (p3 + p4)
-
+plot_grid(p1, p2, p3, p4, nrow = 2)
 ```
  
  You can also use value labels instead of factors (e.g. using `labelled::var_labels()`), keeping your data.frames cleaner and simpler to manipulate. 
@@ -127,7 +126,6 @@ p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
 p5 + 
   easy_labs() +
   labs(title = "Value Labels Work")
-
 ```
 
 easy_labs also extends to facetting
