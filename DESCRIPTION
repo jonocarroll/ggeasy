@@ -1,5 +1,5 @@
 Package: ggeasy
-Title: Easy Access To `ggplot2` Commands
+Title: Easy Access to `ggplot2` Commands
 Version: 0.1.0
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
@@ -16,13 +16,12 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: knitr,
   rmarkdown,
   testthat,
-  cowplot,
   clipr,
   labelled,
   patchwork,
-  covrpage
+  vdiffr
 VignetteBuilder: knitr

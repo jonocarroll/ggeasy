@@ -44,15 +44,15 @@ p4 <- p +
 
 (p1 + p2) / (p3 + p4)
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ------------------------------------------------------------------------
 ## create a copy of the iris data
 iris_labs <- iris
 
 ## add labels to the columns
-## these are visible if you use View(iris_labs) in RStudio
 lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower\nSpecies')
 var_label(iris_labs) <- split(lbl, names(iris_labs))
 
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     geom_line(aes(colour = Species))
 
@@ -75,25 +75,7 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
 
 
 ## ---- fig.width = 8, fig.height = 8--------------------------------------
-
-iris_labs_3 <- iris_labs
-
-iris_labs_3$Species <- as.character(iris_labs_3$Species)
-
-var_label(iris_labs_3$Species) <- "Sub-genera"
-
-val_labels(iris_labs_3$Species) <- setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
- 
-p5 <- ggplot(iris_labs_3,aes(x=Sepal.Length,y=Sepal.Width))+
-   geom_line(aes(colour=Species))
-
-p5 + 
-  easy_labs() +
-  labs(title = "Value Labels Work")
-
-
-## ---- fig.width = 8, fig.height = 8--------------------------------------
-p5 + geom_point(data = iris_labs_3, aes(fill = Species), shape = 24) +
+p4 + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     facet_wrap(~Species) + 
     easy_labs() + 
     labs(title = "Facetting works")
