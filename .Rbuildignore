@@ -9,3 +9,4 @@ mybox.R
 lab_rotate.R
 textRect_rotate.R
 myignore
+^\.travis\.yml$
