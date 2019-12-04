@@ -8,9 +8,6 @@
 #' it) so if the plt takes a while (i.e. has lots of data or transforms) this will also
 #' take a while.
 #'
-#' If `clipr` is installed and `cat` is `TRUE` then the `theme(...)` statements will
-#' be copied to the clipboard as well as displayed (via `cat()`) in the console.
-#'
 #' @md
 #' @param gg ggplot2 plot object
 #' @param flush either "`X`" or "`Y`" or "`XY`" to flush individual or both axes. Default: both.
@@ -20,12 +17,15 @@
 #' @note Intended for basic, fixed-scale plots only (i.e. does not handle free scales in facets).
 #'       Also, the clipboard operations will only occur if `clipr` is installed.
 #' @export
+#' @examples
 #' library(ggplot2)
-#' 
+#'
 #' # Flush ticks' text
-#' ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
-#'   geom_point() + easy_flush_ticks()
-easy_flush_ticks <- function(gg, flush="XY", teach=TRUE, plot=FALSE) {
+#' p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+#'   geom_point()
+#' easy_flush_ticks(p)
+easy_flush_ticks <- function(gg, flush="XY", teach=TRUE, plot=TRUE
+                             ) {
 
   if (!inherits(gg, "ggplot")) return(gg)
 
@@ -50,9 +50,9 @@ easy_flush_ticks <- function(gg, flush="XY", teach=TRUE, plot=FALSE) {
 
   if (has_x & (nx>1)) {
     gg <- gg + theme(axis.text.x=element_text(hjust=c(0, rep(0.5, mid_x), 1)))
-    if (cat) {
+    # if (cat) {
        stmts <- c(NULL, sprintf("theme(axis.text.x = element_text(hjust = c(0, rep(0.5, %s), 1)))", mid_x))
-    }
+    # }
   }
 
   if (has_y & (ny>1)) {
@@ -62,8 +62,7 @@ easy_flush_ticks <- function(gg, flush="XY", teach=TRUE, plot=FALSE) {
 
   if (teach) {
     stmts <- paste0(stmts, collapse = " +\n")
-    if (requireNamespace("clipr", quietly = TRUE)) clipr::write_clip(stmts)
-    cat(stmts, sep="\n")
+    message(stmts)
   }
 
   if (plot) gg else invisible(gg)

@@ -4,7 +4,7 @@
 \alias{easy_flush_ticks}
 \title{Makes axis text labels flush on the ends}
 \usage{
-easy_flush_ticks(gg, flush = "XY", teach = TRUE, plot = FALSE)
+easy_flush_ticks(gg, flush = "XY", teach = TRUE, plot = TRUE)
 }
 \arguments{
 \item{gg}{ggplot2 plot object}
@@ -27,11 +27,15 @@ of geoms, coords, scales, themes, etc. It also builds the plot (but does not dis
 it) so if the plt takes a while (i.e. has lots of data or transforms) this will also
 take a while.
 }
-\details{
-If \code{clipr} is installed and \code{cat} is \code{TRUE} then the \code{theme(...)} statements will
-be copied to the clipboard as well as displayed (via \code{cat()}) in the console.
-}
 \note{
 Intended for basic, fixed-scale plots only (i.e. does not handle free scales in facets).
 Also, the clipboard operations will only occur if \code{clipr} is installed.
+}
+\examples{
+library(ggplot2)
+
+# Flush ticks' text
+p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+  geom_point()
+easy_flush_ticks(p)
 }

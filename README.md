@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_13-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_04-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
 
 # [ggeasy](https://jonocarroll.github.io/ggeasy/)
 

@@ -31,32 +31,8 @@ p <- ggplot2::ggplot(iris_labs,ggplot2::aes(x=Sepal.Length,y=Sepal.Width))+
 p
 
 p + easy_labs()
-p + easy_labs(subtitle='mysubtitle', x='x axis label')
+p + easy_labs(title = "Plot Title", subtitle = 'Plot Subtitle', x = 'x axis label')
 
-# working with value labels
-
-iris_labs$Species <- as.character(iris_labs$Species)
-
-labelled::val_labels(iris_labs$Species) <-
-  setNames(c('setosa','versicolor','virginica'),c('a','b','c'))
-
-p1 <- ggplot2::ggplot(iris_labs,ggplot2::aes(x=Sepal.Length,y=Sepal.Width))+
-  ggplot2::geom_line(ggplot2::aes(colour=Species))
-
-# ggplot2 doesnt build with columns that
-# inherit the attribute 'labels'
-
-attributes(iris_labs$Species)
-
-\dontrun{
-
-# This will cause an error
-
-p1
-}
-
-# easy_labs does let you build ggplots with columns
-# that inherit the attribute 'labels'
-p1 + easy_labs()
+p + easy_labs(teach = TRUE)
 
 }

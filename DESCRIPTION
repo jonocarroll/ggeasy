@@ -16,14 +16,12 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: knitr,
   rmarkdown,
   testthat,
-  cowplot,
   clipr,
   labelled,
   patchwork,
-  covrpage,
   vdiffr
 VignetteBuilder: knitr

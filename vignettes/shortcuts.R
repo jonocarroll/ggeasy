@@ -44,15 +44,15 @@ p4 <- p +
 
 (p1 + p2) / (p3 + p4)
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ------------------------------------------------------------------------
 ## create a copy of the iris data
 iris_labs <- iris
 
 ## add labels to the columns
-## these are visible if you use View(iris_labs) in RStudio
 lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower\nSpecies')
 var_label(iris_labs) <- split(lbl, names(iris_labs))
 
+## ---- fig.width = 8, fig.height = 8--------------------------------------
 p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     geom_line(aes(colour = Species))
 
