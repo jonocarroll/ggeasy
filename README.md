@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
+
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_04-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
 [![Travis build
