@@ -3,6 +3,7 @@
 \name{easy_change_legend}
 \alias{easy_change_legend}
 \alias{easy_move_legend}
+\alias{easy_legend_at}
 \alias{easy_rotate_legend}
 \alias{easy_adjust_legend}
 \title{Easily modify legends}
@@ -11,6 +12,9 @@ easy_change_legend(what = c("position", "direction", "justification"),
   to, teach = FALSE)
 
 easy_move_legend(to = c("none", "left", "right", "bottom", "top"),
+  teach = FALSE)
+
+easy_legend_at(to = c("none", "left", "right", "bottom", "top"),
   teach = FALSE)
 
 easy_rotate_legend(to = c("horizontal", "vertical"), teach = FALSE)

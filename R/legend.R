@@ -138,6 +138,10 @@ easy_move_legend <- function(to = c("none", "left", "right", "bottom", "top"), t
 
 #' @export
 #' @rdname easy_change_legend
+easy_legend_at <- easy_move_legend
+
+#' @export
+#' @rdname easy_change_legend
 easy_rotate_legend <- function(to = c("horizontal", "vertical"), teach = FALSE) {
     to <- match.arg(to, several.ok = FALSE)
     easy_change_legend(what = "direction", to = to, teach = teach)
