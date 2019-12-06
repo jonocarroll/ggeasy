@@ -149,3 +149,63 @@ easy_adjust_legend <- function(to = c("left", "right", "center"), teach = FALSE)
     to <- match.arg(to, several.ok = FALSE)
     easy_change_legend(what = "justification", to = to, teach = teach)
 }
+
+#' Easily add legend title(s)
+#'
+#' Update the title(s) of the specified aesthetic, or all aesthetics at once.
+#'
+#' @md
+#' @param ... A list of new name-value pairs. The name should be an aesthetic.
+#'   If only a character value is provided then *all* legend titles will be
+#'   changed to that.
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
+#' expression?
+#'
+#' @return a \code{\link[ggplot2]{theme}} object
+#' @export
+#' @author Jonathan Carroll
+#'
+#' @examples
+#'
+#' library(ggplot2)
+#'
+#' # Add legend title to a specific aesthetic
+#' ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+#'   geom_point() + easy_add_legend_title(col = "Number of Cylinders")
+#'
+#' # Add legend title to all aesthetics
+#' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
+#'   geom_point() + easy_add_legend_title("Number of Cylinders")
+easy_add_legend_title <- function(..., teach = FALSE) {
+
+    dots <- rlang::dots_list(...)
+
+    if (length(dots) == 1L && names(dots) == "") {
+        orig_dots <- dots
+        dots <- setNames(rep(dots, length(.all_legend_aes)), .all_legend_aes)
+        if (teach) {
+            message('easy_add_legend_title("', orig_dots, '") call can be substituted with:')
+            message('labs(YOUR_AES = "', orig_dots, '")')
+        }
+        return(suppressWarnings(do.call(ggplot2::labs, dots)))
+    }
+
+    if (teach) {
+        easy_fun_args <- paste0(names(dots), ' = "',  dots, '"', collapse = ", ")
+        easy_fun <- paste0('easy_add_legend_title(', easy_fun_args, ')')
+        message(paste0(easy_fun, " call can be substituted with:"))
+        message(strwrap(
+            paste0('labs(', easy_fun_args, ')'),
+            width = 80,
+            exdent = 2,
+            prefix = "\n",
+            initial = ""
+        ))
+    }
+
+    do.call(ggplot2::labs, dots)
+}
+
+.all_legend_aes <- c("alpha", "cex", "col", "color", "colour",
+                     "fill", "linetype", "lty", "lwd", "pch", "radius",
+                     "shape", "size", "weight", "width")

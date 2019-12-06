@@ -5,7 +5,7 @@
 \alias{easy_move_legend}
 \alias{easy_rotate_legend}
 \alias{easy_adjust_legend}
-\title{Easily modify legend(s)}
+\title{Easily modify legends}
 \usage{
 easy_change_legend(what = c("position", "direction", "justification"),
   to, teach = FALSE)
@@ -30,6 +30,9 @@ expression?}
 a \code{\link[ggplot2]{theme}} object
 }
 \description{
+Change legend position, direction, or justification.
+}
+\details{
 Due to limitations of \code{ggplot2} this will apply to all legends at once
 }
 \examples{
