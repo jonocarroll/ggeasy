@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
+
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_05-yellowgreen.svg)](http://tinyurl.com/rh6otye)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
-
-# [ggeasy](https://jonocarroll.github.io/ggeasy/)
 
 You know how to make `ggplot2` graphics, right? No worries. Piece of
 cake.
