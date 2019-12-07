@@ -11,13 +11,13 @@
 easy_change_legend(what = c("position", "direction", "justification"),
   to, teach = FALSE)
 
-easy_move_legend(to = c("none", "left", "right", "bottom", "top"),
+easy_move_legend(to = c("right", "none", "left", "bottom", "top"),
   teach = FALSE)
 
-easy_legend_at(to = c("none", "left", "right", "bottom", "top"),
+easy_legend_at(to = c("right", "none", "left", "bottom", "top"),
   teach = FALSE)
 
-easy_rotate_legend(to = c("horizontal", "vertical"), teach = FALSE)
+easy_rotate_legend(to = c("vertical", "horizontal"), teach = FALSE)
 
 easy_adjust_legend(to = c("left", "right", "center"), teach = FALSE)
 }

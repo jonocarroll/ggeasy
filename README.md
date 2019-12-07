@@ -3,8 +3,10 @@
 
 # ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
 
+<!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
+
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_04-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 

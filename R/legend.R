@@ -109,7 +109,7 @@ easy_change_legend <- function(what = c("position", "direction", "justification"
   callingFun <- tryCatch(as.list(sys.call(-1))[[1]], error = function(e) e)
   easy_fun <- if (inherits(callingFun, "simpleError")) {
     ## the call came from inside the house!
-    paste0("easy_change_legend(", what, ' = "', to, '")')
+    paste0("easy_change_legend(", what, ' = "', to, '")') #nocov
   } else {
     ## called from a helper
     paste0(callingFun, '("', to, '")')
@@ -131,7 +131,7 @@ easy_change_legend <- function(what = c("position", "direction", "justification"
 
 #' @export
 #' @rdname easy_change_legend
-easy_move_legend <- function(to = c("none", "left", "right", "bottom", "top"), teach = FALSE) {
+easy_move_legend <- function(to = c("right", "none", "left", "bottom", "top"), teach = FALSE) {
     to <- match.arg(to, several.ok = FALSE)
     easy_change_legend(what = "position", to = to, teach = teach)
 }
@@ -142,7 +142,7 @@ easy_legend_at <- easy_move_legend
 
 #' @export
 #' @rdname easy_change_legend
-easy_rotate_legend <- function(to = c("horizontal", "vertical"), teach = FALSE) {
+easy_rotate_legend <- function(to = c("vertical", "horizontal"), teach = FALSE) {
     to <- match.arg(to, several.ok = FALSE)
     easy_change_legend(what = "direction", to = to, teach = teach)
 }
@@ -183,6 +183,8 @@ easy_adjust_legend <- function(to = c("left", "right", "center"), teach = FALSE)
 easy_add_legend_title <- function(..., teach = FALSE) {
 
     dots <- rlang::dots_list(...)
+
+    length(dots) > 0L || stop("No title provided.", call. = FALSE)
 
     if (length(dots) == 1L && names(dots) == "") {
         orig_dots <- dots

@@ -44,30 +44,30 @@ testthat::test_that("regular labs overides easy_labs ", {
 
 testthat::test_that("regular labs pass new labels through easy_labs ", {
 
-  hard_res <- p + ggplot2::labs(x = 'Sepal Length', y = 'Sepal Width', colour = 'Flower Species', title = 'my title')
-  easy_res <- p + easy_labs(title = 'my title')
+    hard_res <- p + ggplot2::labs(x = 'Sepal Length', y = 'Sepal Width', colour = 'Flower Species', title = 'my title')
+    easy_res <- p + easy_labs(title = 'my title')
 
-  expect_equal(easy_res$labels[sort(names(easy_res$labels))],
-               hard_res$labels[sort(names(hard_res$labels))])
-  vdiffr::expect_doppelganger("labels_mytitle", easy_res)
+    expect_equal(easy_res$labels[sort(names(easy_res$labels))],
+                 hard_res$labels[sort(names(hard_res$labels))])
+    vdiffr::expect_doppelganger("labels_mytitle", easy_res)
 
 })
 
 test_that("column name used when no column attrib present", {
 
-  labelled::var_label(iris_labs$Sepal.Length) <- NULL
+    labelled::var_label(iris_labs$Sepal.Length) <- NULL
 
-  p <- ggplot2::ggplot(iris_labs,
-                       ggplot2::aes(x = Sepal.Length,
-                                    y = Sepal.Width)) +
-    ggplot2::geom_line(ggplot2::aes(colour = Species))
+    p <- ggplot2::ggplot(iris_labs,
+                         ggplot2::aes(x = Sepal.Length,
+                                      y = Sepal.Width)) +
+        ggplot2::geom_line(ggplot2::aes(colour = Species))
 
 
-  hard_res <- p + ggplot2::labs(y = 'Sepal Width', colour = 'Flower Species')
-  easy_res <- p + ggeasy::easy_labs()
+    hard_res <- p + ggplot2::labs(y = 'Sepal Width', colour = 'Flower Species')
+    easy_res <- p + ggeasy::easy_labs()
 
-  expect_equal(easy_res$labels[sort(names(easy_res$labels))],
-               hard_res$labels[sort(names(hard_res$labels))])
-  vdiffr::expect_doppelganger("labels_y_col", easy_res)
+    expect_equal(easy_res$labels[sort(names(easy_res$labels))],
+                 hard_res$labels[sort(names(hard_res$labels))])
+    vdiffr::expect_doppelganger("labels_y_col", easy_res)
 
 })
