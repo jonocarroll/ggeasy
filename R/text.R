@@ -5,12 +5,15 @@
 #' @md
 #' @param which which element to change (see `ggeasy::.all_theme_els`)
 #' @param what what attribute of the element to change (see `ggeasy::.all_element_text`)
+#' @param size size to set attributes to
+#' @param color colo(u)r to set attributes to
 #' @param to value to which the attribute should be set
 #' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
 #' expression?
 #'
 #' @return  a \code{\link[ggplot2]{theme}} object which can be used in
 #' \code{\link[ggplot2]{ggplot2}} calls
+#' @importFrom stats setNames
 #' @export
 #' @author Jonathan Carroll
 #'
@@ -77,9 +80,9 @@ easy_change_text <- function(which = .all_theme_els,
     } else {
         to_arg <- to
         arg_str <- lapply(which, function(x) paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg, collapse = ", "), ')'))
-        arg_val <- lapply(seq_along(which), function(x) do.call(element_text, setNames(list(to_arg), what)))
+        arg_val <- lapply(seq_along(which), function(x) do.call(element_text, stats::setNames(list(to_arg), what)))
     }
-    arg_val <- setNames(arg_val, which)
+    arg_val <- stats::setNames(arg_val, which)
 
     if (teach) {
         message(paste0("easy_change_text call can be substituted with:"))
