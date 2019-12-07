@@ -63,6 +63,10 @@ easy_plot_legend_title_size(size = NULL, teach = FALSE)
 
 \item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
 expression?}
+
+\item{size}{size to set attributes to}
+
+\item{color}{colo(u)r to set attributes to}
 }
 \value{
 a \code{\link[ggplot2]{theme}} object which can be used in
@@ -107,10 +111,17 @@ ggplot(mtcars, aes(mpg, hp)) +
   geom_point(aes(fill = gear)) +
   easy_all_text_color("red")
 
-# make all the text red
+# make all the text 45 degrees, right-justified
 ggplot(mtcars, aes(mpg, hp)) +
   geom_point(aes(fill = gear)) +
-  easy_all_text_color("red")
+  easy_change_text(what = "angle", to = 45) +
+  easy_change_text(what = "hjust", to = 1)
+
+# make just x-axis text 45 degrees, right-justified
+ggplot(mtcars, aes(mpg, hp)) +
+  geom_point(aes(fill = gear)) +
+  easy_change_text(which = "axis.text.x", what = "angle", to = 45) +
+  easy_change_text(which = "axis.text.x", what = "hjust", to = 1)
 }
 \author{
 Jonathan Carroll
