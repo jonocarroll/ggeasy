@@ -7,6 +7,7 @@
 #' @param what what attribute of the element to change (see `ggeasy::.all_element_text`)
 #' @param size size to set attributes to
 #' @param color colo(u)r to set attributes to
+#' @param colour colo(u)r to set attributes to
 #' @param to value to which the attribute should be set
 #' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
 #' expression?

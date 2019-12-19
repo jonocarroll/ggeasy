@@ -74,6 +74,8 @@ expression?}
 \item{size}{size to set attributes to}
 
 \item{color}{colo(u)r to set attributes to}
+
+\item{colour}{colo(u)r to set attributes to}
 }
 \value{
 a \code{\link[ggplot2]{theme}} object which can be used in
