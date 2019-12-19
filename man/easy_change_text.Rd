@@ -9,6 +9,8 @@
 \alias{easy_all_text_color}
 \alias{easy_all_text_colour}
 \alias{easy_text_size}
+\alias{easy_text_color}
+\alias{easy_text_colour}
 \alias{easy_x_axis_title_size}
 \alias{easy_y_axis_title_size}
 \alias{easy_x_axis_labels_size}
@@ -32,9 +34,14 @@ easy_all_text_size(size = NULL, teach = FALSE)
 
 easy_all_text_color(color = NULL, teach = FALSE)
 
-easy_all_text_colour(color = NULL, teach = FALSE)
+easy_all_text_colour(colour = NULL, teach = FALSE)
 
 easy_text_size(which = .all_theme_els, size = NULL, teach = FALSE)
+
+easy_text_color(which = .all_theme_els, color = NULL, teach = FALSE)
+
+easy_text_colour(which = .all_theme_els, colour = NULL,
+  teach = FALSE)
 
 easy_x_axis_title_size(size, teach = FALSE)
 

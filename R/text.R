@@ -79,7 +79,11 @@ easy_change_text <- function(which = .all_theme_els,
         arg_val <- lapply(seq_along(which), function(x) to_arg)
     } else {
         to_arg <- to
-        arg_str <- lapply(which, function(x) paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg, collapse = ", "), ')'))
+        to_arg_q <- to_arg
+        if (is.character(to_arg)) {
+            to_arg_q <- shQuote(to_arg)
+        }
+        arg_str <- lapply(which, function(x) paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg_q, collapse = ", "), ')'))
         arg_val <- lapply(seq_along(which), function(x) do.call(element_text, stats::setNames(list(to_arg), what)))
     }
     arg_val <- stats::setNames(arg_val, which)
@@ -94,17 +98,18 @@ easy_change_text <- function(which = .all_theme_els,
 
 #' @export
 #' @rdname easy_change_text
-.all_theme_els <- c("text",
-                    "axis.text", "axis.text.x", "axis.text.y",
-                    "axis.title", "axis.title.x", "axis.title.y",
-                    "legend.text", "legend.title",
-                    "plot.title", "plot.subtitle", "plot.caption",
-                    "strip.text", "strip.text.x", "strip.text.y")
+.all_theme_els <- c("text",                                          #nocov
+                    "axis.text", "axis.text.x", "axis.text.y",       #nocov
+                    "axis.title", "axis.title.x", "axis.title.y",    #nocov
+                    "legend.text", "legend.title",                   #nocov
+                    "plot.title", "plot.subtitle", "plot.caption",   #nocov
+                    "strip.text", "strip.text.x", "strip.text.y")    #nocov
 
 #' @export
 #' @rdname easy_change_text
-.all_element_text <- c("size", "family", "face", "colour", "hjust", "vjust", "angle",
-                       "lineheight", "color", "margin")
+.all_element_text <- c("size", "family", "face", "colour", "hjust", "vjust", "angle", #nocov
+                       "lineheight", "color", "margin")                               #nocov
+
 
 #' @export
 #' @rdname easy_change_text
@@ -115,17 +120,34 @@ easy_all_text_size <- function(size = NULL, teach = FALSE) {
 #' @export
 #' @rdname easy_change_text
 easy_all_text_color <- function(color = NULL, teach = FALSE) {
-    easy_change_text(what = "color", to = color, teach = teach)
+    easy_change_text(what = "colour", to = color, teach = teach)
 }
+
 #' @export
 #' @rdname easy_change_text
-easy_all_text_colour <- easy_all_text_color
+easy_all_text_colour <- function(colour = NULL, teach = FALSE) {
+    easy_change_text(what = "colour", to = colour, teach = teach)
+}
 
 #' @export
 #' @rdname easy_change_text
 easy_text_size <- function(which = .all_theme_els, size = NULL, teach = FALSE) {
     if (is.numeric(which)) return(easy_all_text_size(size = which, teach = teach))
     easy_change_text(which = which, what = "size", to = size, teach = teach)
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_text_color <- function(which = .all_theme_els, color = NULL, teach = FALSE) {
+    if (!all(which %in% .all_theme_els)) return(easy_all_text_color(color = which, teach = teach))
+    easy_change_text(which = which, what = "colour", to = color, teach = teach)
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_text_colour <- function(which = .all_theme_els, colour = NULL, teach = FALSE) {
+    if (!all(which %in% .all_theme_els)) return(easy_all_text_colour(colour = which, teach = teach))
+    easy_change_text(which = which, what = "colour", to = colour, teach = teach)
 }
 
 #' @export
@@ -178,8 +200,8 @@ easy_plot_caption_size <- function(size = NULL, teach = FALSE) {
 #' @export
 #' @rdname easy_change_text
 easy_plot_legend_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "legend", what = NULL, teach = teach))
-    easy_change_text(which = "legend", what = "size", to = size, teach = teach)
+    if (is.null(size)) return(easy_change_text(which = "legend.text", what = NULL, teach = teach))
+    easy_change_text(which = "legend.text", what = "size", to = size, teach = teach)
 }
 
 #' @export

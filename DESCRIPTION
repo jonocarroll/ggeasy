@@ -17,11 +17,12 @@ Imports:
   ggplot2,
   rlang
 RoxygenNote: 6.1.1
-Suggests: knitr,
-  rmarkdown,
-  testthat,
-  clipr,
-  labelled,
-  patchwork,
-  vdiffr
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0),
+    clipr,
+    labelled,
+    patchwork,
+    vdiffr
 VignetteBuilder: knitr
