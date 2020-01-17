@@ -1,9 +1,7 @@
 Tests and Coverage
 ================
-05 December, 2019 18:52:24
 
-  - [Coverage](#coverage)
-  - [Unit Tests](#unit-tests)
+07 December, 2019 11:03:26
 
 This output is created by
 [covrpage](https://github.com/metrumresearchgroup/covrpage).
