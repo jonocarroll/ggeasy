@@ -26,3 +26,5 @@ Suggests:
     patchwork,
     vdiffr
 VignetteBuilder: knitr
+URL: https://github.com/jonocarroll/ggeasy
+BugReports: https://github.com/jonocarroll/ggeasy/issues
