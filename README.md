@@ -5,12 +5,9 @@
 
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
-[![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/tree/cleanup/sept18/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_05-yellowgreen.svg)](http://tinyurl.com/rh6otye)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
-
-# [ggeasy](https://jonocarroll.github.io/ggeasy/)
 
 You know how to make `ggplot2` graphics, right? No worries. Piece of
 cake.
