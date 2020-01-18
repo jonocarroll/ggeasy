@@ -82,7 +82,7 @@ easy_change_text <- function(which = .all_theme_els,
         to_arg <- to
         to_arg_q <- to_arg
         if (is.character(to_arg)) {
-            to_arg_q <- shQuote(to_arg)
+            to_arg_q <- sQuote(to_arg)
         }
         arg_str <- lapply(which, function(x) paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg_q, collapse = ", "), ')'))
         arg_val <- lapply(seq_along(which), function(x) do.call(element_text, stats::setNames(list(to_arg), what)))
