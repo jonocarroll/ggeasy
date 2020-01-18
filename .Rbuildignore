@@ -12,3 +12,4 @@ myignore
 ^\.travis\.yml$
 ^_pkgdown\.yml$
 ^codecov\.yml$
+^appveyor\.yml$
