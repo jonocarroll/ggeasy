@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_05-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
+[![Codecov test coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://codecov.io/gh/jonocarroll/ggeasy?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/ggeasy)](https://CRAN.R-project.org/package=ggeasy)
 
 You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
 
@@ -48,24 +50,63 @@ See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
 library(ggplot2)
 library(ggeasy)
 
+# rotate x axis labels
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
     easy_rotate_x_labels()
 
+# rotate y axis labels
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
     easy_rotate_y_labels()
 
+# remove 'size' legend
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point() +
     easy_remove_legend(size)
 
+# make the x axis labels larger
+ggplot(mtcars, aes(mpg, hp)) +
+  geom_point() +
+  easy_x_axis_labels_size(22)
+
+# make all the text red
+ggplot(mtcars, aes(mpg, hp)) +
+  geom_point(aes(fill = gear)) +
+  easy_all_text_color("red")
+
+# remove just x axis
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + 
+  easy_remove_x_axis()
+
+# remove y axis ticks
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + 
+  easy_remove_y_axis(what = "ticks")
+
+# move legends to bottom
+ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+  geom_point() + 
+  easy_move_legend("bottom")
+
+# move legend to left side
+ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+  geom_point() +
+  easy_legend_at("left")
+
+# Make legends horizontal
+ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
+  geom_point() + easy_rotate_legend("horizontal")
+
+# use labelled variables
 iris_labs <- iris
 labelled::var_label(iris_labs$Species) <- "Flower\nSpecies"
 labelled::var_label(iris_labs$Sepal.Length) <- "Length of Sepal"
 iris_labs_2 <- iris_labs
 labelled::var_label(iris_labs_2$Species) <- "Sub-genera"
 
+# use variable labels automatically
 ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     geom_line(aes(colour = Species)) + 
     geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
@@ -79,5 +120,9 @@ usually via the `teach` argument (where implemented)
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
     easy_rotate_y_labels(angle = "startatbottom", teach = TRUE)
+
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() + 
+  easy_remove_y_axis(what = "ticks", teach = TRUE)
 ```
 

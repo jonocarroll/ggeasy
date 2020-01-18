@@ -24,7 +24,8 @@ Suggests:
     clipr,
     labelled,
     patchwork,
-    vdiffr
+    vdiffr,
+    covr
 VignetteBuilder: knitr
 URL: https://github.com/jonocarroll/ggeasy
 BugReports: https://github.com/jonocarroll/ggeasy/issues
