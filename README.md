@@ -6,7 +6,7 @@
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_12_05-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_01_18-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![Codecov test
