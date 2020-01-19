@@ -1,4 +1,4 @@
-#' @title Easily add ggplot labels using label attribtute of `data.frame` column
+#' @title Easily add ggplot labels using label attribute of `data.frame` column
 #' @description Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
 #' the column label attribute if present as the variable label in the plot.
 #' @param ... A list of new name-value pairs. The name should either be an aesthetic,

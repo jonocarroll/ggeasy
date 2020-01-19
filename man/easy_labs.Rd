@@ -2,7 +2,7 @@
 % Please edit documentation in R/labs2.R
 \name{easy_labs}
 \alias{easy_labs}
-\title{Easily add ggplot labels using label attribtute of `data.frame` column}
+\title{Easily add ggplot labels using label attribute of `data.frame` column}
 \usage{
 easy_labs(..., teach = FALSE)
 }
