@@ -15,16 +15,24 @@
 
 (*) NOTE on rhub/win-builder is a false-positive
 
-   Possibly mis-spelled words in DESCRIPTION:
-       ggplot (2:24, 12:18)
+   > Possibly mis-spelled words in DESCRIPTION:
+   >   ggplot (2:24, 12:18)
 
 (**) ERROR on rhub Fedora due to upstream issues
 
-   Packages suggested but not available: 'vdiffr', 'covr'
+   > Packages suggested but not available: 'vdiffr', 'covr'
+   
+   These files are used for tests. Issue appears to be dependency-related.
+   
+   > ERROR: dependencies ‘usethis’, ‘covr’, ‘httr’, ‘roxygen2’, ‘rversions’ are not available for package ‘devtools’
+   > ERROR: dependencies ‘devtools’, ‘usethis’, ‘xml2’ are not available for package ‘vdiffr’
 
 (***) ERRORs on R-release win-builder are due to missing package, upstream issue
 
-   Error in loadNamespace(name) : there is no package called 'farver'
+   > Error in loadNamespace(name) : there is no package called 'farver'
+
+   'farver' is a dependeny of 'scales' which is a dependency of 'ggplot2' and 
+   is available on CRAN https://cran.r-project.org/package=farver
 
 ## R CMD check results
 
