@@ -13,3 +13,4 @@ myignore
 ^_pkgdown\.yml$
 ^codecov\.yml$
 ^appveyor\.yml$
+^cran-comments\.md$
