@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Easily add legend title(s) — easy_add_legend_title • ggeasy</title>
+<title>Changelog • ggeasy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,7 @@
 
 
 
-<meta property="og:title" content="Easily add legend title(s) — easy_add_legend_title" />
-<meta property="og:description" content="Update the title(s) of the specified aesthetic, or all aesthetics at once." />
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -64,7 +63,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -131,59 +130,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Easily add legend title(s)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jonocarroll/ggeasy/blob/master/R/legend.R'><code>R/legend.R</code></a></small>
-    <div class="hidden name"><code>easy_add_legend_title.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/jonocarroll/ggeasy/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Update the title(s) of the specified aesthetic, or all aesthetics at once.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>easy_add_legend_title</span>(<span class='no'>...</span>, <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>...</th>
-      <td><p>A list of new name-value pairs. The name should be an aesthetic.
-If only a character value is provided then <em>all</em> legend titles will be
-changed to that.</p></td>
-    </tr>
-    <tr>
-      <th>teach</th>
-      <td><p>print longer equivalent <code><a href='https://ggplot2.tidyverse.org/reference/ggplot2-package.html'>ggplot2</a></code>
-expression?</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>a <code><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></code> object</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
-
-<span class='co'># Add legend title to a specific aesthetic</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>wt</span>, <span class='no'>mpg</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>cyl</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='no'>hp</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() + <span class='fu'>easy_add_legend_title</span>(<span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"Number of Cylinders"</span>)</div><div class='img'><img src='easy_add_legend_title-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='co'># Add legend title to all aesthetics</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>wt</span>, <span class='no'>mpg</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>cyl</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() + <span class='fu'>easy_add_legend_title</span>(<span class='st'>"Number of Cylinders"</span>)</div><div class='img'><img src='easy_add_legend_title-2.png' alt='' width='700' height='433' /></div></pre>
+    <div id="ggeasy-0-1-0" class="section level1">
+<h1 class="page-header">
+<a href="#ggeasy-0-1-0" class="anchor"></a>ggeasy 0.1.0</h1>
+<ul>
+<li>Initial CRAN release</li>
+<li>
+<p>Supports the following shortcuts:</p>
+<p>easy_add_legend_title easy_adjust_legend easy_all_text_color easy_all_text_colour easy_all_text_size easy_change_legend easy_change_text easy_labs easy_legend_at easy_move_legend easy_plot_caption_size easy_plot_legend_size easy_plot_legend_title_size easy_plot_subtitle_size easy_plot_title_size easy_remove_axes easy_remove_legend easy_remove_x_axis easy_remove_y_axis easy_rotate_labels easy_rotate_legend easy_rotate_x_labels easy_rotate_y_labels easy_text_color easy_text_colour easy_text_size easy_x_axis_labels_size easy_x_axis_title_size easy_y_axis_labels_size easy_y_axis_title_size</p>
+</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Jonathan Carroll</p>
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#ggeasy-0-1-0">0.1.0</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
 
