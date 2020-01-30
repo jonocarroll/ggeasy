@@ -57,7 +57,7 @@ easy_update_labs <- function(p, man_labs) {
     }
     if (attr(man_labs, "teach")) {
         message("easy_labs call can be substituted with:")
-        args <- paste(names(p_labs), "=", sQuote(p_labs), collapse = ", ")
+        args <- paste(names(p_labs), "=", sQuote(p_labs,q = 'simple'), collapse = ", ")
         message(strwrap(
             paste0("labs(", args, ")"),
             width = 80,
