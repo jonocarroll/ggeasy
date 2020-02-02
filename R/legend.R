@@ -215,3 +215,24 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 .all_legend_aes <- c("alpha", "cex", "col", "color", "colour",
                      "fill", "linetype", "lty", "lwd", "pch", "radius",
                      "shape", "size", "weight", "width")
+
+
+#' Easily remove legend title
+#' Remove the legend title
+#' @md
+#' @return a \code{\link[ggplot2]{theme}} object
+#' @export
+#' @examples
+#' library(ggplot2)
+#' # Add legend title to all aesthetics
+#' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
+#'   geom_point() + easy_remove_legend_title()
+
+
+easy_remove_legend_title <- function(){
+
+  theme(legend.title=element_blank())
+
+}
+
+
