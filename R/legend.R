@@ -224,7 +224,7 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 #' @export
 #' @examples
 #' library(ggplot2)
-#' # Add legend title to all aesthetics
+#' # remove legend title from all aesthetics
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
 #'   geom_point() + easy_remove_legend_title()
 
