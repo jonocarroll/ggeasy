@@ -220,6 +220,8 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 #' Easily remove legend title
 #' Remove the legend title
 #' @md
+#' @param teach print longer equivalent \code{\link[ggplot2]{ggplot2}}
+#' expression?
 #' @return a \code{\link[ggplot2]{theme}} object
 #' @export
 #' @examples
@@ -229,7 +231,7 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 #'   geom_point() + easy_remove_legend_title()
 
 
-easy_remove_legend_title <- function(){
+easy_remove_legend_title <- function(teach = F){
 
   if (teach) {
     message("easy_remove_legend_title call can be substituted with:")
