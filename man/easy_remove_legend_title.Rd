@@ -5,7 +5,7 @@
 \title{Easily remove legend title
 Remove the legend title}
 \usage{
-easy_remove_legend_title(teach = F)
+easy_remove_legend_title(teach = FALSE)
 }
 \arguments{
 \item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
