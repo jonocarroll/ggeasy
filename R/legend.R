@@ -229,9 +229,7 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 #' # remove legend title from all aesthetics
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
 #'   geom_point() + easy_remove_legend_title()
-
-
-easy_remove_legend_title <- function(teach = F){
+easy_remove_legend_title <- function(teach = FALSE) {
 
   if (teach) {
     message("easy_remove_legend_title call can be substituted with:")
@@ -243,7 +241,7 @@ easy_remove_legend_title <- function(teach = F){
     ))
   }
 
-  theme(legend.title=element_blank())
+  theme(legend.title = element_blank())
 
 }
 
