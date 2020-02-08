@@ -8,14 +8,18 @@
 \alias{easy_adjust_legend}
 \title{Easily modify legends}
 \usage{
-easy_change_legend(what = c("position", "direction", "justification"),
-  to, teach = FALSE)
+easy_change_legend(
+  what = c("position", "direction", "justification"),
+  to,
+  teach = FALSE
+)
 
-easy_move_legend(to = c("right", "none", "left", "bottom", "top"),
-  teach = FALSE)
+easy_move_legend(
+  to = c("right", "none", "left", "bottom", "top"),
+  teach = FALSE
+)
 
-easy_legend_at(to = c("right", "none", "left", "bottom", "top"),
-  teach = FALSE)
+easy_legend_at(to = c("right", "none", "left", "bottom", "top"), teach = FALSE)
 
 easy_rotate_legend(to = c("vertical", "horizontal"), teach = FALSE)
 

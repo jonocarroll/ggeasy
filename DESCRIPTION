@@ -1,6 +1,6 @@
 Package: ggeasy
 Title: Easy Access to 'ggplot2' Commands
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
  person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),
@@ -16,7 +16,7 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Suggests: 
     knitr,
     rmarkdown,

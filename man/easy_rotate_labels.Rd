@@ -6,14 +6,24 @@
 \alias{easy_rotate_y_labels}
 \title{Easily rotate \code{x} axis labels}
 \usage{
-easy_rotate_labels(which = c("both", "x", "y"), angle = 90,
-  side = c("left", "middle", "right"), teach = FALSE)
+easy_rotate_labels(
+  which = c("both", "x", "y"),
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+)
 
-easy_rotate_x_labels(angle = 90, side = c("left", "middle", "right"),
-  teach = FALSE)
+easy_rotate_x_labels(
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+)
 
-easy_rotate_y_labels(angle = 90, side = c("left", "middle", "right"),
-  teach = FALSE)
+easy_rotate_y_labels(
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+)
 }
 \arguments{
 \item{which}{which axis or axes to rotate, by default "both"}

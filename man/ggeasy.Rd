@@ -3,7 +3,6 @@
 \docType{package}
 \name{ggeasy}
 \alias{ggeasy}
-\alias{ggeasy-package}
 \title{ggeasy.}
 \description{
 Helper functions for making using ggplot2 easier.
