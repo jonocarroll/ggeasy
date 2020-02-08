@@ -231,6 +231,16 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 
 easy_remove_legend_title <- function(){
 
+  if (teach) {
+    message("easy_remove_legend_title call can be substituted with:")
+    message(strwrap('theme(legend.title = element_blank())',
+      width = 80,
+      exdent = 2,
+      prefix = "\n",
+      initial = ""
+    ))
+  }
+
   theme(legend.title=element_blank())
 
 }

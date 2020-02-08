@@ -259,3 +259,11 @@ test_that("easy_add_legend_title teach = TRUE works with unspecific aes", {
   }
   expect_equal(easy_res$labels[c("size", "colour")], hard_res$labels[c("size", "colour")])
 })
+
+
+
+test_that("easy_remove_legend_title works", {
+  easy_res <- p + easy_remove_legend_title()
+  hard_res <- p + ggplot2::theme(legend.title = ggplot2::element_blank())
+  expect_equal(easy_res, hard_res)
+})
