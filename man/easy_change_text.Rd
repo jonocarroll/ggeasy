@@ -23,8 +23,12 @@
 \title{Easily change text appearance}
 \format{An object of class \code{character} of length 15.}
 \usage{
-easy_change_text(which = .all_theme_els, what = .all_element_text,
-  to = NULL, teach = FALSE)
+easy_change_text(
+  which = .all_theme_els,
+  what = .all_element_text,
+  to = NULL,
+  teach = FALSE
+)
 
 .all_theme_els
 
@@ -40,8 +44,7 @@ easy_text_size(which = .all_theme_els, size = NULL, teach = FALSE)
 
 easy_text_color(which = .all_theme_els, color = NULL, teach = FALSE)
 
-easy_text_colour(which = .all_theme_els, colour = NULL,
-  teach = FALSE)
+easy_text_colour(which = .all_theme_els, colour = NULL, teach = FALSE)
 
 easy_x_axis_title_size(size, teach = FALSE)
 

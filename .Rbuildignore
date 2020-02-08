@@ -15,3 +15,5 @@ myignore
 ^appveyor\.yml$
 ^cran-comments\.md$
 ^ggeasy\.Rproj$
+^CRAN-RELEASE$
+^\.github$

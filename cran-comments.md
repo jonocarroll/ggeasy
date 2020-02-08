@@ -1,5 +1,7 @@
 ## New package
 
+Re-submission. Changed to standard quotes in DESCRIPTION as per request.
+
 ## Test environments
 * local Pop!_OS 19.04, R 3.5.1:                      OK
 * devtools::check_rhub() 

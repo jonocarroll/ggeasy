@@ -6,14 +6,15 @@
 \alias{easy_remove_x_axis}
 \title{Easily remove one or more axes}
 \usage{
-easy_remove_axes(which = c("both", "x", "y"), what = c("ticks",
-  "title", "text", "line"), teach = FALSE)
+easy_remove_axes(
+  which = c("both", "x", "y"),
+  what = c("ticks", "title", "text", "line"),
+  teach = FALSE
+)
 
-easy_remove_y_axis(what = c("ticks", "title", "text", "line"),
-  teach = FALSE)
+easy_remove_y_axis(what = c("ticks", "title", "text", "line"), teach = FALSE)
 
-easy_remove_x_axis(what = c("ticks", "title", "text", "line"),
-  teach = FALSE)
+easy_remove_x_axis(what = c("ticks", "title", "text", "line"), teach = FALSE)
 }
 \arguments{
 \item{which}{which axis or axes to remove, by default "both"}
