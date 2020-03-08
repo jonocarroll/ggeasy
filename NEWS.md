@@ -1,4 +1,10 @@
-# ggeasy 0.1.0
+# ggeasy 0.1.2
+
+* Support for ggplot2 3.3.0 (no implementation change required)
+* Added easy_remove_legend_title() (#39, @feddelegrand7)
+* Updated covrpage test results
+
+# ggeasy 0.1.1
 
 * Initial CRAN release
 * Supports the following shortcuts:
