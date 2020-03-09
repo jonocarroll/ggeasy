@@ -53,7 +53,7 @@ ggplot(mtcars, aes(hp, mpg)) +
     easy_rotate_x_labels()
 ```
 
-![](tools/readme/README-example-1.png)<!-- -->
+![](man/figures/example-1.png)<!-- -->
 
 ``` r
 
@@ -63,7 +63,7 @@ ggplot(mtcars, aes(hp, mpg)) +
     easy_rotate_y_labels()
 ```
 
-![](tools/readme/README-example-2.png)<!-- -->
+![](man/figures/example-2.png)<!-- -->
 
 ``` r
 
@@ -73,7 +73,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     easy_remove_legend(size)
 ```
 
-![](tools/readme/README-example-3.png)<!-- -->
+![](man/figures/example-3.png)<!-- -->
 
 ``` r
 
@@ -83,7 +83,7 @@ ggplot(mtcars, aes(mpg, hp)) +
   easy_x_axis_labels_size(22)
 ```
 
-![](tools/readme/README-example-4.png)<!-- -->
+![](man/figures/example-4.png)<!-- -->
 
 ``` r
 
@@ -93,7 +93,7 @@ ggplot(mtcars, aes(mpg, hp)) +
   easy_all_text_color("red")
 ```
 
-![](tools/readme/README-example-5.png)<!-- -->
+![](man/figures/example-5.png)<!-- -->
 
 ``` r
 
@@ -103,7 +103,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   easy_remove_x_axis()
 ```
 
-![](tools/readme/README-example-6.png)<!-- -->
+![](man/figures/example-6.png)<!-- -->
 
 ``` r
 
@@ -113,7 +113,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   easy_remove_y_axis(what = "ticks")
 ```
 
-![](tools/readme/README-example-7.png)<!-- -->
+![](man/figures/example-7.png)<!-- -->
 
 ``` r
 
@@ -123,7 +123,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   easy_move_legend("bottom")
 ```
 
-![](tools/readme/README-example-8.png)<!-- -->
+![](man/figures/example-8.png)<!-- -->
 
 ``` r
 
@@ -133,7 +133,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   easy_legend_at("left")
 ```
 
-![](tools/readme/README-example-9.png)<!-- -->
+![](man/figures/example-9.png)<!-- -->
 
 ``` r
 
@@ -142,7 +142,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_rotate_legend("horizontal")
 ```
 
-![](tools/readme/README-example-10.png)<!-- -->
+![](man/figures/example-10.png)<!-- -->
 
 ``` r
 
@@ -160,7 +160,7 @@ ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     easy_labs()
 ```
 
-![](tools/readme/README-example-11.png)<!-- -->
+![](man/figures/example-11.png)<!-- -->
 
 These functions will try to teach you the ‘official’ way to achieve
 these goal, usually via the `teach` argument (where implemented)
@@ -173,7 +173,7 @@ ggplot(mtcars, aes(hp, mpg)) +
 #> theme(axis.text.y = element_text(angle = 90, hjust = 0))
 ```
 
-![](tools/readme/README-teach-1.png)<!-- -->
+![](man/figures/teach-1.png)<!-- -->
 
 ``` r
 
@@ -184,4 +184,4 @@ ggplot(mtcars, aes(wt, mpg)) +
 #> theme(axis.ticks.y = element_blank())
 ```
 
-![](tools/readme/README-teach-2.png)<!-- -->
+![](man/figures/teach-2.png)<!-- -->
