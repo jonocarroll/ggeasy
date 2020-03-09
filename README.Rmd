@@ -9,7 +9,7 @@ always_allow_html: yes
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "tools/readme/README-"
+  fig.path = "man/figures/"
 )
 ```
 
