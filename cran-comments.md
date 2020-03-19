@@ -1,6 +1,6 @@
 ## Updated package
 
-Correction to address failing test. 
+Correction to address failing tests. 
 
 No code change required - output of test changed. Updated for compatibility.
 
