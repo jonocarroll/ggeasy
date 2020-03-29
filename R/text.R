@@ -231,3 +231,16 @@ easy_align_title <- function(to = c("plot", "panel"), teach = FALSE) {
 easy_title_flushleft <- function() {
     easy_align_title(to = "plot")
 }
+
+easy_align_caption <- function(to = c("plot", "panel"), teach = FALSE) {
+    if (packageVersion("ggplot2") < package_version("3.3.0")) {
+        stop("This function requires 'ggplot2' version 3.3.0 or later.")
+    }
+
+    if (teach) {
+        message(paste0("easy_align_title call can be substituted with:"))
+        message("ggplot2::theme(plot.caption.position = \"", to, "\")")
+    }
+
+    ggplot2::theme(plot.caption.position = to)
+}
