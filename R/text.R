@@ -85,7 +85,7 @@ easy_change_text <- function(which = .all_theme_els,
             to_arg_q <- sQuote(to_arg,q = 'single')
         }
         arg_str <- lapply(which, function(x) {
-            paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg_q, collapse = ", "), ')')   
+            paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg_q, collapse = ", "), ')')
         })
         arg_val <- lapply(seq_along(which), function(x) do.call(element_text, stats::setNames(list(to_arg), what)))
     }
@@ -212,4 +212,22 @@ easy_plot_legend_size <- function(size = NULL, teach = FALSE) {
 easy_plot_legend_title_size <- function(size = NULL, teach = FALSE) {
     if (is.null(size)) return(easy_change_text(which = "legend.title", what = NULL, teach = teach))
     easy_change_text(which = "legend.title", what = "size", to = size, teach = teach)
+}
+
+
+easy_align_title <- function(to = c("plot", "panel"), teach = FALSE) {
+    if (packageVersion("ggplot2") < package_version("3.3.0")) {
+        stop("This function requires 'ggplot2' version 3.3.0 or later.")
+    }
+
+    if (teach) {
+        message(paste0("easy_align_title call can be substituted with:"))
+        message("ggplot2::theme(plot.title.position = \"", to, "\")")
+    }
+
+    ggplot2::theme(plot.title.position = to)
+}
+
+easy_title_flushleft <- function() {
+    easy_align_title(to = "plot")
 }
