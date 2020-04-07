@@ -213,3 +213,9 @@ easy_plot_legend_title_size <- function(size = NULL, teach = FALSE) {
     if (is.null(size)) return(easy_change_text(which = "legend.title", what = NULL, teach = teach))
     easy_change_text(which = "legend.title", what = "size", to = size, teach = teach)
 }
+
+#' @export
+#' @rdname easy_change_text
+easy_center_title <- function(teach = FALSE) {
+  easy_change_text(which = "plot.title", what = "hjust", to = .5, teach = teach)
+}

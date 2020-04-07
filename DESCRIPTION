@@ -6,7 +6,8 @@ Authors@R: c(
  person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),
  person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut"),comment = c(ORCID = "0000-0002-4222-1819")),
  person("Bob", "Rudis", email = "bob@rud.is", role = c("ctb"), comment = c(ORCID = "0000-0001-5670-2640")), 
- person("Mohamed El Fodil", "Ihaddaden", email = "ihaddaden.fodeil@gmail.com", role = c("ctb"))
+ person("Mohamed El Fodil", "Ihaddaden", email = "ihaddaden.fodeil@gmail.com", role = c("ctb")),
+ person("Thomas", "Neitmann", email = "th.neitmann@gmail.com", role = c("ctb"))
  )
 Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
 Description: Provides a series of aliases to commonly used but difficult 
