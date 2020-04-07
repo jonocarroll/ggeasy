@@ -13,9 +13,10 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Easy Access to ggplot2 Commands">
 <meta property="og:description" content="Provides a series of aliases to commonly used but difficult 
     to remember ggplot2 sequences.">
@@ -25,7 +26,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,8 +106,8 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install ggeasy from github with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"jonocarroll/ggeasy"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"jonocarroll/ggeasy"</span>)</pre></div>
 </div>
 <div id="reference" class="section level2">
 <h2 class="hasAnchor">
@@ -116,94 +117,94 @@
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggeasy)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co"># rotate x axis labels</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(hp, mpg)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="st">    </span><span class="kw"><a href="reference/easy_rotate_labels.html">easy_rotate_x_labels</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggeasy</span>)
+
+<span class="co"># rotate x axis labels</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">hp</span>, <span class="no">mpg</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+    <span class="fu"><a href="reference/easy_rotate_labels.html">easy_rotate_x_labels</a></span>()</pre></div>
 <p><img src="reference/figures/example-1.png"><!-- --></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># rotate y axis labels</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(hp, mpg)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">    </span><span class="kw"><a href="reference/easy_rotate_labels.html">easy_rotate_y_labels</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="r">
+<span class="co"># rotate y axis labels</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">hp</span>, <span class="no">mpg</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+    <span class="fu"><a href="reference/easy_rotate_labels.html">easy_rotate_y_labels</a></span>()</pre></div>
 <p><img src="reference/figures/example-2.png"><!-- --></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co"># remove 'size' legend</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg, <span class="dt">colour =</span> cyl, <span class="dt">size =</span> hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">    </span><span class="kw"><a href="reference/easy_remove_legend.html">easy_remove_legend</a></span>(size)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="r">
+<span class="co"># remove 'size' legend</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">cyl</span>, <span class="kw">size</span> <span class="kw">=</span> <span class="no">hp</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+    <span class="fu"><a href="reference/easy_remove_legend.html">easy_remove_legend</a></span>(<span class="no">size</span>)</pre></div>
 <p><img src="reference/figures/example-3.png"><!-- --></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># make the x axis labels larger</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(mpg, hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_change_text.html">easy_x_axis_labels_size</a></span>(<span class="dv">22</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="r">
+<span class="co"># make the x axis labels larger</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">mpg</span>, <span class="no">hp</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_change_text.html">easy_x_axis_labels_size</a></span>(<span class="fl">22</span>)</pre></div>
 <p><img src="reference/figures/example-4.png"><!-- --></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co"># make all the text red</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(mpg, hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> gear)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_change_text.html">easy_all_text_color</a></span>(<span class="st">"red"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="r">
+<span class="co"># make all the text red</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">mpg</span>, <span class="no">hp</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">gear</span>)) +
+  <span class="fu"><a href="reference/easy_change_text.html">easy_all_text_color</a></span>(<span class="st">"red"</span>)</pre></div>
 <p><img src="reference/figures/example-5.png"><!-- --></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co"># remove just x axis</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_remove_axes.html">easy_remove_x_axis</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="r">
+<span class="co"># remove just x axis</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_remove_axes.html">easy_remove_x_axis</a></span>()</pre></div>
 <p><img src="reference/figures/example-6.png"><!-- --></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co"># remove y axis ticks</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_remove_axes.html">easy_remove_y_axis</a></span>(<span class="dt">what =</span> <span class="st">"ticks"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="r">
+<span class="co"># remove y axis ticks</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_remove_axes.html">easy_remove_y_axis</a></span>(<span class="kw">what</span> <span class="kw">=</span> <span class="st">"ticks"</span>)</pre></div>
 <p><img src="reference/figures/example-7.png"><!-- --></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co"># move legends to bottom</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg, <span class="dt">colour =</span> cyl, <span class="dt">size =</span> hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_change_legend.html">easy_move_legend</a></span>(<span class="st">"bottom"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="r">
+<span class="co"># move legends to bottom</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">cyl</span>, <span class="kw">size</span> <span class="kw">=</span> <span class="no">hp</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_change_legend.html">easy_move_legend</a></span>(<span class="st">"bottom"</span>)</pre></div>
 <p><img src="reference/figures/example-8.png"><!-- --></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co"># move legend to left side</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg, <span class="dt">colour =</span> cyl, <span class="dt">size =</span> hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/easy_change_legend.html">easy_legend_at</a></span>(<span class="st">"left"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="r">
+<span class="co"># move legend to left side</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">cyl</span>, <span class="kw">size</span> <span class="kw">=</span> <span class="no">hp</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_change_legend.html">easy_legend_at</a></span>(<span class="st">"left"</span>)</pre></div>
 <p><img src="reference/figures/example-9.png"><!-- --></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Make legends horizontal</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg, <span class="dt">colour =</span> cyl, <span class="dt">size =</span> hp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span><span class="kw"><a href="reference/easy_change_legend.html">easy_rotate_legend</a></span>(<span class="st">"horizontal"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="r">
+<span class="co"># Make legends horizontal</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">cyl</span>, <span class="kw">size</span> <span class="kw">=</span> <span class="no">hp</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() + <span class="fu"><a href="reference/easy_change_legend.html">easy_rotate_legend</a></span>(<span class="st">"horizontal"</span>)</pre></div>
 <p><img src="reference/figures/example-10.png"><!-- --></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co"># use labelled variables</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">iris_labs &lt;-<span class="st"> </span>iris</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">labelled<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(iris_labs<span class="op">$</span>Species) &lt;-<span class="st"> "Flower</span><span class="ch">\n</span><span class="st">Species"</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">labelled<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(iris_labs<span class="op">$</span>Sepal.Length) &lt;-<span class="st"> "Length of Sepal"</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">iris_labs_<span class="dv">2</span> &lt;-<span class="st"> </span>iris_labs</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">labelled<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(iris_labs_<span class="dv">2</span><span class="op">$</span>Species) &lt;-<span class="st"> "Sub-genera"</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co"># use variable labels automatically</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(iris_labs, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Sepal.Width)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">colour =</span> Species)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="dt">data =</span> iris_labs_<span class="dv">2</span>, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> Species), <span class="dt">shape =</span> <span class="dv">24</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="st">    </span><span class="kw"><a href="reference/easy_labs.html">easy_labs</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="r">
+<span class="co"># use labelled variables</span>
+<span class="no">iris_labs</span> <span class="kw">&lt;-</span> <span class="no">iris</span>
+<span class="kw pkg">labelled</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(<span class="no">iris_labs</span>$<span class="no">Species</span>) <span class="kw">&lt;-</span> <span class="st">"Flower\nSpecies"</span>
+<span class="kw pkg">labelled</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(<span class="no">iris_labs</span>$<span class="no">Sepal.Length</span>) <span class="kw">&lt;-</span> <span class="st">"Length of Sepal"</span>
+<span class="no">iris_labs_2</span> <span class="kw">&lt;-</span> <span class="no">iris_labs</span>
+<span class="kw pkg">labelled</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/labelled/man/var_label.html">var_label</a></span>(<span class="no">iris_labs_2</span>$<span class="no">Species</span>) <span class="kw">&lt;-</span> <span class="st">"Sub-genera"</span>
+
+<span class="co"># use variable labels automatically</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">iris_labs</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">Sepal.Length</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">Sepal.Width</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">colour</span> <span class="kw">=</span> <span class="no">Species</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">iris_labs_2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">Species</span>), <span class="kw">shape</span> <span class="kw">=</span> <span class="fl">24</span>) +
+    <span class="fu"><a href="reference/easy_labs.html">easy_labs</a></span>()</pre></div>
 <p><img src="reference/figures/example-11.png"><!-- --></p>
-<p>These functions will try to teach you the ‘official’ way to achieve these goal, usually via the <code>teach</code> argument (where implemented)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(hp, mpg)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">    </span><span class="kw"><a href="reference/easy_rotate_labels.html">easy_rotate_y_labels</a></span>(<span class="dt">angle =</span> <span class="st">"startatbottom"</span>, <span class="dt">teach =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt; easy_rotate_y_labels call can be substituted with:</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; theme(axis.text.y = element_text(angle = 90, hjust = 0))</span></a></code></pre></div>
+<p>These functions will try to teach you the âofficialâ way to achieve these goal, usually via the <code>teach</code> argument (where implemented)</p>
+<div class="sourceCode" id="cb13"><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">hp</span>, <span class="no">mpg</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+    <span class="fu"><a href="reference/easy_rotate_labels.html">easy_rotate_y_labels</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="st">"startatbottom"</span>, <span class="kw">teach</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt; easy_rotate_y_labels call can be substituted with:</span>
+<span class="co">#&gt; theme(axis.text.y = element_text(angle = 90, hjust = 0))</span></pre></div>
 <p><img src="reference/figures/teach-1.png"><!-- --></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mtcars, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(wt, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="reference/easy_remove_axes.html">easy_remove_y_axis</a></span>(<span class="dt">what =</span> <span class="st">"ticks"</span>, <span class="dt">teach =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#&gt; easy_remove_y_axis call can be substituted with:</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">#&gt; theme(axis.ticks.y = element_blank())</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="r">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">wt</span>, <span class="no">mpg</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+  <span class="fu"><a href="reference/easy_remove_axes.html">easy_remove_y_axis</a></span>(<span class="kw">what</span> <span class="kw">=</span> <span class="st">"ticks"</span>, <span class="kw">teach</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt; easy_remove_y_axis call can be substituted with:</span>
+<span class="co">#&gt; theme(axis.ticks.y = element_blank())</span></pre></div>
 <p><img src="reference/figures/teach-2.png"><!-- --></p>
 </div>
 </div>
@@ -240,7 +241,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md"><img src="https://img.shields.io/badge/covrpage-Last_Build_2020_03_19-brightgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md"><img src="https://img.shields.io/badge/covrpage-Last_Build_2020_04_07-brightgreen.svg" alt="Covrpage Summary"></a></li>
 <li><a href="https://travis-ci.org/jonocarroll/ggeasy"><img src="https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master" alt="Travis build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/jonocarroll/ggeasy"><img src="https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://codecov.io/gh/jonocarroll/ggeasy?branch=master"><img src="https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
@@ -256,7 +257,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
 </div>
 
       </footer>
