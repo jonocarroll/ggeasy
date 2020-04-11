@@ -22,7 +22,11 @@
 \alias{easy_plot_legend_title_size}
 \alias{easy_center_title}
 \title{Easily change text appearance}
-\format{An object of class \code{character} of length 15.}
+\format{
+An object of class \code{character} of length 15.
+
+An object of class \code{character} of length 10.
+}
 \usage{
 easy_change_text(
   which = .all_theme_els,

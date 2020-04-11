@@ -4,23 +4,34 @@
 \alias{easy_bar_median}
 \title{Easy median bar plot}
 \usage{
-easy_bar_median(df, fct_var, num_var, teach = FALSE)
+easy_bar_median(
+  df,
+  fct_var,
+  num_var,
+  col = "brown1",
+  fill = "brown4",
+  teach = FALSE
+)
 }
 \arguments{
-\item{df}{the dataframe}
+\item{df}{the data frame}
 
 \item{fct_var}{the factor variable}
 
-\item{num_var}{the function will calculate the mean of num_var for each value of fct_var}
+\item{num_var}{the function will calculate the median of num_var for each value of fct_var}
+
+\item{col}{the color of the bar plot borders}
+
+\item{fill}{the filling color of the bar plot}
 
 \item{teach}{print longer equivalent \code{\link[ggplot2]{ggplot2}}
 expression?}
 }
 \value{
-a \code{\link[ggplot2]{theme}} object
+a \code{\link[ggplot2]{ggplot2}} object
 }
 \description{
-Create a bar plot that displays the median of a numeric variable according to the values of a factor variable (factor in a statistical sense, it doesn't need to be a  factor class)
+Create a bar plot that displays the median of a numeric variable according to the values of a factor variable
 }
 \examples{
 library(ggplot2)
