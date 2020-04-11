@@ -42,7 +42,7 @@ testthat::test_that("easy bar median draw correctly", {
 })
 
 
-# testing the easy_bar_median() function #################
+# testing the easy_range() function #################
 
 
 
@@ -52,8 +52,14 @@ testthat::test_that("easy range bar draw correctly", {
   easy_range <- easy_range(mtcars, am, mpg)
 
 
+
+  summary <- function(y) {
+    return(data.frame(min = min(y), max = max(y)))
+
+  }
+
   ggplot_range <- ggplot(mtcars, aes(forcats::fct_reorder(factor(am), mpg, .fun = max), mpg)) +
-    stat_summary(fun.data = so.summary,geom = "errorbar",  colour = "brown1", size = 2) +
+    stat_summary(fun.data = summary,geom = "errorbar",  colour = "brown1", size = 2) +
     xlab("")+
     ylab("range")
 
@@ -62,4 +68,5 @@ testthat::test_that("easy range bar draw correctly", {
 
 })
 
+install.packages("patchwork")
 

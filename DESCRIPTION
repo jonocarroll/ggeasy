@@ -16,8 +16,9 @@ License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
 Imports: 
-  ggplot2,
-  rlang
+    ggplot2,
+    rlang,
+    forcats
 RoxygenNote: 7.1.0
 Suggests: 
     knitr,

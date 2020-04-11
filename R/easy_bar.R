@@ -15,7 +15,8 @@
 #' library(ggplot2)
 #' easy_bar_mean(df = mpg, fct_var = class, num_var = hwy)
 #'
-#'
+#' @importFrom forcats fct_reorder
+#' @importFrom ggplot2 ggplot
 #'
 
 
@@ -66,8 +67,8 @@ easy_bar_mean <- function(df, fct_var, num_var, col = "brown1", fill = "brown4",
 #' @examples
 #' library(ggplot2)
 #' easy_bar_median(df = mpg, fct_var = class, num_var = hwy)
-#'
-#'
+#' @importFrom forcats fct_reorder
+#' @importFrom ggplot2 ggplot
 #'
 
 easy_bar_median <- function(df, fct_var, num_var, col = "brown1", fill = "brown4", teach = FALSE) {
@@ -117,8 +118,9 @@ easy_bar_median <- function(df, fct_var, num_var, col = "brown1", fill = "brown4
 #' library(ggplot2)
 #' easy_range(df = mpg, fct_var = class, num_var = hwy)
 #'
-#'
-#'
+#' @importFrom forcats fct_reorder
+#' @importFrom ggplot2 ggplot
+#
 
 easy_range <- function(df, fct_var, num_var, col = "brown1", teach = FALSE) {
 
@@ -126,9 +128,12 @@ easy_range <- function(df, fct_var, num_var, col = "brown1", teach = FALSE) {
   if (teach) {message("easy_range call can be substituted with:")
     message(strwrap(
       '
+  summary <- function (y) {
+  return(data.frame(min = min(y), max = max(y)))
+  }
 
   ggplot(df, aes(forcats::fct_reorder(factor(fct_var), num_var, .fun = max), num_var)) +
-    stat_summary(fun.data = so.summary, geom = "errorbar",  colour = "brown1", size = 2) +
+    stat_summary(fun.data = summary, geom = "errorbar",  colour = "brown1", size = 2) +
     xlab("") +
     ylab("range")
 
@@ -143,10 +148,13 @@ easy_range <- function(df, fct_var, num_var, col = "brown1", teach = FALSE) {
     ))}
 
 
+  summary <- function(y) {
+    return(data.frame(min = min(y), max = max(y)))
 
+  }
 
   ggplot(df, aes(forcats::fct_reorder(factor({{fct_var}}), {{num_var}}, .fun = max), {{num_var}})) +
-    stat_summary(fun.data = so.summary,geom = "errorbar",  colour = "brown1", size = 2) +
+    stat_summary(fun.data = summary,geom = "errorbar",  colour = "brown1", size = 2) +
     xlab("")+
     ylab("range")
 
