@@ -2,6 +2,7 @@
 #'
 #' Easily remove any gridlines from a \code{ggplot}.
 #'
+#' @param axis From which axis should grid lines be removed? By default \code{"both"}.
 #' @param minor Should minor grid lines be removed? By default \code{TRUE}.
 #' @param major Should major grid lines be removed? By default \code{TRUE}.
 #' @param teach Should the equivalent \code{ggplot2} expression be printed? By
@@ -27,18 +28,24 @@
 #'
 #' # remove x gridlines
 #' p + easy_remove_x_gridlines()
+#' # or
+#' p + easy_remove_gridlines(axis = "x")
 #'
 #' # remove y gridlines
 #' p + easy_remove_y_gridlines()
 #'
 #' @export
-easy_remove_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
+easy_remove_gridlines <- function(axis = c("both", "x", "y"), minor = TRUE, major = TRUE, teach = FALSE) {
+
+  axis <- match.arg(axis)
+  suffix <- ifelse(axis == "both", "", paste0(".", axis))
+
   args <- list()
   if (minor) {
-    args$panel.grid.minor <- quote(element_blank())
+    args[[paste0("panel.grid.minor", suffix)]] <- quote(element_blank())
   }
   if (major) {
-    args$panel.grid.major <- quote(element_blank())
+    args[[paste0("panel.grid.major", suffix)]] <- quote(element_blank())
   }
 
   if (teach) {
@@ -51,35 +58,12 @@ easy_remove_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
 #' @export
 #' @rdname easy_remove_gridlines
 easy_remove_x_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
-  args <- list()
-  if (minor) {
-    args$panel.grid.minor.x <- quote(element_blank())
-  }
-  if (major) {
-    args$panel.grid.major.x <- quote(element_blank())
-  }
-
-  if (teach) {
-    teach_message(args)
-  }
-
-  do.call(theme, args)
+  easy_remove_gridlines(axis = "x", minor = minor, major = major, teach = teach)
 }
 
 #' @export
 #' @rdname easy_remove_gridlines
 easy_remove_y_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
-  args <- list()
-  if (minor) {
-    args$panel.grid.minor.y <- quote(element_blank())
-  }
-  if (major) {
-    args$panel.grid.major.y <- quote(element_blank())
-  }
-
-  if (teach) {
-    teach_message(args)
-  }
-
-  do.call(theme, args)
+  easy_remove_gridlines(axis = "y", minor = minor, major = major, teach = teach)
 }
+

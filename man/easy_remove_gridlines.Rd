@@ -6,13 +6,20 @@
 \alias{easy_remove_y_gridlines}
 \title{Easily remove gridlines}
 \usage{
-easy_remove_gridlines(minor = TRUE, major = TRUE, teach = FALSE)
+easy_remove_gridlines(
+  axis = c("both", "x", "y"),
+  minor = TRUE,
+  major = TRUE,
+  teach = FALSE
+)
 
 easy_remove_x_gridlines(minor = TRUE, major = TRUE, teach = FALSE)
 
 easy_remove_y_gridlines(minor = TRUE, major = TRUE, teach = FALSE)
 }
 \arguments{
+\item{axis}{From which axis should grid lines be removed? By default \code{"both"}.}
+
 \item{minor}{Should minor grid lines be removed? By default \code{TRUE}.}
 
 \item{major}{Should major grid lines be removed? By default \code{TRUE}.}
@@ -42,6 +49,8 @@ p + easy_remove_gridlines(minor = FALSE)
 
 # remove x gridlines
 p + easy_remove_x_gridlines()
+# or
+p + easy_remove_gridlines(axis = "x")
 
 # remove y gridlines
 p + easy_remove_y_gridlines()
