@@ -41,6 +41,13 @@ devtools::install_github("jonocarroll/ggeasy")
 
 See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
 
+[@amrrs](https://github.com/amrrs) a.k.a.
+[@1littlecoder](https://twitter.com/1littlecoder) has produced a video
+walkthrough using `{ggeasy}` which covers some of the major features:
+
+[![Watch the
+video](https://img.youtube.com/vi/iAH1GJoBZmI/maxresdefault.jpg)](https://youtu.be/iAH1GJoBZmI)
+
 ## Examples
 
 ``` r
