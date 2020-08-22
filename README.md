@@ -171,3 +171,9 @@ these goal, usually via the `teach` argument (where implemented)
     #> theme(axis.ticks.y = element_blank())
 
 ![](man/figures/teach-2.png)<!-- -->
+
+Credits
+-------
+
+Many thanks to [Sébastien Rochette (@statnmap)](https://statnmap.com/)
+for the design and execution of the hex logo.

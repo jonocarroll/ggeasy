@@ -137,3 +137,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   easy_remove_y_axis(what = "ticks", teach = TRUE)
 ```
 
+## Credits
+
+Many thanks to [Sébastien Rochette (\@statnmap)](https://statnmap.com/) for 
+the design and execution of the hex logo.
