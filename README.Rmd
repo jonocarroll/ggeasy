@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
+# ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html --> 
 
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_03_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
@@ -27,8 +27,8 @@ You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
 Now, can you please rotate the `x` axis labels to vertical?
 
 ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/xkcd.png)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif)
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif) -->
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif) -->
 
 `ggeasy` is here to make that a little easier.
 
