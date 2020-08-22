@@ -144,21 +144,21 @@
     </div>
 
     <pre class="usage"><span class='fu'>easy_change_legend</span>(
-  <span class='kw'>what</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"position"</span>, <span class='st'>"direction"</span>, <span class='st'>"justification"</span>),
-  <span class='no'>to</span>,
-  <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  what = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"position"</span>, <span class='st'>"direction"</span>, <span class='st'>"justification"</span>),
+  <span class='kw'>to</span>,
+  teach = <span class='fl'>FALSE</span>
 )
 
 <span class='fu'>easy_move_legend</span>(
-  <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"right"</span>, <span class='st'>"none"</span>, <span class='st'>"left"</span>, <span class='st'>"bottom"</span>, <span class='st'>"top"</span>),
-  <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  to = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"right"</span>, <span class='st'>"none"</span>, <span class='st'>"left"</span>, <span class='st'>"bottom"</span>, <span class='st'>"top"</span>),
+  teach = <span class='fl'>FALSE</span>
 )
 
-<span class='fu'>easy_legend_at</span>(<span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"right"</span>, <span class='st'>"none"</span>, <span class='st'>"left"</span>, <span class='st'>"bottom"</span>, <span class='st'>"top"</span>), <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>easy_legend_at</span>(to = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"right"</span>, <span class='st'>"none"</span>, <span class='st'>"left"</span>, <span class='st'>"bottom"</span>, <span class='st'>"top"</span>), teach = <span class='fl'>FALSE</span>)
 
-<span class='fu'>easy_rotate_legend</span>(<span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"vertical"</span>, <span class='st'>"horizontal"</span>), <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>easy_rotate_legend</span>(to = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"vertical"</span>, <span class='st'>"horizontal"</span>), teach = <span class='fl'>FALSE</span>)
 
-<span class='fu'>easy_adjust_legend</span>(<span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>, <span class='st'>"center"</span>), <span class='kw'>teach</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>easy_adjust_legend</span>(to = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>, <span class='st'>"center"</span>), teach = <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -185,21 +185,24 @@ expression?</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Due to limitations of <code>ggplot2</code> this will apply to all legends at once</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Jonathan Carroll</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://ggplot2.tidyverse.org'>ggplot2</a></span>)
 
 <span class='co'># Move legends to bottom</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>wt</span>, <span class='no'>mpg</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>cyl</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='no'>hp</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() + <span class='fu'>easy_move_legend</span>(<span class='st'>"bottom"</span>)</div><div class='img'><img src='easy_change_legend-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>wt</span>, <span class='kw'>mpg</span>, colour = <span class='kw'>cyl</span>, size = <span class='kw'>hp</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span> <span class='fu'>easy_move_legend</span>(<span class='st'>"bottom"</span>)</div><div class='img'><img src='easy_change_legend-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Make legends horizontal</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>wt</span>, <span class='no'>mpg</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>cyl</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='no'>hp</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() + <span class='fu'>easy_rotate_legend</span>(<span class='st'>"horizontal"</span>)</div><div class='img'><img src='easy_change_legend-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>wt</span>, <span class='kw'>mpg</span>, colour = <span class='kw'>cyl</span>, size = <span class='kw'>hp</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span> <span class='fu'>easy_rotate_legend</span>(<span class='st'>"horizontal"</span>)</div><div class='img'><img src='easy_change_legend-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Justify legends to the bottom and justify to the right</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>wt</span>, <span class='no'>mpg</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>cyl</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='no'>hp</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() +
-  <span class='fu'>easy_move_legend</span>(<span class='st'>"bottom"</span>) +
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>wt</span>, <span class='kw'>mpg</span>, colour = <span class='kw'>cyl</span>, size = <span class='kw'>hp</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span>
+  <span class='fu'>easy_move_legend</span>(<span class='st'>"bottom"</span>) <span class='op'>+</span>
   <span class='fu'>easy_adjust_legend</span>(<span class='st'>"right"</span>)</div><div class='img'><img src='easy_change_legend-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
