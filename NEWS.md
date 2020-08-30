@@ -1,3 +1,7 @@
+# ggeasy 0.1.3
+
+* Added easy_remove_gridlines() (#45, @thomas-neitmann)
+
 # ggeasy 0.1.2
 
 * Support for ggplot2 3.3.0 (no implementation change required)
