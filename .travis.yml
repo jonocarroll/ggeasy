@@ -1,8 +1,12 @@
 language: R
 cache: packages
 
-r_github_packages: 
-- metrumresearchgroup/covrpage   
+apt_packages:
+  - libharfbuzz-dev
+  - libfribidi-dev
+
+r_github_packages:
+- metrumresearchgroup/covrpage
 - r-lib/pkgdown
 
 after_success:
