@@ -4,6 +4,7 @@ cache: packages
 apt_packages:
   - libharfbuzz-dev
   - libfribidi-dev
+  - libgit2-dev
 
 r_github_packages:
 - metrumresearchgroup/covrpage
