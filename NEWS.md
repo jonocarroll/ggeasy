@@ -1,3 +1,9 @@
+# ggeasy 0.1.3
+
+* Tests updated to comply with new r-devel all.equal() environment checks
+* Added easy_center_title() (#44, @thomas-neitmann)
+* New logo (#57, @statnmap)
+
 # ggeasy 0.1.2
 
 * Support for ggplot2 3.3.0 (no implementation change required)
