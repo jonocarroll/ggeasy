@@ -10,15 +10,15 @@ Checked locally on r-devel 2021-01-01 r79748.
 
 rhub::check_for_cran():
 
-Windows Server 2008 R2 SP1, R-devel, 32/64 bit :: 1 NOTE (URL redirect)
-Ubuntu Linux 16.04 LTS, R-release, GCC :: OK (tested with _R_CHECK_FORCE_SUGGESTS = false due to vdiffr, covr)
-Fedora Linux, R-devel, clang, gfortran :: OK (tested with _R_CHECK_FORCE_SUGGESTS = false)
+Windows Server 2008 R2 SP1, R-devel, 32/64 bit :: OK
+Ubuntu Linux 16.04 LTS, R-release, GCC :: OK
+Fedora Linux, R-devel, clang, gfortran :: OK
 
 Win-builder: 
 
 release :: OK
 old_release :: OK
-devel :: 1 NOTE (URL redirect)
+devel :: OK
 
 ## Reverse dependencies
 
