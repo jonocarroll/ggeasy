@@ -80,19 +80,13 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggeasy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -117,7 +111,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/jonocarroll/ggeasy/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -143,48 +137,48 @@
     <p>Change any of the text parameters such as</p>
     </div>
 
-    <pre class="usage"><span class='fu'>easy_change_text</span>(
-  which = <span class='kw'>.all_theme_els</span>,
-  what = <span class='kw'>.all_element_text</span>,
-  to = <span class='kw'>NULL</span>,
-  teach = <span class='fl'>FALSE</span>
-)
+    <pre class="usage"><span class='fu'>easy_change_text</span><span class='op'>(</span>
+  which <span class='op'>=</span> <span class='va'>.all_theme_els</span>,
+  what <span class='op'>=</span> <span class='va'>.all_element_text</span>,
+  to <span class='op'>=</span> <span class='cn'>NULL</span>,
+  teach <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
 
-<span class='kw'>.all_theme_els</span>
+<span class='va'>.all_theme_els</span>
 
-<span class='kw'>.all_element_text</span>
+<span class='va'>.all_element_text</span>
 
-<span class='fu'>easy_all_text_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_all_text_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_all_text_color</span>(color = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_all_text_color</span><span class='op'>(</span>color <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_all_text_colour</span>(colour = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_all_text_colour</span><span class='op'>(</span>colour <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_text_size</span>(which = <span class='kw'>.all_theme_els</span>, size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_text_size</span><span class='op'>(</span>which <span class='op'>=</span> <span class='va'>.all_theme_els</span>, size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_text_color</span>(which = <span class='kw'>.all_theme_els</span>, color = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_text_color</span><span class='op'>(</span>which <span class='op'>=</span> <span class='va'>.all_theme_els</span>, color <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_text_colour</span>(which = <span class='kw'>.all_theme_els</span>, colour = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_text_colour</span><span class='op'>(</span>which <span class='op'>=</span> <span class='va'>.all_theme_els</span>, colour <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_x_axis_title_size</span>(<span class='kw'>size</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_x_axis_title_size</span><span class='op'>(</span><span class='va'>size</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_y_axis_title_size</span>(<span class='kw'>size</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_y_axis_title_size</span><span class='op'>(</span><span class='va'>size</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_x_axis_labels_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_x_axis_labels_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_y_axis_labels_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_y_axis_labels_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_plot_title_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_plot_title_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_plot_subtitle_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_plot_subtitle_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_plot_caption_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_plot_caption_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_plot_legend_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_plot_legend_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_plot_legend_title_size</span>(size = <span class='kw'>NULL</span>, teach = <span class='fl'>FALSE</span>)
+<span class='fu'>easy_plot_legend_title_size</span><span class='op'>(</span>size <span class='op'>=</span> <span class='cn'>NULL</span>, teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>easy_center_title</span>(teach = <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>easy_center_title</span><span class='op'>(</span>teach <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -233,44 +227,52 @@ expression?</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://ggplot2.tidyverse.org'>ggplot2</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
 
 <span class='co'># make all text larger</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span>
-  <span class='fu'>easy_all_text_size</span>(<span class='fl'>22</span>)</div><div class='img'><img src='easy_change_text-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># also works if accidentally using easy_text_size(n)</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_all_text_size</span><span class='op'>(</span><span class='fl'>22</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># also works if accidentally using easy_text_size(n)</span>
 
 <span class='co'># make the x and y axis text larger</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span>
-  <span class='fu'>easy_text_size</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axis.text.x"</span>, <span class='st'>"axis.text.y"</span>), <span class='fl'>22</span>)</div><div class='img'><img src='easy_change_text-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_text_size</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"axis.text.x"</span>, <span class='st'>"axis.text.y"</span><span class='op'>)</span>, <span class='fl'>22</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make the x axis labels larger</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span>
-  <span class='fu'>easy_x_axis_labels_size</span>(<span class='fl'>22</span>)</div><div class='img'><img src='easy_change_text-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_x_axis_labels_size</span><span class='op'>(</span><span class='fl'>22</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make the plot title larger</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>() <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(title = <span class='st'>"My Plot"</span>) <span class='op'>+</span>
-  <span class='fu'>easy_plot_title_size</span>(<span class='fl'>22</span>)</div><div class='img'><img src='easy_change_text-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"My Plot"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_plot_title_size</span><span class='op'>(</span><span class='fl'>22</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make the legend title larger</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(fill = <span class='kw'>gear</span>)) <span class='op'>+</span>
-  <span class='fu'>easy_plot_legend_title_size</span>(<span class='fl'>22</span>)</div><div class='img'><img src='easy_change_text-5.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>gear</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_plot_legend_title_size</span><span class='op'>(</span><span class='fl'>22</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-5.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make all the text red</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(fill = <span class='kw'>gear</span>)) <span class='op'>+</span>
-  <span class='fu'>easy_all_text_color</span>(<span class='st'>"red"</span>)</div><div class='img'><img src='easy_change_text-6.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>gear</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_all_text_color</span><span class='op'>(</span><span class='st'>"red"</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-6.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make all the text 45 degrees, right-justified</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(fill = <span class='kw'>gear</span>)) <span class='op'>+</span>
-  <span class='fu'>easy_change_text</span>(what = <span class='st'>"angle"</span>, to = <span class='fl'>45</span>) <span class='op'>+</span>
-  <span class='fu'>easy_change_text</span>(what = <span class='st'>"hjust"</span>, to = <span class='fl'>1</span>)</div><div class='img'><img src='easy_change_text-7.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>gear</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_change_text</span><span class='op'>(</span>what <span class='op'>=</span> <span class='st'>"angle"</span>, to <span class='op'>=</span> <span class='fl'>45</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_change_text</span><span class='op'>(</span>what <span class='op'>=</span> <span class='st'>"hjust"</span>, to <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-7.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># make just x-axis text 45 degrees, right-justified</span>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>mpg</span>, <span class='kw'>hp</span>)) <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(fill = <span class='kw'>gear</span>)) <span class='op'>+</span>
-  <span class='fu'>easy_change_text</span>(which = <span class='st'>"axis.text.x"</span>, what = <span class='st'>"angle"</span>, to = <span class='fl'>45</span>) <span class='op'>+</span>
-  <span class='fu'>easy_change_text</span>(which = <span class='st'>"axis.text.x"</span>, what = <span class='st'>"hjust"</span>, to = <span class='fl'>1</span>)</div><div class='img'><img src='easy_change_text-8.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>mpg</span>, <span class='va'>hp</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>gear</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_change_text</span><span class='op'>(</span>which <span class='op'>=</span> <span class='st'>"axis.text.x"</span>, what <span class='op'>=</span> <span class='st'>"angle"</span>, to <span class='op'>=</span> <span class='fl'>45</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>easy_change_text</span><span class='op'>(</span>which <span class='op'>=</span> <span class='st'>"axis.text.x"</span>, what <span class='op'>=</span> <span class='st'>"hjust"</span>, to <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='img'><img src='easy_change_text-8.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -286,7 +288,7 @@ expression?</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
