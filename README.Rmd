@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 # ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html --> 
 
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_03_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2021_01_06-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
+[![R-CMD-check](https://github.com/jonocarroll/ggeasy/workflows/R-CMD-check/badge.svg)](https://github.com/jonocarroll/ggeasy/actions)
 [![Codecov test coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://codecov.io/gh/jonocarroll/ggeasy?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/ggeasy)](https://CRAN.R-project.org/package=ggeasy)
 
