@@ -1,6 +1,10 @@
 # ggeasy 0.1.4
 
 * Added easy_remove_gridlines() (#45, @thomas-neitmann)
+* Added gridlines example to shortcuts vignette
+* Use <scale> = "none" to remove legend
+* Align to ggplot2::ggplot_add generic signature (fixes CRAN check)
+* Removed LazyData (fixes CRAN check)
 
 # ggeasy 0.1.3
 

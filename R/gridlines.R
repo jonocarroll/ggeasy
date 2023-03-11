@@ -16,6 +16,7 @@
 #' @examples
 #' library(ggplot2)
 #' p <- ggplot(mtcars, aes(hp, mpg))
+#'  + geom_point()
 #'
 #' # remove all grid lines at once
 #' p + easy_remove_gridlines()

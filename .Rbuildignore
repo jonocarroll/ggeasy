@@ -18,3 +18,4 @@ myignore
 ^CRAN-RELEASE$
 ^\.github$
 ^tests/README\.md$
+^\.vscode$
