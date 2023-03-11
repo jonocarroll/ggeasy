@@ -1,3 +1,7 @@
+# ggeasy 0.1.4
+
+* Added easy_remove_gridlines() (#45, @thomas-neitmann)
+
 # ggeasy 0.1.3
 
 * Tests updated to comply with new r-devel all.equal() environment checks
