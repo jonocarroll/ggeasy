@@ -18,7 +18,7 @@ LazyData: true
 Imports: 
   ggplot2,
   rlang
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,

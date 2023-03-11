@@ -17,3 +17,4 @@ myignore
 ^ggeasy\.Rproj$
 ^CRAN-RELEASE$
 ^\.github$
+^tests/README\.md$

@@ -13,12 +13,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
+# ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html --> 
 
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_03_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2021_01_06-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
+[![R-CMD-check](https://github.com/jonocarroll/ggeasy/workflows/R-CMD-check/badge.svg)](https://github.com/jonocarroll/ggeasy/actions)
 [![Codecov test coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://codecov.io/gh/jonocarroll/ggeasy?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/ggeasy)](https://CRAN.R-project.org/package=ggeasy)
 
@@ -27,23 +28,33 @@ You know how to make `ggplot2` graphics, right? No worries. Piece of cake.
 Now, can you please rotate the `x` axis labels to vertical?
 
 ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/xkcd.png)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif)
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif) -->
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif) -->
 
 `ggeasy` is here to make that a little easier.
 
 ## Installation
 
-You can install ggeasy from github with:
+You can install the latest released version of `ggeasy` from CRAN with:
+
+```{r cran-installation, eval = FALSE}
+install.packages("ggeasy")
+```
+
+or the bleeding-edge development version from GitHub with
 
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("jonocarroll/ggeasy")
+# install.packages("remotes")
+remotes::install_github("jonocarroll/ggeasy")
 ```
 
 ## Reference
 
 See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
+
+[\@amrrs](https://github.com/amrrs) a.k.a. [\@1littlecoder](https://twitter.com/1littlecoder) has produced a video walkthrough using `ggeasy` which covers some of the major features:
+
+[![Watch the video](https://img.youtube.com/vi/iAH1GJoBZmI/maxresdefault.jpg)](https://youtu.be/iAH1GJoBZmI)
 
 ## Examples
 
@@ -127,3 +138,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   easy_remove_y_axis(what = "ticks", teach = TRUE)
 ```
 
+## Credits
+
+Many thanks to [Sébastien Rochette (\@statnmap)](https://statnmap.com/) for 
+the design and execution of the hex logo.

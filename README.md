@@ -1,16 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggeasy <img src='man/figures/logo.png' align="right" height="138.5" />
+# ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
 
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_03_07-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2021_01_06-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
+[![R-CMD-check](https://github.com/jonocarroll/ggeasy/workflows/R-CMD-check/badge.svg)](https://github.com/jonocarroll/ggeasy/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://codecov.io/gh/jonocarroll/ggeasy?branch=master)
 [![CRAN
@@ -19,27 +20,39 @@ status](https://www.r-pkg.org/badges/version/ggeasy)](https://CRAN.R-project.org
 You know how to make `ggplot2` graphics, right? No worries. Piece of
 cake.
 
-Now, can you please rotate the `x` axis labels to
-vertical?
+Now, can you please rotate the `x` axis labels to vertical?
 
 ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/xkcd.png)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif)
-![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif)
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/winona.gif) -->
+<!-- ![](https://raw.githubusercontent.com/jonocarroll/ggeasy/master/inst/media/sherlock.gif) -->
 
 `ggeasy` is here to make that a little easier.
 
 ## Installation
 
-You can install ggeasy from github with:
+You can install the latest released version of `ggeasy` from CRAN with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("jonocarroll/ggeasy")
+install.packages("ggeasy")
+```
+
+or the bleeding-edge development version from GitHub with
+
+``` r
+# install.packages("remotes")
+remotes::install_github("jonocarroll/ggeasy")
 ```
 
 ## Reference
 
 See the [`pkgdown` site](https://jonocarroll.github.io/ggeasy/).
+
+[@amrrs](https://github.com/amrrs) a.k.a.
+[@1littlecoder](https://twitter.com/1littlecoder) has produced a video
+walkthrough using `ggeasy` which covers some of the major features:
+
+[![Watch the
+video](https://img.youtube.com/vi/iAH1GJoBZmI/maxresdefault.jpg)](https://youtu.be/iAH1GJoBZmI)
 
 ## Examples
 
@@ -56,7 +69,6 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/example-1.png)<!-- -->
 
 ``` r
-
 # rotate y axis labels
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
@@ -66,7 +78,6 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/example-2.png)<!-- -->
 
 ``` r
-
 # remove 'size' legend
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point() +
@@ -76,7 +87,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-3.png)<!-- -->
 
 ``` r
-
 # make the x axis labels larger
 ggplot(mtcars, aes(mpg, hp)) +
   geom_point() +
@@ -86,7 +96,6 @@ ggplot(mtcars, aes(mpg, hp)) +
 ![](man/figures/example-4.png)<!-- -->
 
 ``` r
-
 # make all the text red
 ggplot(mtcars, aes(mpg, hp)) +
   geom_point(aes(fill = gear)) +
@@ -96,7 +105,6 @@ ggplot(mtcars, aes(mpg, hp)) +
 ![](man/figures/example-5.png)<!-- -->
 
 ``` r
-
 # remove just x axis
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
@@ -106,7 +114,6 @@ ggplot(mtcars, aes(wt, mpg)) +
 ![](man/figures/example-6.png)<!-- -->
 
 ``` r
-
 # remove y axis ticks
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
@@ -116,7 +123,6 @@ ggplot(mtcars, aes(wt, mpg)) +
 ![](man/figures/example-7.png)<!-- -->
 
 ``` r
-
 # move legends to bottom
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + 
@@ -126,7 +132,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-8.png)<!-- -->
 
 ``` r
-
 # move legend to left side
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() +
@@ -136,7 +141,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-9.png)<!-- -->
 
 ``` r
-
 # Make legends horizontal
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_rotate_legend("horizontal")
@@ -145,7 +149,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-10.png)<!-- -->
 
 ``` r
-
 # use labelled variables
 iris_labs <- iris
 labelled::var_label(iris_labs$Species) <- "Flower\nSpecies"
@@ -176,7 +179,6 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/teach-1.png)<!-- -->
 
 ``` r
-
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
   easy_remove_y_axis(what = "ticks", teach = TRUE)
@@ -185,3 +187,8 @@ ggplot(mtcars, aes(wt, mpg)) +
 ```
 
 ![](man/figures/teach-2.png)<!-- -->
+
+## Credits
+
+Many thanks to [Sébastien Rochette (@statnmap)](https://statnmap.com/)
+for the design and execution of the hex logo.
