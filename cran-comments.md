@@ -1,25 +1,15 @@
 ## Updated package
 
-Correction to address failing tests and comply with new r-devel all.equal()
+Fixed WARN/NOTEs and added some new features.
+
+One issue on winbuilder due to svglite which seems to be due to an 
+out of date installation. Same as
+https://stackoverflow.com/questions/72136553/tests-with-expect-doppelganger-fail-after-upgrade-to-r-4-2-0
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
 
-Checked locally on r-devel 2021-01-01 r79748.
-
-rhub::check_for_cran():
-
-Windows Server 2008 R2 SP1, R-devel, 32/64 bit :: OK
-Ubuntu Linux 16.04 LTS, R-release, GCC :: OK
-Fedora Linux, R-devel, clang, gfortran :: OK
-
-Win-builder: 
-
-release :: OK
-old_release :: OK
-devel :: OK
-
 ## Reverse dependencies
 
-None.
+Confirmed no new issues with reverse imports.
