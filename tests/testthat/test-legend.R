@@ -12,25 +12,25 @@ test_that("easy_remove_legend works with no argument", {
 
 test_that("easy_remove_legend works with single character argument", {
   easy_res <- p + easy_remove_legend("size")
-  hard_res <- p + guides(size = FALSE)
+  hard_res <- p + guides(size = "none")
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_remove_legend works with single bare argument", {
   easy_res <- p + easy_remove_legend(size)
-  hard_res <- p + guides(size = FALSE)
+  hard_res <- p + guides(size = "none")
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_remove_legend works with multiple character arguments", {
   easy_res <- p + easy_remove_legend("size", "color")
-  hard_res <- p + guides(size = FALSE, color = FALSE)
+  hard_res <- p + guides(size = "none", color = "none")
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_remove_legend works with multiple bare arguments", {
   easy_res <- p + easy_remove_legend(size, color)
-  hard_res <- p + guides(size = FALSE, color = FALSE)
+  hard_res <- p + guides(size = "none", color = "none")
   expect_eqNe(easy_res, hard_res)
 })
 

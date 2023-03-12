@@ -6,7 +6,7 @@
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2021_01_06-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![Travis build
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build
@@ -54,6 +54,14 @@ walkthrough using `ggeasy` which covers some of the major features:
 [![Watch the
 video](https://img.youtube.com/vi/iAH1GJoBZmI/maxresdefault.jpg)](https://youtu.be/iAH1GJoBZmI)
 
+[Sharon Machlis](https://www.infoworld.com/author/Sharon-Machlis/) has a
+great
+[article](https://www.infoworld.com/article/3533453/easier-ggplot-with-the-ggeasy-r-package.html)
+detailing using the package, as well as a video
+
+[![Watch the
+video](https://img.youtube.com/vi/-2ZvQQ583pI/maxresdefault.jpg)](https://www.youtube.com/watch?v=-2ZvQQ583pI)
+
 ## Examples
 
 ``` r
@@ -69,6 +77,7 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/example-1.png)<!-- -->
 
 ``` r
+
 # rotate y axis labels
 ggplot(mtcars, aes(hp, mpg)) + 
     geom_point() + 
@@ -78,6 +87,7 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/example-2.png)<!-- -->
 
 ``` r
+
 # remove 'size' legend
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point() +
@@ -87,6 +97,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-3.png)<!-- -->
 
 ``` r
+
 # make the x axis labels larger
 ggplot(mtcars, aes(mpg, hp)) +
   geom_point() +
@@ -96,6 +107,7 @@ ggplot(mtcars, aes(mpg, hp)) +
 ![](man/figures/example-4.png)<!-- -->
 
 ``` r
+
 # make all the text red
 ggplot(mtcars, aes(mpg, hp)) +
   geom_point(aes(fill = gear)) +
@@ -105,6 +117,7 @@ ggplot(mtcars, aes(mpg, hp)) +
 ![](man/figures/example-5.png)<!-- -->
 
 ``` r
+
 # remove just x axis
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
@@ -114,6 +127,7 @@ ggplot(mtcars, aes(wt, mpg)) +
 ![](man/figures/example-6.png)<!-- -->
 
 ``` r
+
 # remove y axis ticks
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
@@ -123,6 +137,7 @@ ggplot(mtcars, aes(wt, mpg)) +
 ![](man/figures/example-7.png)<!-- -->
 
 ``` r
+
 # move legends to bottom
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + 
@@ -132,6 +147,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-8.png)<!-- -->
 
 ``` r
+
 # move legend to left side
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() +
@@ -141,6 +157,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-9.png)<!-- -->
 
 ``` r
+
 # Make legends horizontal
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_rotate_legend("horizontal")
@@ -149,6 +166,7 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ![](man/figures/example-10.png)<!-- -->
 
 ``` r
+
 # use labelled variables
 iris_labs <- iris
 labelled::var_label(iris_labs$Species) <- "Flower\nSpecies"
@@ -179,6 +197,7 @@ ggplot(mtcars, aes(hp, mpg)) +
 ![](man/figures/teach-1.png)<!-- -->
 
 ``` r
+
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() + 
   easy_remove_y_axis(what = "ticks", teach = TRUE)
