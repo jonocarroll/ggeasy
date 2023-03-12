@@ -11,9 +11,9 @@ Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen
 status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
-[![R-CMD-check](https://github.com/jonocarroll/ggeasy/workflows/R-CMD-check/badge.svg)](https://github.com/jonocarroll/ggeasy/actions)
+[![R-CMD-check](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://codecov.io/gh/jonocarroll/ggeasy?branch=master)
+coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://app.codecov.io/gh/jonocarroll/ggeasy?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ggeasy)](https://CRAN.R-project.org/package=ggeasy)
 
