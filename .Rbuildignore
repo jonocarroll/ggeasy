@@ -19,3 +19,4 @@ myignore
 ^\.github$
 ^tests/README\.md$
 ^\.vscode$
+^CRAN-SUBMISSION$
