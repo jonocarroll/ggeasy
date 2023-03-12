@@ -5,9 +5,9 @@ library(ggeasy)
 
 expect_eqNe <- function(...) expect_equal(..., check.environment = FALSE)
 
-expect_doppelganger <- function(title, fig, path = NULL, ...) {
+expect_doppelganger <- function(title, fig, ...) {
   testthat::skip_if_not_installed("vdiffr")
-  vdiffr::expect_doppelganger(title, fig, path = path, ...)
+  vdiffr::expect_doppelganger(title, fig, ...)
 }
 
 iris_labs <- iris

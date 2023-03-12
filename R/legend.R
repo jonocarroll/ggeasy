@@ -44,13 +44,13 @@ easy_remove_legend <- function(..., teach = FALSE) {
     }
     theme(legend.position = "none")
   } else {
-    inputs <- lapply(vars, function(x) FALSE)
+    inputs <- lapply(vars, function(x) "none")
     names(inputs) <- vars
 
     if (teach) {
       message("easy_remove_legend call can be substituted with:")
-      false_strings <- lapply(vars, function(x) " = FALSE")
-      args <- paste0(vars, false_strings, collapse = ", ")
+      none_strings <- lapply(vars, function(x) ' = "none"')
+      args <- paste0(vars, none_strings, collapse = ", ")
       message(strwrap(
         paste0("guides(", args, ")"),
         width = 80,

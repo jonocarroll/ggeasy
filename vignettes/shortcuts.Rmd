@@ -51,7 +51,7 @@ p4 <- p +
 (p1 + p2) / (p3 + p4)
 ```
 
-## Removing legends
+## Remove Legends
 
 Removing legends is made easier by the `easy_remove_legend` function.  When called without arguments, all legends are removed (equivalent to `theme(legend.position = "none")`). Alternatively, the names of aesthetics for which legends should be removed can be passed.
 
@@ -70,6 +70,32 @@ p3 <- p +
 p4 <- p + 
     easy_remove_legend(size, color) + 
     labs(title = "Remove both legends specifically")
+
+(p1 + p2) / (p3 + p4)
+```
+
+## Remove Grid Lines
+
+Grid lines can be completely removed, or removed in only one direction
+
+```{r, fig.width = 8, fig.height = 8}
+p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
+
+p1 <- p + easy_remove_gridlines() + 
+  labs(title = "Remove all gridlines")
+
+p2 <- p + easy_remove_gridlines(major = FALSE) +
+  labs(title = "Remove minor gridlines")
+
+p3 <- p + easy_remove_gridlines(minor = FALSE) +
+  labs(title = "Remove minor gridlines")
+
+p4 <- p + easy_remove_x_gridlines() + 
+  labs(title = "Remove x gridlines")
+# or
+# p + easy_remove_gridlines(axis = "x")
+
+# p + easy_remove_y_gridlines()
 
 (p1 + p2) / (p3 + p4)
 ```
@@ -93,7 +119,7 @@ These are visible if you use `View(iris_labs)` in RStudio
 
 ```{r, fig.width = 8, fig.height = 8}
 p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
-    geom_line(aes(colour = Species))
+  geom_line(aes(colour = Species))
 
 p1 <- p + labs(title = "default labels")
 p2 <- p + 
@@ -111,7 +137,6 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     labs(title = "Additional labels can be added in other aesthetics")
 
 (p1 + p2) / (p3 + p4)
-
 ```
 
 easy_labs also extends to facetting

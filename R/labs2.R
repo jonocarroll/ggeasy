@@ -32,8 +32,8 @@ easy_labs <- function(..., teach = FALSE){
 }
 
 #' @export
-ggplot_add.easy_labs <- function (p, object, objectname) {
-    easy_update_labs(object, p)
+ggplot_add.easy_labs <- function(object, plot, object_name) {
+    easy_update_labs(plot, object)
 }
 
 #' @importFrom utils modifyList
