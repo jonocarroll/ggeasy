@@ -28,5 +28,5 @@ Suggests:
     vdiffr,
     covr
 VignetteBuilder: knitr
-URL: https://github.com/jonocarroll/ggeasy
+URL: https://github.com/jonocarroll/ggeasy, https://jonocarroll.github.io/ggeasy/
 BugReports: https://github.com/jonocarroll/ggeasy/issues
