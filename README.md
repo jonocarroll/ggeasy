@@ -7,8 +7,6 @@
 
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
-[![Travis build
-status](https://travis-ci.org/jonocarroll/ggeasy.svg?branch=master)](https://travis-ci.org/jonocarroll/ggeasy)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
 [![R-CMD-check](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml)
@@ -54,9 +52,9 @@ walkthrough using `ggeasy` which covers some of the major features:
 [![Watch the
 video](https://img.youtube.com/vi/iAH1GJoBZmI/maxresdefault.jpg)](https://youtu.be/iAH1GJoBZmI)
 
-[Sharon Machlis](https://www.infoworld.com/author/Sharon-Machlis/) has a
-great
-[article](https://www.infoworld.com/article/3533453/easier-ggplot-with-the-ggeasy-r-package.html)
+[Sharon Machlis](https://www.infoworld.com/profile/sharon-machlis/) has
+a great
+[article](https://www.infoworld.com/article/2256726/easier-ggplot-with-the-ggeasy-r-package.html)
 detailing using the package, as well as a video
 
 [![Watch the
@@ -66,6 +64,11 @@ video](https://img.youtube.com/vi/-2ZvQQ583pI/maxresdefault.jpg)](https://www.yo
 
 ``` r
 library(ggplot2)
+#> 
+#> Attaching package: 'ggplot2'
+#> The following object is masked from 'package:base':
+#> 
+#>     is.element
 library(ggeasy)
 
 # rotate x axis labels
