@@ -1,15 +1,17 @@
 ## Updated package
 
-Fixed WARN/NOTEs and added some new features.
-
-One issue on winbuilder due to svglite which seems to be due to an 
-out of date installation. Same as
-https://stackoverflow.com/questions/72136553/tests-with-expect-doppelganger-fail-after-upgrade-to-r-4-2-0
+Fixed _PACKAGE documentation as requested
+Updated to align with ggplot2 updates
+Minor alias additions
 
 ## R CMD check results
+
+Checked with rhubv2 linux, macos, macos-arm64, and windows.
+Checked with winbuilder devel, release, and oldrelease.
 
 0 errors | 0 warnings | 0 notes
 
 ## Reverse dependencies
 
-Confirmed no new issues with reverse imports.
+Current revdeps: autostats, FPDclustering, SqueakR
+revdepcheck::revdep_check() reports no new problems.
