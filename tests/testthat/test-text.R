@@ -2,6 +2,11 @@ context("adjust text sizes")
 
 expect_eqNe <- function(...) expect_equal(..., check.environment = FALSE)
 
+expect_doppelganger <- function(title, fig, ...) {
+  testthat::skip_if_not_installed("vdiffr")
+  vdiffr::expect_doppelganger(title, fig, ...)
+}
+
 expect_equal_with_reorder <- function(easy, hard, debug = FALSE) {
     for (x in names(hard)) {
         for (y in names(hard[x])) {
@@ -218,4 +223,13 @@ test_that("easy_center_title works", {
   easy_res <- p + easy_center_title()
   hard_res <- p + ggplot2::theme(plot.title = element_text(hjust = .5))
   expect_eqNe(easy_res, hard_res)
+})
+
+context("bolding title")
+
+test_that("bold round-trips", {
+  bold <- p + easy_title_bold()
+  unbold <- bold + easy_title_regular()
+  expect_eqNe(p + theme(plot.title = element_text(face = "bold")), bold)
+  expect_doppelganger("bolding", unbold)
 })

@@ -1,3 +1,10 @@
+# ggeasy 0.1.5
+
+* Restore compatibility with ggplot2's get_labs()
+* Added easy_*_size() functions which do not have 'plot' in the name (#77, @davidhodge931)
+* Added easy_title_bold(), easy_title_plain(), and easy_title_regular() (#71, @davidhodge931)
+* Minor fixes for CRAN
+
 # ggeasy 0.1.4
 
 * Added easy_remove_gridlines() (#45, @thomas-neitmann)

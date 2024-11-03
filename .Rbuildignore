@@ -20,3 +20,4 @@ myignore
 ^tests/README\.md$
 ^\.vscode$
 ^CRAN-SUBMISSION$
+^revdep$

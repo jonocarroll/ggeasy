@@ -188,10 +188,18 @@ easy_plot_title_size <- function(size = NULL, teach = FALSE) {
 
 #' @export
 #' @rdname easy_change_text
+easy_title_size <- easy_plot_title_size
+
+#' @export
+#' @rdname easy_change_text
 easy_plot_subtitle_size <- function(size = NULL, teach = FALSE) {
     if (is.null(size)) return(easy_change_text(which = "plot.subtitle", what = NULL, teach = teach))
     easy_change_text(which = "plot.subtitle", what = "size", to = size, teach = teach)
 }
+
+#' @export
+#' @rdname easy_change_text
+easy_subtitle_size <- easy_plot_subtitle_size
 
 #' @export
 #' @rdname easy_change_text
@@ -202,10 +210,18 @@ easy_plot_caption_size <- function(size = NULL, teach = FALSE) {
 
 #' @export
 #' @rdname easy_change_text
+easy_caption_size <- easy_plot_caption_size
+
+#' @export
+#' @rdname easy_change_text
 easy_plot_legend_size <- function(size = NULL, teach = FALSE) {
     if (is.null(size)) return(easy_change_text(which = "legend.text", what = NULL, teach = teach))
     easy_change_text(which = "legend.text", what = "size", to = size, teach = teach)
 }
+
+#' @export
+#' @rdname easy_change_text
+easy_legend_title_size <- easy_plot_legend_size
 
 #' @export
 #' @rdname easy_change_text
@@ -216,6 +232,26 @@ easy_plot_legend_title_size <- function(size = NULL, teach = FALSE) {
 
 #' @export
 #' @rdname easy_change_text
+easy_legend_size <- easy_plot_legend_title_size
+
+#' @export
+#' @rdname easy_change_text
 easy_center_title <- function(teach = FALSE) {
   easy_change_text(which = "plot.title", what = "hjust", to = .5, teach = teach)
 }
+
+#' @export
+#' @rdname easy_change_text
+easy_title_bold <- function() {
+  easy_change_text("plot.title", "face", "bold")
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_title_regular <- function() {
+  easy_change_text("plot.title", "face", "plain")
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_title_plain <- easy_title_regular
