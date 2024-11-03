@@ -38,7 +38,8 @@ ggplot_add.easy_labs <- function(object, plot, object_name) {
 
 #' @importFrom utils modifyList
 easy_update_labs <- function(p, man_labs) {
-    p_labs <- p$labels
+    p_labs <- get_labs(p)
+    p_labs <- Filter(\(x) !is.null(x) && x != "", p_labs)
     d <- p$data
     d_labs <- lapply(d, function(x) attr(x, "label"))
     has_labs <- sapply(d_labs, function(x) !is.null(x))
@@ -69,4 +70,11 @@ easy_update_labs <- function(p, man_labs) {
 
     ggplot2::update_labels(p, p_labs)
 
+}
+
+#' @keywords internal
+get_labs <- if ("get_labs" %in% getNamespaceExports("ggplot2")) {
+  ggplot2::get_labs
+} else {
+  function(plot) plot$labels
 }

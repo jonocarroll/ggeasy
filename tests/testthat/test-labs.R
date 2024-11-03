@@ -26,8 +26,8 @@ test_that("easy_labs uses column attrib", {
   hard_res <- p + ggplot2::labs(x = 'Sepal Length', y = 'Sepal Width', colour = 'Flower Species')
   easy_res <- p + easy_labs()
 
-  expect_eqNe(easy_res, hard_res)
-  expect_message(p + easy_labs(teach = TRUE), regexp = "colour = 'Flower Species')")
+  expect_mapequal(get_labs(easy_res), get_labs(hard_res))
+  expect_message(p + easy_labs(teach = TRUE), regexp = "colour = 'Flower Species'")
 
   easy_res_test_teach <- p + easy_labs()
   teach_message <- capture_messages({p + easy_labs(teach = TRUE)})[2]
@@ -43,8 +43,7 @@ testthat::test_that("regular labs overides easy_labs ", {
   hard_res <- p + ggplot2::labs(x = 'x axis', y = 'Sepal Width', colour = 'Flower Species')
   easy_res <- p + easy_labs(x = 'x axis')
 
-  expect_eqNe(easy_res$labels[sort(names(easy_res$labels))],
-               hard_res$labels[sort(names(hard_res$labels))])
+  expect_mapequal(get_labs(easy_res), get_labs(hard_res))
   expect_doppelganger("labels_manual", easy_res)
 
 })
@@ -73,8 +72,7 @@ test_that("column name used when no column attrib present", {
   hard_res <- p + ggplot2::labs(y = 'Sepal Width', colour = 'Flower Species')
   easy_res <- p + ggeasy::easy_labs()
 
-  expect_eqNe(easy_res$labels[sort(names(easy_res$labels))],
-               hard_res$labels[sort(names(hard_res$labels))])
+  expect_mapequal(get_labs(easy_res), get_labs(hard_res))
   expect_doppelganger("labels_y_col", easy_res)
 
 })

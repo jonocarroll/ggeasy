@@ -1,5 +1,10 @@
 # ggeasy 0.1.4
 
+* Restore compatibility with ggplot2's get_labs()
+* Minor fixes for CRAN
+
+# ggeasy 0.1.4
+
 * Added easy_remove_gridlines() (#45, @thomas-neitmann)
 * Added gridlines example to shortcuts vignette
 * Use <scale> = "none" to remove legend
