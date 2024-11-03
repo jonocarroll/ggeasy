@@ -16,13 +16,22 @@
 \alias{easy_x_axis_labels_size}
 \alias{easy_y_axis_labels_size}
 \alias{easy_plot_title_size}
+\alias{easy_title_size}
 \alias{easy_plot_subtitle_size}
+\alias{easy_subtitle_size}
 \alias{easy_plot_caption_size}
+\alias{easy_caption_size}
 \alias{easy_plot_legend_size}
+\alias{easy_legend_title_size}
 \alias{easy_plot_legend_title_size}
+\alias{easy_legend_size}
 \alias{easy_center_title}
 \title{Easily change text appearance}
-\format{An object of class \code{character} of length 15.}
+\format{
+An object of class \code{character} of length 15.
+
+An object of class \code{character} of length 10.
+}
 \usage{
 easy_change_text(
   which = .all_theme_els,
@@ -57,13 +66,23 @@ easy_y_axis_labels_size(size = NULL, teach = FALSE)
 
 easy_plot_title_size(size = NULL, teach = FALSE)
 
+easy_title_size(size = NULL, teach = FALSE)
+
 easy_plot_subtitle_size(size = NULL, teach = FALSE)
+
+easy_subtitle_size(size = NULL, teach = FALSE)
 
 easy_plot_caption_size(size = NULL, teach = FALSE)
 
+easy_caption_size(size = NULL, teach = FALSE)
+
 easy_plot_legend_size(size = NULL, teach = FALSE)
 
+easy_legend_title_size(size = NULL, teach = FALSE)
+
 easy_plot_legend_title_size(size = NULL, teach = FALSE)
+
+easy_legend_size(size = NULL, teach = FALSE)
 
 easy_center_title(teach = FALSE)
 }
