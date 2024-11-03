@@ -239,3 +239,19 @@ easy_legend_size <- easy_plot_legend_title_size
 easy_center_title <- function(teach = FALSE) {
   easy_change_text(which = "plot.title", what = "hjust", to = .5, teach = teach)
 }
+
+#' @export
+#' @rdname easy_change_text
+easy_title_bold <- function() {
+  easy_change_text("plot.title", "face", "bold")
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_title_regular <- function() {
+  easy_change_text("plot.title", "face", "plain")
+}
+
+#' @export
+#' @rdname easy_change_text
+easy_title_plain <- easy_title_regular

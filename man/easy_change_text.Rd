@@ -26,6 +26,9 @@
 \alias{easy_plot_legend_title_size}
 \alias{easy_legend_size}
 \alias{easy_center_title}
+\alias{easy_title_bold}
+\alias{easy_title_regular}
+\alias{easy_title_plain}
 \title{Easily change text appearance}
 \format{
 An object of class \code{character} of length 15.
@@ -85,6 +88,12 @@ easy_plot_legend_title_size(size = NULL, teach = FALSE)
 easy_legend_size(size = NULL, teach = FALSE)
 
 easy_center_title(teach = FALSE)
+
+easy_title_bold()
+
+easy_title_regular()
+
+easy_title_plain()
 }
 \arguments{
 \item{which}{which element to change (see \code{ggeasy::.all_theme_els})}
