@@ -1,6 +1,6 @@
 Package: ggeasy
 Title: Easy Access to 'ggplot2' Commands
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
  person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),

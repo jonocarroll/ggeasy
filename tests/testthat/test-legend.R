@@ -2,7 +2,8 @@ context("remove legend")
 
 expect_eqNe <- function(...) expect_equal(..., check.environment = FALSE)
 
-p <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg, colour = cyl, size = hp)) + ggplot2::geom_point()
+p <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg, colour = cyl, size = hp)) +
+  ggplot2::geom_point()
 
 test_that("easy_remove_legend works with no argument", {
   easy_res <- p + easy_remove_legend()
@@ -35,7 +36,9 @@ test_that("easy_remove_legend works with multiple bare arguments", {
 })
 
 test_that("easy_remove_legend teach = TRUE works with no other arguments", {
-  teach_message <- capture_messages({p + easy_remove_legend(teach = TRUE)})[2]
+  teach_message <- capture_messages({
+    p + easy_remove_legend(teach = TRUE)
+  })[2]
   easy_res <- easy_remove_legend()
   teach_res <- rlang::eval_bare(rlang::parse_expr(teach_message))
   expect_message(p + easy_remove_legend(teach = TRUE))
@@ -43,7 +46,9 @@ test_that("easy_remove_legend teach = TRUE works with no other arguments", {
 })
 
 test_that("easy_remove_legend teach = TRUE works with specific aes", {
-  teach_message <- capture_messages({p + easy_remove_legend(size, teach = TRUE)})[2]
+  teach_message <- capture_messages({
+    p + easy_remove_legend(size, teach = TRUE)
+  })[2]
   easy_res <- easy_remove_legend(size)
   teach_res <- rlang::eval_bare(rlang::parse_expr(teach_message))
   expect_message(p + easy_remove_legend(size, teach = TRUE))
@@ -51,7 +56,9 @@ test_that("easy_remove_legend teach = TRUE works with specific aes", {
 })
 
 test_that("easy_remove_legend teach = TRUE works with multiple aes", {
-  teach_message <- capture_messages({p + easy_remove_legend(size, color, teach = TRUE)})[2]
+  teach_message <- capture_messages({
+    p + easy_remove_legend(size, color, teach = TRUE)
+  })[2]
   easy_res <- easy_remove_legend(size, color)
   teach_res <- rlang::eval_bare(rlang::parse_expr(teach_message))
   expect_message(p + easy_remove_legend(size, teach = TRUE))
@@ -116,26 +123,58 @@ test_that("easy_move_legend aliases work", {
 test_that("easy_move_legend teach = TRUE works with combinations", {
   easy_res <- p + easy_move_legend("bottom", teach = TRUE)
   hard_res <- p + theme(legend.position = "bottom")
-  expect_message(p + easy_move_legend("bottom", teach = TRUE), regexp = 'easy_move_legend("bottom")', fixed = TRUE)
-  expect_message(p + easy_move_legend("bottom", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_move_legend("bottom", teach = TRUE), regexp = 'theme(legend.position = "bottom")', fixed = TRUE)
+  expect_message(
+    p + easy_move_legend("bottom", teach = TRUE),
+    regexp = 'easy_move_legend("bottom")',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_move_legend("bottom", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_move_legend("bottom", teach = TRUE),
+    regexp = 'theme(legend.position = "bottom")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_legend_at teach = TRUE works with combinations", {
   easy_res <- p + easy_legend_at("bottom", teach = TRUE)
   hard_res <- p + theme(legend.position = "bottom")
-  expect_message(p + easy_legend_at("bottom", teach = TRUE), regexp = 'easy_legend_at("bottom")', fixed = TRUE)
-  expect_message(p + easy_legend_at("bottom", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_legend_at("bottom", teach = TRUE), regexp = 'theme(legend.position = "bottom")', fixed = TRUE)
+  expect_message(
+    p + easy_legend_at("bottom", teach = TRUE),
+    regexp = 'easy_legend_at("bottom")',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_legend_at("bottom", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_legend_at("bottom", teach = TRUE),
+    regexp = 'theme(legend.position = "bottom")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_change_legend teach = TRUE works with position", {
   easy_res <- p + easy_change_legend("position", "bottom", teach = TRUE)
   hard_res <- p + theme(legend.position = "bottom")
-  expect_message(p + easy_change_legend("position", "bottom", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_change_legend("position", "bottom", teach = TRUE), regexp = 'theme(legend.position = "bottom")', fixed = TRUE)
+  expect_message(
+    p + easy_change_legend("position", "bottom", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_change_legend("position", "bottom", teach = TRUE),
+    regexp = 'theme(legend.position = "bottom")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
@@ -165,9 +204,21 @@ test_that("easy_rotate_legend works with combinations", {
 test_that("easy_rotate_legend teach = TRUE works with combinations", {
   easy_res <- p + easy_rotate_legend("horizontal", teach = TRUE)
   hard_res <- p + theme(legend.direction = "horizontal")
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'easy_rotate_legend("horizontal"', fixed = TRUE)
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'theme(legend.direction = "horizontal")', fixed = TRUE)
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'easy_rotate_legend("horizontal"',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'theme(legend.direction = "horizontal")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
@@ -198,25 +249,53 @@ test_that("easy_adjust_legend errors with bad argument", {
 test_that("easy_adjust_legend teach = TRUE works with justification", {
   easy_res <- p + easy_adjust_legend("right", teach = TRUE)
   hard_res <- p + theme(legend.justification = "right")
-  expect_message(p + easy_adjust_legend("right", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_adjust_legend("right", teach = TRUE), regexp = 'theme(legend.justification = "right")', fixed = TRUE)
+  expect_message(
+    p + easy_adjust_legend("right", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_adjust_legend("right", teach = TRUE),
+    regexp = 'theme(legend.justification = "right")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_change_legend teach = TRUE works with justification", {
   easy_res <- p + easy_change_legend("justification", "center", teach = TRUE)
   hard_res <- p + theme(legend.justification = "center")
-  expect_message(p + easy_change_legend("justification", "center", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_change_legend("justification", "center", teach = TRUE), regexp = 'theme(legend.justification = "center")', fixed = TRUE)
+  expect_message(
+    p + easy_change_legend("justification", "center", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_change_legend("justification", "center", teach = TRUE),
+    regexp = 'theme(legend.justification = "center")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_rotate_legend teach = TRUE works with combinations", {
   easy_res <- p + easy_rotate_legend("horizontal", teach = TRUE)
   hard_res <- p + theme(legend.direction = "horizontal")
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'easy_rotate_legend("horizontal"', fixed = TRUE)
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_rotate_legend("horizontal", teach = TRUE), regexp = 'theme(legend.direction = "horizontal")', fixed = TRUE)
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'easy_rotate_legend("horizontal"',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_rotate_legend("horizontal", teach = TRUE),
+    regexp = 'theme(legend.direction = "horizontal")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
@@ -238,30 +317,59 @@ test_that("easy_add_legend_title relabels all legend titles", {
   for (el in setdiff(names(hard_res), "labels")) {
     expect_eqNe(easy_res[[el]], hard_res[[el]])
   }
-  expect_eqNe(easy_res$labels[c("size", "colour")], hard_res$labels[c("size", "colour")])
+  expect_eqNe(
+    easy_res$labels[c("size", "colour")],
+    hard_res$labels[c("size", "colour")]
+  )
 })
 
 test_that("easy_add_legend_title teach = TRUE works with specific aes", {
   easy_res <- p + easy_add_legend_title(col = "nCylinders", teach = TRUE)
   hard_res <- p + labs(colour = "nCylinders")
-  expect_message(p + easy_add_legend_title(col = "nCylinders", teach = TRUE), regexp = 'easy_add_legend_title(col = "nCylinders"', fixed = TRUE)
-  expect_message(p + easy_add_legend_title(col = "nCylinders", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_add_legend_title(col = "nCylinders", teach = TRUE), regexp = 'labs(col = "nCylinders")', fixed = TRUE)
+  expect_message(
+    p + easy_add_legend_title(col = "nCylinders", teach = TRUE),
+    regexp = 'easy_add_legend_title(col = "nCylinders"',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_add_legend_title(col = "nCylinders", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_add_legend_title(col = "nCylinders", teach = TRUE),
+    regexp = 'labs(col = "nCylinders")',
+    fixed = TRUE
+  )
   expect_eqNe(easy_res, hard_res)
 })
 
 test_that("easy_add_legend_title teach = TRUE works with unspecific aes", {
   easy_res <- p + easy_add_legend_title("title", teach = TRUE)
   hard_res <- p + labs(colour = "title", size = "title")
-  expect_message(p + easy_add_legend_title("title", teach = TRUE), regexp = 'easy_add_legend_title("title"', fixed = TRUE)
-  expect_message(p + easy_add_legend_title("title", teach = TRUE), regexp = 'can be substituted with:', fixed = TRUE)
-  expect_message(p + easy_add_legend_title("title", teach = TRUE), regexp = 'labs(YOUR_AES = "title")', fixed = TRUE)
+  expect_message(
+    p + easy_add_legend_title("title", teach = TRUE),
+    regexp = 'easy_add_legend_title("title"',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_add_legend_title("title", teach = TRUE),
+    regexp = 'can be substituted with:',
+    fixed = TRUE
+  )
+  expect_message(
+    p + easy_add_legend_title("title", teach = TRUE),
+    regexp = 'labs(YOUR_AES = "title")',
+    fixed = TRUE
+  )
   for (el in setdiff(names(hard_res), "labels")) {
     expect_eqNe(easy_res[[el]], hard_res[[el]])
   }
-  expect_eqNe(easy_res$labels[c("size", "colour")], hard_res$labels[c("size", "colour")])
+  expect_eqNe(
+    easy_res$labels[c("size", "colour")],
+    hard_res$labels[c("size", "colour")]
+  )
 })
-
 
 
 test_that("easy_remove_legend_title works", {

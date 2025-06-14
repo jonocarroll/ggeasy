@@ -1,3 +1,8 @@
+# ggeasy 0.1.6
+
+* Align to ggplot2 latest release and S7 implementations
+* Deprecated easy_labs(); this behaviour is now native in ggplot2 https://github.com/tidyverse/ggplot2/pull/5879
+
 # ggeasy 0.1.5
 
 * Restore compatibility with ggplot2's get_labs()

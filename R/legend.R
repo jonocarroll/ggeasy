@@ -98,9 +98,11 @@ easy_remove_legend <- function(..., teach = FALSE) {
 #'   geom_point() +
 #'   easy_move_legend("bottom") +
 #'   easy_adjust_legend("right")
-easy_change_legend <- function(what = c("position", "direction", "justification"),
-                               to,
-                               teach = FALSE) {
+easy_change_legend <- function(
+  what = c("position", "direction", "justification"),
+  to,
+  teach = FALSE
+) {
   what <- match.arg(what, several.ok = FALSE)
 
   theme_args <- setNames(to, paste0("legend.", what))
@@ -131,9 +133,12 @@ easy_change_legend <- function(what = c("position", "direction", "justification"
 
 #' @export
 #' @rdname easy_change_legend
-easy_move_legend <- function(to = c("right", "none", "left", "bottom", "top"), teach = FALSE) {
-    to <- match.arg(to, several.ok = FALSE)
-    easy_change_legend(what = "position", to = to, teach = teach)
+easy_move_legend <- function(
+  to = c("right", "none", "left", "bottom", "top"),
+  teach = FALSE
+) {
+  to <- match.arg(to, several.ok = FALSE)
+  easy_change_legend(what = "position", to = to, teach = teach)
 }
 
 #' @export
@@ -142,16 +147,22 @@ easy_legend_at <- easy_move_legend
 
 #' @export
 #' @rdname easy_change_legend
-easy_rotate_legend <- function(to = c("vertical", "horizontal"), teach = FALSE) {
-    to <- match.arg(to, several.ok = FALSE)
-    easy_change_legend(what = "direction", to = to, teach = teach)
+easy_rotate_legend <- function(
+  to = c("vertical", "horizontal"),
+  teach = FALSE
+) {
+  to <- match.arg(to, several.ok = FALSE)
+  easy_change_legend(what = "direction", to = to, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_legend
-easy_adjust_legend <- function(to = c("left", "right", "center"), teach = FALSE) {
-    to <- match.arg(to, several.ok = FALSE)
-    easy_change_legend(what = "justification", to = to, teach = teach)
+easy_adjust_legend <- function(
+  to = c("left", "right", "center"),
+  teach = FALSE
+) {
+  to <- match.arg(to, several.ok = FALSE)
+  easy_change_legend(what = "justification", to = to, teach = teach)
 }
 
 #' Easily add legend title(s)
@@ -181,40 +192,61 @@ easy_adjust_legend <- function(to = c("left", "right", "center"), teach = FALSE)
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
 #'   geom_point() + easy_add_legend_title("Number of Cylinders")
 easy_add_legend_title <- function(..., teach = FALSE) {
+  dots <- rlang::dots_list(...)
 
-    dots <- rlang::dots_list(...)
+  length(dots) > 0L || stop("No title provided.", call. = FALSE)
 
-    length(dots) > 0L || stop("No title provided.", call. = FALSE)
-
-    if (length(dots) == 1L && names(dots) == "") {
-        orig_dots <- dots
-        dots <- setNames(rep(dots, length(.all_legend_aes)), .all_legend_aes)
-        if (teach) {
-            message('easy_add_legend_title("', orig_dots, '") call can be substituted with:')
-            message('labs(YOUR_AES = "', orig_dots, '")')
-        }
-        return(suppressWarnings(do.call(ggplot2::labs, dots)))
-    }
-
+  if (length(dots) == 1L && names(dots) == "") {
+    orig_dots <- dots
+    dots <- setNames(rep(dots, length(.all_legend_aes)), .all_legend_aes)
     if (teach) {
-        easy_fun_args <- paste0(names(dots), ' = "',  dots, '"', collapse = ", ")
-        easy_fun <- paste0('easy_add_legend_title(', easy_fun_args, ')')
-        message(paste0(easy_fun, " call can be substituted with:"))
-        message(strwrap(
-            paste0('labs(', easy_fun_args, ')'),
-            width = 80,
-            exdent = 2,
-            prefix = "\n",
-            initial = ""
-        ))
+      message(
+        'easy_add_legend_title("',
+        orig_dots,
+        '") call can be substituted with:'
+      )
+      message('labs(YOUR_AES = "', orig_dots, '")')
     }
+    return(suppressWarnings(do.call(ggplot2::labs, dots)))
+  }
 
-    do.call(ggplot2::labs, dots)
+  if (teach) {
+    easy_fun_args <- paste0(names(dots), ' = "', dots, '"', collapse = ", ")
+    easy_fun <- paste0('easy_add_legend_title(', easy_fun_args, ')')
+    message(paste0(easy_fun, " call can be substituted with:"))
+    message(strwrap(
+      paste0('labs(', easy_fun_args, ')'),
+      width = 80,
+      exdent = 2,
+      prefix = "\n",
+      initial = ""
+    ))
+  }
+
+  do.call(ggplot2::labs, dots)
 }
 
-.all_legend_aes <- c("alpha", "cex", "col", "color", "colour",
-                     "fill", "linetype", "lty", "lwd", "pch", "radius",
-                     "shape", "size", "weight", "width")
+.all_legend_aes <- unique(
+  ggplot2:::standardise_aes_names(
+    c(
+      "alpha",
+      "cex",
+      "col",
+      "color",
+      "colour",
+      "fill",
+      "linetype",
+      "lty",
+      "lwd",
+      "pch",
+      "radius",
+      "shape",
+      "size",
+      "weight",
+      "width"
+    )
+  )
+)
 
 
 #' Easily remove legend title
@@ -230,10 +262,10 @@ easy_add_legend_title <- function(..., teach = FALSE) {
 #' ggplot(mtcars, aes(wt, mpg, colour = cyl)) +
 #'   geom_point() + easy_remove_legend_title()
 easy_remove_legend_title <- function(teach = FALSE) {
-
   if (teach) {
     message("easy_remove_legend_title call can be substituted with:")
-    message(strwrap('theme(legend.title = element_blank())',
+    message(strwrap(
+      'theme(legend.title = element_blank())',
       width = 80,
       exdent = 2,
       prefix = "\n",
@@ -242,7 +274,4 @@ easy_remove_legend_title <- function(teach = FALSE) {
   }
 
   theme(legend.title = element_blank())
-
 }
-
-

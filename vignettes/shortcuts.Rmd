@@ -102,7 +102,7 @@ p4 <- p + easy_remove_x_gridlines() +
 
 ## Plot Labels
 
-Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. `easy_labs()` makes this possible.
+Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. ~~`easy_labs()` makes this possible.~~ This behaviour is now native in ggplot2.
 
 ```{r}
 ## create a copy of the iris data
@@ -118,34 +118,7 @@ These are visible if you use `View(iris_labs)` in RStudio
 ![](View_iris_labs.png)
 
 ```{r, fig.width = 8, fig.height = 8}
-p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
+ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_line(aes(colour = Species))
-
-p1 <- p + labs(title = "default labels")
-p2 <- p + 
-    easy_labs() + 
-    labs(title = "Replace titles with column labels")
-p3 <- p + 
-    easy_labs(x = 'My x axis') + 
-    labs(title = "Manually add x axis label")
-    
-iris_labs_2 <- iris_labs
-var_label(iris_labs_2$Species) <- "Sub-genera"
-
-p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    easy_labs() + 
-    labs(title = "Additional labels can be added in other aesthetics")
-
-(p1 + p2) / (p3 + p4)
 ```
-
-easy_labs also extends to facetting
-
-```{r, fig.width = 8, fig.height = 8}
-p4 + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    facet_wrap(~Species) + 
-    easy_labs() + 
-    labs(title = "Facetting works")
-```
-
 
