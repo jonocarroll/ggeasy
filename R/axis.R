@@ -41,13 +41,18 @@
 #' # Remove y axis
 #' ggplot(mtcars, aes(wt, mpg)) +
 #'   geom_point() + easy_remove_y_axis(what = "ticks")
-easy_remove_axes <- function(which = c("both", "x", "y"),
-                             what = c("ticks", "title", "text", "line"),
-                             teach = FALSE) {
+easy_remove_axes <- function(
+  which = c("both", "x", "y"),
+  what = c("ticks", "title", "text", "line"),
+  teach = FALSE
+) {
   which <- match.arg(which)
   what <- match.arg(what, several.ok = TRUE)
 
-  fun_name <- paste0("easy_remove_", ifelse(which == "both", "_axes", paste0(which, "_axis")))
+  fun_name <- paste0(
+    "easy_remove_",
+    ifelse(which == "both", "_axes", paste0(which, "_axis"))
+  )
   axis_suffix <- if (which == "both") "" else paste0(".", which)
 
   blanks <- lapply(what, function(x) ggplot2::element_blank())
@@ -71,14 +76,18 @@ easy_remove_axes <- function(which = c("both", "x", "y"),
 
 #' @export
 #' @rdname easy_remove_axes
-easy_remove_y_axis <- function(what = c("ticks", "title", "text", "line"),
-                               teach = FALSE) {
+easy_remove_y_axis <- function(
+  what = c("ticks", "title", "text", "line"),
+  teach = FALSE
+) {
   easy_remove_axes("y", what = what, teach = teach)
 }
 
 #' @export
 #' @rdname easy_remove_axes
-easy_remove_x_axis <- function(what = c("ticks", "title", "text", "line"),
-                               teach = FALSE) {
+easy_remove_x_axis <- function(
+  what = c("ticks", "title", "text", "line"),
+  teach = FALSE
+) {
   easy_remove_axes("x", what = what, teach = teach)
 }

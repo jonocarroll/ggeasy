@@ -21,10 +21,12 @@
 #' ggplot(mtcars, aes(mpg, hp)) +
 #'   geom_point() +
 #'   easy_rotate_labels()
-easy_rotate_labels <- function(which = c("both", "x", "y"),
-                               angle = 90,
-                               side = c("left", "middle", "right"),
-                               teach = FALSE) {
+easy_rotate_labels <- function(
+  which = c("both", "x", "y"),
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+) {
   axis <- match.arg(which)
   hjust <- switch(
     match.arg(side),
@@ -35,23 +37,39 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
   angle <- if (is.numeric(angle) || is.integer(angle)) {
     angle
   } else if (is.character(angle)) {
-    switch(angle,
-           startattop = -90,
-           startatbottom = 90,
-           stop("angle not recognised. Accepts: startattop, startatbottom", call. = FALSE)
+    switch(
+      angle,
+      startattop = -90,
+      startatbottom = 90,
+      stop(
+        "angle not recognised. Accepts: startattop, startatbottom",
+        call. = FALSE
+      )
     )
   }
 
-  fun_name <- paste0("easy_rotate_", ifelse(axis == "both", "", paste0(which, "_")), "labels")
+  fun_name <- paste0(
+    "easy_rotate_",
+    ifelse(axis == "both", "", paste0(which, "_")),
+    "labels"
+  )
   axis_suffix <- if (axis == "both") "" else paste0(".", which)
 
-  rotations <- lapply(axis, function(x) ggplot2::element_text(angle = angle, hjust = hjust))
+  rotations <- lapply(
+    axis,
+    function(x) ggplot2::element_text(angle = angle, hjust = hjust)
+  )
   names(rotations) <- paste0("axis.text", axis_suffix)
 
   if (teach) {
-    rotation_strings <- paste0(names(rotations),
-                               " = element_text(angle = ", angle,
-                               ", hjust = ", hjust, ")")
+    rotation_strings <- paste0(
+      names(rotations),
+      " = element_text(angle = ",
+      angle,
+      ", hjust = ",
+      hjust,
+      ")"
+    )
     message(paste0(fun_name, " call can be substituted with:"))
     message(strwrap(
       paste0("theme(", paste(rotation_strings), ")"),
@@ -67,16 +85,20 @@ easy_rotate_labels <- function(which = c("both", "x", "y"),
 
 #' @export
 #' @rdname easy_rotate_labels
-easy_rotate_x_labels <- function(angle = 90,
-                                 side = c("left", "middle", "right"),
-                                 teach = FALSE) {
+easy_rotate_x_labels <- function(
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+) {
   easy_rotate_labels(which = "x", angle = angle, side = side, teach = teach)
 }
 
 #' @export
 #' @rdname easy_rotate_labels
-easy_rotate_y_labels <- function(angle = 90,
-                                 side = c("left", "middle", "right"),
-                                 teach = FALSE) {
+easy_rotate_y_labels <- function(
+  angle = 90,
+  side = c("left", "middle", "right"),
+  teach = FALSE
+) {
   easy_rotate_labels(which = "y", angle = angle, side = side, teach = teach)
 }

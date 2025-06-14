@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' library(ggplot2)
-#' p <- ggplot(mtcars, aes(hp, mpg)) + 
+#' p <- ggplot(mtcars, aes(hp, mpg)) +
 #'   geom_point()
 #'
 #' # remove all grid lines at once
@@ -36,8 +36,12 @@
 #' p + easy_remove_y_gridlines()
 #'
 #' @export
-easy_remove_gridlines <- function(axis = c("both", "x", "y"), minor = TRUE, major = TRUE, teach = FALSE) {
-
+easy_remove_gridlines <- function(
+  axis = c("both", "x", "y"),
+  minor = TRUE,
+  major = TRUE,
+  teach = FALSE
+) {
   axis <- match.arg(axis)
   suffix <- ifelse(axis == "both", "", paste0(".", axis))
 
@@ -67,4 +71,3 @@ easy_remove_x_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
 easy_remove_y_gridlines <- function(minor = TRUE, major = TRUE, teach = FALSE) {
   easy_remove_gridlines(axis = "y", minor = minor, major = major, teach = teach)
 }
-

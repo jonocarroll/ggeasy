@@ -65,125 +65,199 @@
 #'   geom_point(aes(fill = gear)) +
 #'   easy_change_text(which = "axis.text.x", what = "angle", to = 45) +
 #'   easy_change_text(which = "axis.text.x", what = "hjust", to = 1)
-easy_change_text <- function(which = .all_theme_els,
-                             what = .all_element_text,
-                             to = NULL,
-                             teach = FALSE) {
-    which <- match.arg(which, several.ok = TRUE)
-    if (is.null(which) || identical(which, .all_theme_els)) which <- c("text", "axis.text", "title")
-    if (!is.null(what)) what <- match.arg(what, several.ok = FALSE)
-    length(to) <= 1L || stop("Only one value can be used at a time", call. = FALSE)
+easy_change_text <- function(
+  which = .all_theme_els,
+  what = .all_element_text,
+  to = NULL,
+  teach = FALSE
+) {
+  which <- match.arg(which, several.ok = TRUE)
+  if (is.null(which) || identical(which, .all_theme_els))
+    which <- c("text", "axis.text", "title")
+  if (!is.null(what)) what <- match.arg(what, several.ok = FALSE)
+  length(to) <= 1L ||
+    stop("Only one value can be used at a time", call. = FALSE)
 
-    if (is.null(what)) {
-        to_arg <- ggplot2::element_blank()
-        arg_str <- lapply(which, function(x) paste0(x, " = ggplot2::element_blank()"))
-        arg_val <- lapply(seq_along(which), function(x) to_arg)
-    } else {
-        to_arg <- to
-        to_arg_q <- to_arg
-        if (is.character(to_arg)) {
-            to_arg_q <- sQuote(to_arg,q = 'single')
-        }
-        arg_str <- lapply(which, function(x) {
-            paste0(x, ' = ggplot2::element_text(', paste0(what, ' = ', to_arg_q, collapse = ", "), ')')   
-        })
-        arg_val <- lapply(seq_along(which), function(x) do.call(element_text, stats::setNames(list(to_arg), what)))
+  if (is.null(what)) {
+    to_arg <- ggplot2::element_blank()
+    arg_str <- lapply(
+      which,
+      function(x) paste0(x, " = ggplot2::element_blank()")
+    )
+    arg_val <- lapply(seq_along(which), function(x) to_arg)
+  } else {
+    to_arg <- to
+    to_arg_q <- to_arg
+    if (is.character(to_arg)) {
+      to_arg_q <- sQuote(to_arg, q = 'single')
     }
-    arg_val <- stats::setNames(arg_val, which)
+    arg_str <- lapply(which, function(x) {
+      paste0(
+        x,
+        ' = ggplot2::element_text(',
+        paste0(what, ' = ', to_arg_q, collapse = ", "),
+        ')'
+      )
+    })
+    arg_val <- lapply(
+      seq_along(which),
+      function(x) do.call(element_text, stats::setNames(list(to_arg), what))
+    )
+  }
+  arg_val <- stats::setNames(arg_val, which)
 
-    if (teach) {
-        message(paste0("easy_change_text call can be substituted with:"))
-        message(paste(paste0("theme(", arg_str, ")"), collapse = " + \n"))
-    }
+  if (teach) {
+    message(paste0("easy_change_text call can be substituted with:"))
+    message(paste(paste0("theme(", arg_str, ")"), collapse = " + \n"))
+  }
 
-    do.call(ggplot2::theme, arg_val)
+  do.call(ggplot2::theme, arg_val)
 }
 
 #' @export
 #' @rdname easy_change_text
-.all_theme_els <- c("text",                                          #nocov
-                    "axis.text", "axis.text.x", "axis.text.y",       #nocov
-                    "axis.title", "axis.title.x", "axis.title.y",    #nocov
-                    "legend.text", "legend.title",                   #nocov
-                    "plot.title", "plot.subtitle", "plot.caption",   #nocov
-                    "strip.text", "strip.text.x", "strip.text.y")    #nocov
+.all_theme_els <- c(
+  "text", #nocov
+  "axis.text",
+  "axis.text.x",
+  "axis.text.y", #nocov
+  "axis.title",
+  "axis.title.x",
+  "axis.title.y", #nocov
+  "legend.text",
+  "legend.title", #nocov
+  "plot.title",
+  "plot.subtitle",
+  "plot.caption", #nocov
+  "strip.text",
+  "strip.text.x",
+  "strip.text.y"
+) #nocov
 
 #' @export
 #' @rdname easy_change_text
-.all_element_text <- c("size", "family", "face", "colour", "hjust", "vjust", "angle", #nocov
-                       "lineheight", "color", "margin")                               #nocov
+.all_element_text <- c(
+  "size",
+  "family",
+  "face",
+  "colour",
+  "hjust",
+  "vjust",
+  "angle", #nocov
+  "lineheight",
+  "color",
+  "margin"
+) #nocov
 
 
 #' @export
 #' @rdname easy_change_text
 easy_all_text_size <- function(size = NULL, teach = FALSE) {
-    easy_change_text(what = "size", to = size, teach = teach)
+  easy_change_text(what = "size", to = size, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_all_text_color <- function(color = NULL, teach = FALSE) {
-    easy_change_text(what = "colour", to = color, teach = teach)
+  easy_change_text(what = "colour", to = color, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_all_text_colour <- function(colour = NULL, teach = FALSE) {
-    easy_change_text(what = "colour", to = colour, teach = teach)
+  easy_change_text(what = "colour", to = colour, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_text_size <- function(which = .all_theme_els, size = NULL, teach = FALSE) {
-    if (is.numeric(which)) return(easy_all_text_size(size = which, teach = teach))
-    easy_change_text(which = which, what = "size", to = size, teach = teach)
+  if (is.numeric(which)) return(easy_all_text_size(size = which, teach = teach))
+  easy_change_text(which = which, what = "size", to = size, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
-easy_text_color <- function(which = .all_theme_els, color = NULL, teach = FALSE) {
-    if (!all(which %in% .all_theme_els)) return(easy_all_text_color(color = which, teach = teach))
-    easy_change_text(which = which, what = "colour", to = color, teach = teach)
+easy_text_color <- function(
+  which = .all_theme_els,
+  color = NULL,
+  teach = FALSE
+) {
+  if (!all(which %in% .all_theme_els))
+    return(easy_all_text_color(color = which, teach = teach))
+  easy_change_text(which = which, what = "colour", to = color, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
-easy_text_colour <- function(which = .all_theme_els, colour = NULL, teach = FALSE) {
-    if (!all(which %in% .all_theme_els)) return(easy_all_text_colour(colour = which, teach = teach))
-    easy_change_text(which = which, what = "colour", to = colour, teach = teach)
+easy_text_colour <- function(
+  which = .all_theme_els,
+  colour = NULL,
+  teach = FALSE
+) {
+  if (!all(which %in% .all_theme_els))
+    return(easy_all_text_colour(colour = which, teach = teach))
+  easy_change_text(which = which, what = "colour", to = colour, teach = teach)
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_x_axis_title_size <- function(size, teach = FALSE) {
-    easy_change_text(which = "axis.title.x", what = "size", to = size, teach = teach)
+  easy_change_text(
+    which = "axis.title.x",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_y_axis_title_size <- function(size, teach = FALSE) {
-    easy_change_text(which = "axis.title.y", what = "size", to = size, teach = teach)
+  easy_change_text(
+    which = "axis.title.y",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_x_axis_labels_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "axis.text.x", what = NULL, teach = teach))
-    easy_change_text(which = "axis.text.x", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "axis.text.x", what = NULL, teach = teach))
+  easy_change_text(
+    which = "axis.text.x",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_y_axis_labels_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "axis.text.y", what = NULL, teach = teach))
-    easy_change_text(which = "axis.text.y", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "axis.text.y", what = NULL, teach = teach))
+  easy_change_text(
+    which = "axis.text.y",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
 #' @rdname easy_change_text
 easy_plot_title_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "plot.title", what = NULL, teach = teach))
-    easy_change_text(which = "plot.title", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "plot.title", what = NULL, teach = teach))
+  easy_change_text(
+    which = "plot.title",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
@@ -193,8 +267,18 @@ easy_title_size <- easy_plot_title_size
 #' @export
 #' @rdname easy_change_text
 easy_plot_subtitle_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "plot.subtitle", what = NULL, teach = teach))
-    easy_change_text(which = "plot.subtitle", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(
+      which = "plot.subtitle",
+      what = NULL,
+      teach = teach
+    ))
+  easy_change_text(
+    which = "plot.subtitle",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
@@ -204,8 +288,14 @@ easy_subtitle_size <- easy_plot_subtitle_size
 #' @export
 #' @rdname easy_change_text
 easy_plot_caption_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "plot.caption", what = NULL, teach = teach))
-    easy_change_text(which = "plot.caption", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "plot.caption", what = NULL, teach = teach))
+  easy_change_text(
+    which = "plot.caption",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
@@ -215,8 +305,14 @@ easy_caption_size <- easy_plot_caption_size
 #' @export
 #' @rdname easy_change_text
 easy_plot_legend_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "legend.text", what = NULL, teach = teach))
-    easy_change_text(which = "legend.text", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "legend.text", what = NULL, teach = teach))
+  easy_change_text(
+    which = "legend.text",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
@@ -226,8 +322,14 @@ easy_legend_title_size <- easy_plot_legend_size
 #' @export
 #' @rdname easy_change_text
 easy_plot_legend_title_size <- function(size = NULL, teach = FALSE) {
-    if (is.null(size)) return(easy_change_text(which = "legend.title", what = NULL, teach = teach))
-    easy_change_text(which = "legend.title", what = "size", to = size, teach = teach)
+  if (is.null(size))
+    return(easy_change_text(which = "legend.title", what = NULL, teach = teach))
+  easy_change_text(
+    which = "legend.title",
+    what = "size",
+    to = size,
+    teach = teach
+  )
 }
 
 #' @export
