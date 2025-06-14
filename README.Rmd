@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
+# ggeasy <img src='man/figures/logo.gif' align="right" height="138" />
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html --> 
 
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
@@ -113,19 +113,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 # Make legends horizontal
 ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
   geom_point() + easy_rotate_legend("horizontal")
-
-# use labelled variables
-iris_labs <- iris
-labelled::var_label(iris_labs$Species) <- "Flower\nSpecies"
-labelled::var_label(iris_labs$Sepal.Length) <- "Length of Sepal"
-iris_labs_2 <- iris_labs
-labelled::var_label(iris_labs_2$Species) <- "Sub-genera"
-
-# use variable labels automatically
-ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
-    geom_line(aes(colour = Species)) + 
-    geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    easy_labs()
 ```
 
 These functions will try to teach you the 'official' way to achieve these goal, 
