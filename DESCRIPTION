@@ -14,7 +14,7 @@ Description: Provides a series of aliases to commonly used but difficult
     to remember 'ggplot2' sequences.
 License: GPL (>=2)
 Encoding: UTF-8
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.1.0)
 Imports: 
   ggplot2,
   rlang
