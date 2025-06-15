@@ -6,7 +6,7 @@
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2025_06_15-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
 [![R-CMD-check](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml)

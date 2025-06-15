@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # ggeasy <img src='man/figures/logo.gif' align="right" height="138" />
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html --> 
 
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2025_06_15-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
 [![R-CMD-check](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/jonocarroll/ggeasy/branch/master/graph/badge.svg)](https://app.codecov.io/gh/jonocarroll/ggeasy?branch=master)

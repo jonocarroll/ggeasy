@@ -1,9 +1,9 @@
 Tests and Coverage
 ================
-11 March, 2023 13:22:52
+15 June, 2025 10:26:29
 
-- <a href="#coverage" id="toc-coverage">Coverage</a>
-- <a href="#unit-tests" id="toc-unit-tests">Unit Tests</a>
+- [Coverage](#coverage)
+- [Unit Tests](#unit-tests)
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -15,13 +15,13 @@ Coverage summary is created using the
 
 | Object                            | Coverage (%) |
 |:----------------------------------|:------------:|
-| ggeasy                            |    89.57     |
+| ggeasy                            |    82.39     |
+| [R/labs2.R](../R/labs2.R)         |     0.00     |
 | [R/utils.R](../R/utils.R)         |     0.00     |
-| [R/legend.R](../R/legend.R)       |    90.54     |
+| [R/legend.R](../R/legend.R)       |    89.87     |
 | [R/gridlines.R](../R/gridlines.R) |    91.67     |
 | [R/axis.R](../R/axis.R)           |    100.00    |
 | [R/labs.R](../R/labs.R)           |    100.00    |
-| [R/labs2.R](../R/labs2.R)         |    100.00    |
 | [R/text.R](../R/text.R)           |    100.00    |
 
 <br>
@@ -31,91 +31,102 @@ Coverage summary is created using the
 Unit Test summary is created using the
 [testthat](https://github.com/r-lib/testthat) package.
 
-| file                                              |   n |  time | error | failed | skipped | warning |
-|:--------------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
-| [test-gridlines.R](testthat/test-gridlines.R)     |   9 | 0.115 |     0 |      0 |       0 |       0 |
-| [test-labs.R](testthat/test-labs.R)               |  10 | 0.643 |     0 |      0 |       0 |       0 |
-| [test-legend.R](testthat/test-legend.R)           |  87 | 0.707 |     0 |      0 |       0 |       0 |
-| [test-remove-axis.R](testthat/test-remove-axis.R) |  20 | 0.132 |     0 |      0 |       0 |       0 |
-| [test-rotate.R](testthat/test-rotate.R)           |  23 | 0.139 |     0 |      0 |       0 |       0 |
-| [test-text.R](testthat/test-text.R)               | 302 | 0.353 |     0 |      0 |       0 |       0 |
+| file | n | time | error | failed | skipped | warning | icon |
+|:---|---:|---:|---:|---:|---:|---:|:---|
+| [test-gridlines.R](testthat/test-gridlines.R) | 9 | 0.022 | 0 | 0 | 0 | 0 |  |
+| [test-labs.R](testthat/test-labs.R) | 4 | 0.010 | 0 | 0 | 4 | 0 | 🔶 |
+| [test-legend.R](testthat/test-legend.R) | 71 | 0.118 | 0 | 0 | 0 | 0 |  |
+| [test-remove-axis.R](testthat/test-remove-axis.R) | 20 | 0.031 | 0 | 0 | 0 | 0 |  |
+| [test-rotate.R](testthat/test-rotate.R) | 23 | 0.051 | 0 | 0 | 0 | 0 |  |
+| [test-text.R](testthat/test-text.R) | 34 | 0.250 | 0 | 0 | 0 | 0 |  |
 
-<details closed>
+<details open>
+
 <summary>
+
 Show Detailed Test Results
 </summary>
 
-| file                                                   | context              | test                                                          | status |   n |  time |
-|:-------------------------------------------------------|:---------------------|:--------------------------------------------------------------|:-------|----:|------:|
-| [test-gridlines.R](testthat/test-gridlines.R#L13)      | remove grid lines    | easy_remove_gridlines works                                   | PASS   |   3 | 0.047 |
-| [test-gridlines.R](testthat/test-gridlines.R#L31)      | remove grid lines    | easy_remove_x\_gridlines works                                | PASS   |   3 | 0.033 |
-| [test-gridlines.R](testthat/test-gridlines.R#L49)      | remove grid lines    | easy_remove_y\_gridlines works                                | PASS   |   3 | 0.035 |
-| [test-labs.R](testthat/test-labs.R#L29)                | attr labs            | easy_labs uses column attrib                                  | PASS   |   4 | 0.183 |
-| [test-labs.R](testthat/test-labs.R#L46_L47)            | attr labs            | regular labs overides easy_labs                               | PASS   |   2 | 0.128 |
-| [test-labs.R](testthat/test-labs.R#L57_L58)            | attr labs            | regular labs pass new labels through easy_labs                | PASS   |   2 | 0.138 |
-| [test-labs.R](testthat/test-labs.R#L76_L77)            | attr labs            | column name used when no column attrib present                | PASS   |   2 | 0.194 |
-| [test-legend.R](testthat/test-legend.R#L10)            | remove legend        | easy_remove_legend works with no argument                     | PASS   |   1 | 0.017 |
-| [test-legend.R](testthat/test-legend.R#L16)            | remove legend        | easy_remove_legend works with single character argument       | PASS   |   1 | 0.017 |
-| [test-legend.R](testthat/test-legend.R#L22)            | remove legend        | easy_remove_legend works with single bare argument            | PASS   |   1 | 0.017 |
-| [test-legend.R](testthat/test-legend.R#L28)            | remove legend        | easy_remove_legend works with multiple character arguments    | PASS   |   1 | 0.016 |
-| [test-legend.R](testthat/test-legend.R#L34)            | remove legend        | easy_remove_legend works with multiple bare arguments         | PASS   |   1 | 0.015 |
-| [test-legend.R](testthat/test-legend.R#L41)            | remove legend        | easy_remove_legend teach = TRUE works with no other arguments | PASS   |   2 | 0.006 |
-| [test-legend.R](testthat/test-legend.R#L49)            | remove legend        | easy_remove_legend teach = TRUE works with specific aes       | PASS   |   2 | 0.006 |
-| [test-legend.R](testthat/test-legend.R#L57)            | remove legend        | easy_remove_legend teach = TRUE works with multiple aes       | PASS   |   2 | 0.006 |
-| [test-legend.R](testthat/test-legend.R#L64)            | move legend          | easy_change_legend errors with no argument                    | PASS   |   1 | 0.008 |
-| [test-legend.R](testthat/test-legend.R#L70)            | move legend          | easy_change_legend works with combinations                    | PASS   |   4 | 0.045 |
-| [test-legend.R](testthat/test-legend.R#L85)            | move legend          | easy_move_legend works with no argument                       | PASS   |   1 | 0.011 |
-| [test-legend.R](testthat/test-legend.R#L91)            | move legend          | easy_move_legend works with specified argument                | PASS   |   3 | 0.032 |
-| [test-legend.R](testthat/test-legend.R#L101)           | move legend          | easy_move_legend errors with bad argument                     | PASS   |   1 | 0.007 |
-| [test-legend.R](testthat/test-legend.R#L107)           | move legend          | easy_move_legend aliases work                                 | PASS   |   3 | 0.034 |
-| [test-legend.R](testthat/test-legend.R#L119)           | move legend          | easy_move_legend teach = TRUE works with combinations         | PASS   |   4 | 0.023 |
-| [test-legend.R](testthat/test-legend.R#L128)           | move legend          | easy_legend_at teach = TRUE works with combinations           | PASS   |   4 | 0.031 |
-| [test-legend.R](testthat/test-legend.R#L137)           | move legend          | easy_change_legend teach = TRUE works with position           | PASS   |   3 | 0.019 |
-| [test-legend.R](testthat/test-legend.R#L147)           | legend direction     | easy_rotate_legend works with no argument                     | PASS   |   1 | 0.012 |
-| [test-legend.R](testthat/test-legend.R#L153)           | legend direction     | easy_rotate_legend works with combinations                    | PASS   |   4 | 0.043 |
-| [test-legend.R](testthat/test-legend.R#L168)           | legend direction     | easy_rotate_legend teach = TRUE works with combinations       | PASS   |   4 | 0.017 |
-| [test-legend.R](testthat/test-legend.R#L179)           | legend justification | easy_adjust_legend works with no argument                     | PASS   |   1 | 0.011 |
-| [test-legend.R](testthat/test-legend.R#L185)           | legend justification | easy_adjust_legend works with combinations                    | PASS   |   3 | 0.033 |
-| [test-legend.R](testthat/test-legend.R#L195)           | legend justification | easy_adjust_legend errors with bad argument                   | PASS   |   1 | 0.008 |
-| [test-legend.R](testthat/test-legend.R#L201)           | legend justification | easy_adjust_legend teach = TRUE works with justification      | PASS   |   3 | 0.016 |
-| [test-legend.R](testthat/test-legend.R#L209)           | legend justification | easy_change_legend teach = TRUE works with justification      | PASS   |   3 | 0.015 |
-| [test-legend.R](testthat/test-legend.R#L217)           | legend justification | easy_rotate_legend teach = TRUE works with combinations       | PASS   |   4 | 0.018 |
-| [test-legend.R](testthat/test-legend.R#L226)           | legend title         | easy_add_legend_title errors with no argument                 | PASS   |   1 | 0.007 |
-| [test-legend.R](testthat/test-legend.R#L232)           | legend title         | easy_add_legend_title relabels a single legend title          | PASS   |   1 | 0.011 |
-| [test-legend.R](testthat/test-legend.R#L239)           | legend title         | easy_add_legend_title relabels all legend titles              | PASS   |   9 | 0.041 |
-| [test-legend.R](testthat/test-legend.R#L247)           | legend title         | easy_add_legend_title teach = TRUE works with specific aes    | PASS   |   4 | 0.017 |
-| [test-legend.R](testthat/test-legend.R#L256)           | legend title         | easy_add_legend_title teach = TRUE works with unspecific aes  | PASS   |  12 | 0.137 |
-| [test-legend.R](testthat/test-legend.R#L270)           | legend title         | easy_remove_legend_title works                                | PASS   |   1 | 0.011 |
-| [test-remove-axis.R](testthat/test-remove-axis.R#L15)  | remove axes          | no argument                                                   | PASS   |   3 | 0.023 |
-| [test-remove-axis.R](testthat/test-remove-axis.R#L46)  | remove axes          | explicit axis                                                 | PASS   |  10 | 0.069 |
-| [test-remove-axis.R](testthat/test-remove-axis.R#L90)  | remove axes          | multiple components                                           | PASS   |   4 | 0.030 |
-| [test-remove-axis.R](testthat/test-remove-axis.R#L109) | remove axes          | teach argument produces working code                          | PASS   |   3 | 0.010 |
-| [test-rotate.R](testthat/test-rotate.R#L10)            | rotate labels        | rotation of both labels                                       | PASS   |  17 | 0.092 |
-| [test-rotate.R](testthat/test-rotate.R#L64)            | rotate labels        | rotation of x labels                                          | PASS   |   3 | 0.025 |
-| [test-rotate.R](testthat/test-rotate.R#L79)            | rotate labels        | rotation of y labels                                          | PASS   |   3 | 0.022 |
-| [test-text.R](testthat/test-text.R#L25)                | adjust text sizes    | set text sizes                                                | PASS   | 203 | 0.225 |
-| [test-text.R](testthat/test-text.R#L146)               | adjust text colors   | set text colors                                               | PASS   |  98 | 0.120 |
-| [test-text.R](testthat/test-text.R#L220)               | text alignment       | easy_center_title works                                       | PASS   |   1 | 0.008 |
+| file | context | test | status | n | time | icon |
+|:---|:---|:---|:---|---:|---:|:---|
+| [test-gridlines.R](testthat/test-gridlines.R#L13) | remove grid lines | easy_remove_gridlines works | PASS | 3 | 0.012 |  |
+| [test-gridlines.R](testthat/test-gridlines.R#L31) | remove grid lines | easy_remove_x_gridlines works | PASS | 3 | 0.005 |  |
+| [test-gridlines.R](testthat/test-gridlines.R#L49) | remove grid lines | easy_remove_y_gridlines works | PASS | 3 | 0.005 |  |
+| [test-labs.R](testthat/test-labs.R#L32) | attr labs | easy_labs uses column attrib | SKIPPED | 1 | 0.002 | 🔶 |
+| [test-labs.R](testthat/test-labs.R#L58) | attr labs | regular labs overides easy_labs | SKIPPED | 1 | 0.005 | 🔶 |
+| [test-labs.R](testthat/test-labs.R#L68) | attr labs | regular labs pass new labels through easy_labs | SKIPPED | 1 | 0.002 | 🔶 |
+| [test-labs.R](testthat/test-labs.R#L86) | attr labs | column name used when no column attrib present | SKIPPED | 1 | 0.001 | 🔶 |
+| [test-legend.R](testthat/test-legend.R#L11) | remove legend | easy_remove_legend works with no argument | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L17) | remove legend | easy_remove_legend works with single character argument | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L23) | remove legend | easy_remove_legend works with single bare argument | PASS | 1 | 0.001 |  |
+| [test-legend.R](testthat/test-legend.R#L29) | remove legend | easy_remove_legend works with multiple character arguments | PASS | 1 | 0.001 |  |
+| [test-legend.R](testthat/test-legend.R#L35) | remove legend | easy_remove_legend works with multiple bare arguments | PASS | 1 | 0.001 |  |
+| [test-legend.R](testthat/test-legend.R#L44) | remove legend | easy_remove_legend teach = TRUE works with no other arguments | PASS | 2 | 0.003 |  |
+| [test-legend.R](testthat/test-legend.R#L54) | remove legend | easy_remove_legend teach = TRUE works with specific aes | PASS | 2 | 0.003 |  |
+| [test-legend.R](testthat/test-legend.R#L64) | remove legend | easy_remove_legend teach = TRUE works with multiple aes | PASS | 2 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L71) | move legend | easy_change_legend errors with no argument | PASS | 1 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L77) | move legend | easy_change_legend works with combinations | PASS | 4 | 0.006 |  |
+| [test-legend.R](testthat/test-legend.R#L92) | move legend | easy_move_legend works with no argument | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L98) | move legend | easy_move_legend works with specified argument | PASS | 3 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L108) | move legend | easy_move_legend errors with bad argument | PASS | 1 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L114) | move legend | easy_move_legend aliases work | PASS | 3 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L126_L130) | move legend | easy_move_legend teach = TRUE works with combinations | PASS | 4 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L147_L151) | move legend | easy_legend_at teach = TRUE works with combinations | PASS | 4 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L168_L172) | move legend | easy_change_legend teach = TRUE works with position | PASS | 3 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L186) | legend direction | easy_rotate_legend works with no argument | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L192) | legend direction | easy_rotate_legend works with combinations | PASS | 4 | 0.006 |  |
+| [test-legend.R](testthat/test-legend.R#L207_L211) | legend direction | easy_rotate_legend teach = TRUE works with combinations | PASS | 4 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L230) | legend justification | easy_adjust_legend works with no argument | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L236) | legend justification | easy_adjust_legend works with combinations | PASS | 3 | 0.010 |  |
+| [test-legend.R](testthat/test-legend.R#L246) | legend justification | easy_adjust_legend errors with bad argument | PASS | 1 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L252_L256) | legend justification | easy_adjust_legend teach = TRUE works with justification | PASS | 3 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L268_L272) | legend justification | easy_change_legend teach = TRUE works with justification | PASS | 3 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L284_L288) | legend justification | easy_rotate_legend teach = TRUE works with combinations | PASS | 4 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L305) | legend title | easy_add_legend_title errors with no argument | PASS | 1 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L311) | legend title | easy_add_legend_title relabels a single legend title | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L320_L323) | legend title | easy_add_legend_title relabels all legend titles | PASS | 1 | 0.002 |  |
+| [test-legend.R](testthat/test-legend.R#L329_L333) | legend title | easy_add_legend_title teach = TRUE works with specific aes | PASS | 4 | 0.004 |  |
+| [test-legend.R](testthat/test-legend.R#L350_L354) | legend title | easy_add_legend_title teach = TRUE works with unspecific aes | PASS | 4 | 0.005 |  |
+| [test-legend.R](testthat/test-legend.R#L378) | legend title | easy_remove_legend_title works | PASS | 1 | 0.002 |  |
+| [test-remove-axis.R](testthat/test-remove-axis.R#L16) | remove axes | no argument | PASS | 3 | 0.006 |  |
+| [test-remove-axis.R](testthat/test-remove-axis.R#L49) | remove axes | explicit axis | PASS | 10 | 0.012 |  |
+| [test-remove-axis.R](testthat/test-remove-axis.R#L97) | remove axes | multiple components | PASS | 4 | 0.006 |  |
+| [test-remove-axis.R](testthat/test-remove-axis.R#L120) | remove axes | teach argument produces working code | PASS | 3 | 0.007 |  |
+| [test-rotate.R](testthat/test-rotate.R#L11) | rotate labels | rotation of both labels | PASS | 17 | 0.040 |  |
+| [test-rotate.R](testthat/test-rotate.R#L104) | rotate labels | rotation of x labels | PASS | 3 | 0.006 |  |
+| [test-rotate.R](testthat/test-rotate.R#L122) | rotate labels | rotation of y labels | PASS | 3 | 0.005 |  |
+| [test-text.R](testthat/test-text.R#L30_L33) | adjust text sizes | set text sizes | PASS | 23 | 0.068 |  |
+| [test-text.R](testthat/test-text.R#L289_L292) | adjust text colors | set text colors | PASS | 8 | 0.034 |  |
+| [test-text.R](testthat/test-text.R#L391) | text alignment | easy_center_title works | PASS | 1 | 0.003 |  |
+| [test-text.R](testthat/test-text.R#L399) | bolding title | bold round-trips | PASS | 2 | 0.145 |  |
+
+| Failed | Warning | Skipped |
+|:-------|:--------|:--------|
+| 🛑     | ⚠️      | 🔶      |
 
 </details>
+
 <details>
+
 <summary>
+
 Session Info
 </summary>
 
 | Field    | Value                        |
 |:---------|:-----------------------------|
-| Version  | R version 4.1.2 (2021-11-01) |
-| Platform | x86_64-pc-linux-gnu (64-bit) |
-| Running  | Pop!\_OS 22.04 LTS           |
-| Language | en_AU                        |
+| Version  | R version 4.4.1 (2024-06-14) |
+| Platform | aarch64-apple-darwin20       |
+| Running  | macOS 15.5                   |
+| Language | en_US                        |
 | Timezone | Australia/Adelaide           |
 
 | Package  | Version |
 |:---------|:--------|
-| testthat | 3.1.5   |
-| covr     | 3.6.1   |
+| testthat | 3.2.3   |
+| covr     | 3.6.4   |
 | covrpage | 0.2     |
 
 </details>
-<!--- Final Status : pass --->
+
+<!--- Final Status : skipped/warning --->
