@@ -102,7 +102,7 @@ p4 <- p + easy_remove_x_gridlines() +
 
 ## Plot Labels
 
-Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. ~~`easy_labs()` makes this possible.~~ This behaviour is now native in ggplot2.
+Changing plot labels to a specified string isn't particularly difficult (`labs(x = "my label")`) but wouldn't it be even nicer if you could just add labels to your `data.frame` columns (e.g. using `labelled::var_labels()`) and have these reflected in your plot. ~~`easy_labs()` makes this possible.~~ This behaviour is native in (the development version of) ggplot2, and likely 3.5.3.
 
 ```{r}
 ## create a copy of the iris data
