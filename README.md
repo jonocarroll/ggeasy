@@ -60,6 +60,12 @@ detailing using the package, as well as a video
 [![Watch the
 video](https://img.youtube.com/vi/-2ZvQQ583pI/maxresdefault.jpg)](https://www.youtube.com/watch?v=-2ZvQQ583pI)
 
+[Jenny Richmond](https://www.youtube.com/@jenrichmondPhD) walks through
+some helpful features:
+
+[![Jenny
+Richmond](https://img.youtube.com/vi/PX8m69owHAs/maxresdefault.jpg)](https://www.youtube.com/watch?v=PX8m69owHAs)
+
 ## Examples
 
 ``` r
